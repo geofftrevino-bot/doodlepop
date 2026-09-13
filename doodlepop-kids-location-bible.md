@@ -6,6 +6,7 @@ red barn with the slate roof and silo, split-rail fencing, apple trees, and
 rolled hay bales recur across plates — that shared vocabulary is what will make
 the world read as one place.
 
+> **Channel:** DoodlePop Kids  ·  **Show:** Fix-It Farm
 ---
 
 ## ⚠️ THE GAP: THESE ARE ALL "AFTER" PLATES
