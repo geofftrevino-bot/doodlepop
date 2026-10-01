@@ -24,8 +24,8 @@ survived, but only just.
 
 | Character | With prop | Without prop |
 |---|---|---|
-| **Sprocket** | `SPROCKET_ref.png` — silver wrench in raised hoof | `SPROCKET_noprop_ref.png` |
-| **Clover** | `CLOVER_ref.png` — carrot in overalls pocket, trowel in paw | `CLOVER_noprop_ref.png` |
+| **Sprocket** | `sprocket_ref.png` — silver wrench in raised hoof | `sprocket_noprop_ref.png` |
+| **Clover** | `clover_ref.png` — carrot in overalls pocket, trowel in paw | `clover_noprop_ref.png` |
 | **Rocco** | *(no prop — the straw hat is costume, always worn)* | — |
 | **Nugget** | *(no prop — see the two-form rule instead)* | — |
 

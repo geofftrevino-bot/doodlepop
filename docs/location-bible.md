@@ -123,16 +123,16 @@ These are your `image_url` sources for image-to-video. A clip generated from an
 approved plate holds the set far better than one generated from text, and it
 solves half the consistency problem on its own.
 
-Upload alongside the character refs, lowercase:
+Stored in `refs/locations/`, alongside the character refs in `refs/characters/`:
 
 ```
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/barn_ext.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/barn_int.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/garden.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/workshop.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/tractor_yard.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/fence_line.png
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/windmill_field.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/barn_ext.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/barn_int.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/garden.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/workshop.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/tractor_yard.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/fence_line.png
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/refs/locations/windmill_field.png
 ```
 
 **One limitation to plan around:** image-to-video animates *from* the source

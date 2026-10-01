@@ -225,8 +225,8 @@ We can fix anything!
 Let's fix it!
 ```
 
-Files: `signoff_rocco.mp3`, `signoff_clover.mp3`, `signoff_sprocket.mp3`,
-`signoff_nugget.mp3` · `catch_rocco.mp3` … (same pattern)
+Files: `audio/signoffs/signoff_rocco.mp3`, `signoff_clover.mp3`, `signoff_sprocket.mp3`,
+`signoff_nugget.mp3` · `audio/catchphrases/catch_rocco.mp3` … (same pattern)
 
 Delivery: bright, confident, shared — the whole cast owns it. Same energy every
 time. Kids will start saying it before the character does.
