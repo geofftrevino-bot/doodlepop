@@ -1,0 +1,78 @@
+{
+  "title": "Which One Doesn't Belong?",
+  "character": "sprocket",
+  "voice": {
+    "name": "Sprocket",
+    "id": "7cz9fvECOZ5B0zNWkN2v",
+    "model": "eleven_multilingual_v2"
+  },
+  "take": "short10_vo_sprocket_take.mp3",
+  "lines": [
+    {
+      "text": "Wrench. Hammer. Screwdriver. Carrot.",
+      "take": [
+        0,
+        1.92
+      ],
+      "at": 0.5
+    },
+    {
+      "text": "Which one doesn't belong?",
+      "take": [
+        2.97,
+        4.19
+      ],
+      "at": 2.85
+    },
+    {
+      "text": "Thanks, Clover!",
+      "take": [
+        6.39,
+        null
+      ],
+      "at": 6.6
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_sprocket.mp3",
+    "at": null
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "clip": "short10_clip_v2.mp4",
+  "video": {
+    "start_frame": "short10_still.png",
+    "raw_clip": "short10_clip_v2.mp4",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "SPROCKET the pink piglet (brown tool belt, gold buckle, no goggles) and CLOVER the white rabbit (green overalls) stand in the workshop; a wrench, a hammer, a screwdriver and a carrot lie on the floor in front of them.",
+    "negative": [
+      "goggles"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.8,
+      "mouth": "open",
+      "action": "Sprocket counts off the items on the floor, nodding at each one."
+    },
+    {
+      "from": 2.8,
+      "to": 4.0,
+      "mouth": "open",
+      "action": "He asks the viewer a question, eyebrows up."
+    },
+    {
+      "from": 4.0,
+      "to": 6.6,
+      "mouth": "closed",
+      "action": "Thinking pause. Clover hops forward and picks up the carrot, holding it up proudly."
+    },
+    {
+      "from": 6.6,
+      "to": 8.0,
+      "mouth": "open",
+      "action": "Sprocket turns to Clover with a big grin."
+    }
+  ]
+}
