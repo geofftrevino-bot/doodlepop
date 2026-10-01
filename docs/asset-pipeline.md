@@ -15,8 +15,14 @@ That was unnecessary. There are two ways to skip it entirely:
 repo can be attached with no upload at all:
 
 ```
-https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/<file>
+https://raw.githubusercontent.com/geofftrevino-bot/doodlepop/main/<path>
 ```
+
+`<path>` includes the folder, e.g. `refs/characters/rocco_ref.png` or
+`shorts/short09_morning_checklist/short09_still_a_rocco.png`. See the
+top-level `README.md` for the layout and naming convention. Files were
+reorganized out of the repo root; `docs/file-renames.md` maps every old
+root-level name to its new path.
 
 Verified working. This is the default path from now on.
 

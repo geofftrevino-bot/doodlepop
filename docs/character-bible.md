@@ -6,7 +6,7 @@ descriptions on this page **verbatim**. Do not paraphrase, do not abbreviate,
 do not add details that aren't listed.
 
 > **Channel:** DoodlePop Kids  ·  **Show:** Fix-It Farm
-**Reference files:** `character-refs/ROCCO_ref.png` · `CLOVER_ref.png` · `SPROCKET_ref.png` · `NUGGET_ref.png`
+**Reference files:** `refs/characters/rocco_ref.png` · `clover_ref.png` · `sprocket_ref.png` · `nugget_sidekick_ref.png` / `nugget_hero_ref.png`
 
 ---
 
@@ -84,8 +84,8 @@ Prepend to **every** image and video prompt:
 
 | Form | When | Chest patch | Reference |
 |---|---|---|---|
-| **SIDEKICK** | He's ≤20% of frame height — beside Sprocket, in a group, background | **No patch.** Too small to read; adding it makes him look dirty | `NUGGET_sidekick_ref.png` |
-| **HERO** | He's >20% of frame height — his own Short, close-ups, anytime he leads | **Pale cream fuzzy oval on his chest** — mandatory | `NUGGET_hero_ref.png` |
+| **SIDEKICK** | He's ≤20% of frame height — beside Sprocket, in a group, background | **No patch.** Too small to read; adding it makes him look dirty | `nugget_sidekick_ref.png` |
+| **HERO** | He's >20% of frame height — his own Short, close-ups, anytime he leads | **Pale cream fuzzy oval on his chest** — mandatory | `nugget_hero_ref.png` |
 
 **This is permanent.** The patch was present in Short 7 and missing in Short 12,
 which is exactly the inconsistency to stop. If he's big enough to see, the patch
