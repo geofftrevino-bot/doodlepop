@@ -9,8 +9,9 @@ fields.
   pauses TAKE                 silences in a take, to pick each line's cut points
   check SPEC                  validate timing (overlaps, voice over mouth-closed beats)
   prompt SPEC                 print the Veo prompt, negative prompt and settings
-  sheet SPEC [--clip C] --out IMG
-                              timestamped frame grid of the clip, beats listed
+  sheet SPEC [--clip C] [--crop W:H:X:Y] [--to T] [--fps F] --out IMG
+                              timestamped frame grid of the clip, beats listed;
+                              crop to the face at --fps 6 to see when the mouth moves
   retime SPEC N=AT [N=AT ...] move line N (1-based) to play at AT seconds; saves the spec
   lipsync-track SPEC [--out]  voice-only lines at their positions, padded to the clip
   mix SPEC [--out]            mastered Short (default: shortNN_final_test.mp4)
@@ -174,10 +175,12 @@ def cmd_sheet(a):
     sp = Spec(a.spec)
     clip = sp.res(a.clip or sp.d["clip"])
     fps, cols = a.fps, 8
-    n = int(duration(clip) * fps)
+    length = min(duration(clip), a.to or 1e9)
+    n = int(length * fps)
     rows = (n + cols - 1) // cols
+    crop = f"crop={a.crop}," if a.crop else ""
     run("-i", clip, "-vf",
-        f"fps={fps},scale=160:-1,drawtext=fontfile={FONT}:text='%{{pts\\:hms}}':x=4:y=4:"
+        f"trim=0:{length},fps={fps},{crop}scale=160:-1,drawtext=fontfile={FONT}:text='%{{pts\\:flt}}':x=4:y=4:"
         f"fontsize=14:fontcolor=white:box=1:boxcolor=black@0.6,tile={cols}x{rows}",
         "-frames:v", "1", a.out)
     print(f"wrote {a.out} ({n} frames, every {1 / fps:g}s). Planned beats:")
@@ -288,6 +291,8 @@ def main():
     s.add_argument("spec")
     s.add_argument("--clip")
     s.add_argument("--fps", type=float, default=4)
+    s.add_argument("--crop", metavar="W:H:X:Y", help="crop before tiling, e.g. the face, to read mouth movement")
+    s.add_argument("--to", type=float, help="only the first N seconds")
     s.add_argument("--out", required=True)
     r = sub.add_parser("retime")
     r.add_argument("spec")
