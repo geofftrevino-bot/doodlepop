@@ -55,7 +55,7 @@ voices are locked in the table below.
 |---|---|---|---|---|---|
 | **ROCCO** | `Rocco` | `_____` | Warm, big, theatrical. A proud friendly foreman who means well. Never stern. | Low-mid, resonant | Measured, lands his lines |
 | **CLOVER** | `Clover` | `_____` | Soft, patient, sing-songy. The calm one. Gentle but not sleepy. | Mid, light | Unhurried, even |
-| **SPROCKET** | `Sprocket` | `_____` | Bright, busy, chatty. Thinks out loud while working. **Male.** | Mid-high, energetic | Quick, overlapping |
+| **SPROCKET** | `Sprocket` | `7cz9fvECOZ5B0zNWkN2v` | Bright, busy, chatty. Thinks out loud while working. **Male.** | Mid-high, energetic | Quick, overlapping |
 | **NUGGET** | `Nugget` | `_____` | Tiny, breathy, eager. Short sentences. Pure enthusiasm. | High, small, squeaky | Fast, excitable bursts |
 
 These are **custom voices generated in ElevenLabs Voice Design**, not library
