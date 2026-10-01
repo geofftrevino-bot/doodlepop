@@ -265,7 +265,7 @@ Red apples. Yellow sunflowers. <break time="1.0s" /> Orange carrots. Green lettu
 | 3 | …And Nugget. | 5.75 | ~0.90 | → sign-off |
 
 **Line 3 is not re-recorded.** You asked to keep that ending exactly as
-recorded, so it stays `c03_andnugget.wav`. Only lines 1–2 are in the new take.
+recorded, so it stays `short13_vo_clover_tag.mp3` (uploaded as `c03_andnugget.mp3`). Only lines 1–2 are in the new take.
 Same voice and settings, so the join should be invisible; if it isn't, we
 re-record line 3 too — your call after a listen.
 
