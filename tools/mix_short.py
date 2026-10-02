@@ -103,9 +103,10 @@ class Spec:
     def picture(self):
         """(main clip, tail clip or None, total picture length)."""
         clip = self.res(self.d["clip"])
-        tail = self.d.get("tail", {}).get("clip")
-        tail = self.res(tail) if tail else None
-        return clip, tail, duration(clip) + (duration(tail) if tail else 0)
+        t = self.d.get("tail", {})
+        tail = self.res(t["clip"]) if t.get("clip") else None
+        tail_len = min(duration(tail), t.get("use", 1e9)) if tail else 0
+        return clip, tail, duration(clip) + tail_len
 
     def signoff(self, lines):
         so = self.d["signoff"]
@@ -297,7 +298,8 @@ def cmd_mix(a):
         norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
         if tail:
             vin, vf = ["-i", clip, "-i", p("master.wav"), "-i", tail], (
-                f"[0:v]{norm}[a];[2:v]{norm}[b];[a][b]concat=n=2:v=1:a=0,"
+                f"[0:v]{norm}[a];[2:v]trim=0:{sp.d['tail'].get('use', 1e9)},setpts=PTS-STARTPTS,{norm}[b];"
+                f"[a][b]concat=n=2:v=1:a=0,"
                 f"tpad=stop_mode=clone:stop_duration={hold}[v]")
         else:
             vin, vf = ["-i", clip, "-i", p("master.wav")], (

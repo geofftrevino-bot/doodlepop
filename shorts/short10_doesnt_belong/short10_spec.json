@@ -35,11 +35,17 @@
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_sprocket.mp3",
-    "at": null
+    "at": 8.3
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
   "clip": "short10_clip_v2_lipsync.mp4",
+  "tail": {
+    "clip": "short10_clip_tail.mp4",
+    "raw_clip": "short10_clip_tail.mp4",
+    "use": 2.0,
+    "start_frame": "short10_lastframe_v2.png"
+  },
   "video": {
     "start_frame": "short10_still.png",
     "raw_clip": "short10_clip_v2.mp4",
@@ -73,6 +79,12 @@
       "to": 8.0,
       "mouth": "open",
       "action": "Sprocket turns to Clover with a big grin."
+    },
+    {
+      "from": 8.0,
+      "to": 10.0,
+      "mouth": "open",
+      "action": "Tail: Sprocket turns to the camera, thumbs-up, says the sign-off, then a big grin."
     }
   ]
 }
