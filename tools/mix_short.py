@@ -13,7 +13,9 @@ fields.
                               timestamped frame grid of the clip, beats listed;
                               crop to the face at --fps 6 to see when the mouth moves
   retime SPEC N=AT [N=AT ...] move line N (1-based) to play at AT seconds; saves the spec
-  lipsync-track SPEC [--out]  voice-only lines at their positions, padded to the clip
+  lipsync-track SPEC [--tail] [--out]
+                              voice-only lines at their positions, padded to the clip;
+                              --tail: the sign-off, placed inside the tail clip
   mix SPEC [--out]            mastered Short (default: shortNN_final_test.mp4)
 
 Paths in the spec resolve against the Short's folder first, then the repo root.
@@ -98,6 +100,13 @@ class Spec:
             out.append((ln["text"], s, e, ln["at"], ln["at"] + f - s, ln["at"] + l - s))
         return out
 
+    def picture(self):
+        """(main clip, tail clip or None, total picture length)."""
+        clip = self.res(self.d["clip"])
+        tail = self.d.get("tail", {}).get("clip")
+        tail = self.res(tail) if tail else None
+        return clip, tail, duration(clip) + (duration(tail) if tail else 0)
+
     def signoff(self, lines):
         so = self.d["signoff"]
         at = so.get("at")
@@ -135,9 +144,8 @@ def cmd_check(a):
     if so_at < lines[-1][5] + 0.3:
         problems.append(f"sign-off at {so_at}s starts too close to the last line")
     total = so_at + duration(so_file) + 0.25
-    clip = sp.d.get("clip")
-    if clip:
-        hold = total - duration(sp.res(clip))
+    if sp.d.get("clip"):
+        hold = total - sp.picture()[2]
         print(f"sign-off {so_at:.2f}s, runtime {total:.2f}s" + (f", last frame held {hold:.2f}s" if hold > 0 else ""))
     beats = sp.d.get("beats", [])
     if len(beats) > 6:
@@ -218,6 +226,8 @@ def voice_bus(sp, lines, out, total, with_signoff, channels=2):
 
 def cmd_lipsync_track(a):
     sp = Spec(a.spec)
+    if a.tail:
+        return lipsync_tail_track(sp, a.out)
     clip = sp.res(sp.d["video"].get("raw_clip") or sp.d["clip"])
     total = round(duration(clip), 3)
     out = a.out or os.path.join(sp.dir, f"{sp.name}_vo_lipsync_track.mp3")
@@ -225,6 +235,20 @@ def cmd_lipsync_track(a):
         voice_bus(sp, sp.lines(), os.path.join(t, "bus.wav"), total, with_signoff=False, channels=1)
         run("-i", os.path.join(t, "bus.wav"), "-ar", "44100", "-b:a", "192k", out)
     print(f"wrote {out} ({total}s, matches {os.path.basename(clip)})")
+
+
+def lipsync_tail_track(sp, out):
+    """Sign-off only, placed where it falls inside the tail clip."""
+    t = sp.d["tail"]
+    raw = sp.res(t.get("raw_clip") or t["clip"])
+    so_file, so_at = sp.signoff(sp.lines())
+    start = duration(sp.res(sp.d["clip"]))
+    at = max(0.0, so_at - start)
+    total = round(duration(raw), 3)
+    out = out or os.path.join(sp.dir, f"{sp.name}_vo_lipsync_track_tail.mp3")
+    run("-i", so_file, "-af", f"aresample=44100,adelay={int(at * 1000)}:all=1,"
+        f"apad=whole_dur={total},atrim=0:{total}", "-ac", "1", "-b:a", "192k", out)
+    print(f"wrote {out} ({total}s, sign-off at {at:.2f}s into {os.path.basename(raw)})")
 
 
 def loudnorm_2pass(src, dst, i, tp):
@@ -239,11 +263,11 @@ def loudnorm_2pass(src, dst, i, tp):
 
 def cmd_mix(a):
     sp = Spec(a.spec)
-    clip = sp.res(sp.d["clip"])
+    clip, tail, pic_len = sp.picture()
     lines = sp.lines()
     so_file, so_at = sp.signoff(lines)
-    total = round(max(duration(clip), so_at + duration(so_file) + 0.25), 2)
-    hold = max(0.0, round(total - duration(clip), 2))
+    total = round(max(pic_len, so_at + duration(so_file) + 0.25), 2)
+    hold = max(0.0, round(total - pic_len, 2))
     out = a.out or os.path.join(sp.dir, f"{sp.name}_final_test.mp4")
     print(f"last line ends {lines[-1][5]:.2f}s, sign-off at {so_at:.2f}s, runtime {total:.2f}s"
           + (f", last frame held {hold:.2f}s" if hold else ""))
@@ -270,8 +294,15 @@ def cmd_mix(a):
         run(*ins, "-filter_complex",
             f"amix=inputs={len(stems)}:normalize=0:duration=longest,atrim=0:{total}", p("sum.wav"))
         loudnorm_2pass(p("sum.wav"), p("master.wav"), -14, -1.5)
-        run("-i", clip, "-i", p("master.wav"), "-filter_complex",
-            f"[0:v]tpad=stop_mode=clone:stop_duration={hold}[v]", "-map", "[v]", "-map", "1:a",
+        norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
+        if tail:
+            vin, vf = ["-i", clip, "-i", p("master.wav"), "-i", tail], (
+                f"[0:v]{norm}[a];[2:v]{norm}[b];[a][b]concat=n=2:v=1:a=0,"
+                f"tpad=stop_mode=clone:stop_duration={hold}[v]")
+        else:
+            vin, vf = ["-i", clip, "-i", p("master.wav")], (
+                f"[0:v]{norm},tpad=stop_mode=clone:stop_duration={hold}[v]")
+        run(*vin, "-filter_complex", vf, "-map", "[v]", "-map", "1:a",
             "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), "-t", str(total), out)
 
@@ -301,6 +332,8 @@ def main():
         p = sub.add_parser(c)
         p.add_argument("spec")
         p.add_argument("--out")
+        if c == "lipsync-track":
+            p.add_argument("--tail", action="store_true", help="sign-off track for the tail clip")
     a = ap.parse_args()
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
           "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix}[a.cmd]
