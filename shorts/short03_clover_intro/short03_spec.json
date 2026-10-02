@@ -30,12 +30,12 @@
         6.93,
         null
       ],
-      "at": 5.0
+      "at": 5.35
     }
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_clover.mp3",
-    "at": 9.0
+    "at": 8.3
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -86,7 +86,7 @@
     },
     {
       "clip": "short03_shot_c.mp4",
-      "use": 3.8,
+      "use": 3.3,
       "start_frame": "short03_shot_b_cut.png",
       "beats": [
         {
@@ -106,25 +106,19 @@
     {
       "clip": "short03_clip_tail.mp4",
       "use": 1.9,
-      "start_frame": "short03_shot_c_last.png",
+      "start_frame": "short03_shot_c_cut.png",
       "beats": [
         {
           "from": 0.0,
-          "to": 0.3,
-          "mouth": "closed",
-          "action": "Clover turns to the camera among the new flowers."
-        },
-        {
-          "from": 0.3,
-          "to": 1.7,
+          "to": 1.5,
           "mouth": "open",
-          "action": "She says a cheerful catchphrase to the camera with a little thumbs-up."
+          "action": "Clover looks straight at the camera among the new flowers and says: \"We can fix anything!\" with a little thumbs-up."
         },
         {
-          "from": 1.7,
+          "from": 1.5,
           "to": 4.0,
           "mouth": "closed",
-          "action": "She holds a big happy grin and gives a small wave."
+          "action": "She holds a big happy grin and gives a small wave, staying in place."
         }
       ]
     }
