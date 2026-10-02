@@ -144,3 +144,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   up the rest.
 - **Read the tail before setting `use`.** Short 7's tail walked off at ~3.4s, so
   the cut is at 2.9s (mouth onset 0.45s + 2.06s sign-off + a short grin).
+- **The lip-sync pass often changes nothing on our cartoon faces** (found after
+  Short 8). `sync-check` against the input shows Shorts 2, 5 (main picture), 6
+  and 8 came back pixel-identical: the model found no face to sync, so the lip
+  sync seen there was Veo's own mouth movement plus where we placed the lines.
+  Only Short 5's sign-off, 7, 10 and 14 were edited at all. Wide shots with two
+  characters and small rabbit or chick mouths fail most. **Run `sync-check`
+  after every pass**, and don't pay for one on wide two-character shots.

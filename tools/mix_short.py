@@ -21,6 +21,8 @@ fields.
   lipsync-track SPEC [--tail|--full] [--out]
                               voice-only lines at their positions, padded to the clip;
                               --tail: the sign-off, placed inside the tail clip
+  sync-check BEFORE AFTER     how much a lip-sync pass changed the picture (catches a pass
+                              that found no face and returned the input unchanged)
   mix SPEC [--out]            mastered Short (default: shortNN_final_test.mp4)
 
 Paths in the spec resolve against the Short's folder first, then the repo root.
@@ -317,6 +319,21 @@ def video_join(segs, first=0):
     return ins, ";".join(parts)
 
 
+def cmd_sync_check(a):
+    # Blur the per-frame difference so encoder noise vanishes and only a real local edit
+    # (a redrawn mouth) leaves a peak. Peak 0 on every frame = the pass changed nothing.
+    log = ffmpeg_log("-i", a.before, "-i", a.after, "-lavfi",
+                     "[1:v][0:v]scale2ref[b][a];[a][b]blend=all_mode=difference,format=gray,"
+                     "avgblur=12,signalstats,metadata=print:key=lavfi.signalstats.YMAX",
+                     "-f", "null", "-")
+    peaks = [int(x) for x in re.findall(r"YMAX=(\d+)", log)]
+    changed = sum(p >= 40 for p in peaks)
+    print(f"{changed}/{len(peaks)} frames edited (mean peak {sum(peaks) / max(len(peaks), 1):.0f})")
+    if changed < len(peaks) * 0.1:
+        print("the pass barely touched the picture: the model likely found no face to sync")
+        return 1
+
+
 def cmd_seams(a):
     """Last frame before and first frame after every cut, side by side, to catch jumps
     (pose, framing, lighting) before paying for a lip-sync pass."""
@@ -462,6 +479,9 @@ def main():
     at.add_argument("spec")
     at.add_argument("files", nargs="+", help="one audio file per line, in order")
     at.add_argument("--gap", type=float, default=1.0)
+    sc = sub.add_parser("sync-check")
+    sc.add_argument("before")
+    sc.add_argument("after")
     sm = sub.add_parser("seams")
     sm.add_argument("spec")
     sm.add_argument("--out", required=True)
@@ -480,7 +500,7 @@ def main():
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
           "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix,
           "picture": cmd_picture, "assemble-take": cmd_assemble_take,
-          "seams": cmd_seams}[a.cmd]
+          "seams": cmd_seams, "sync-check": cmd_sync_check}[a.cmd]
     return fn(a)
 
 
