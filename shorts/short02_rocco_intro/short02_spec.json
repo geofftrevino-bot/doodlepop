@@ -1,0 +1,72 @@
+{
+  "title": "This Is Rocco",
+  "character": "rocco",
+  "voice": {
+    "name": "Rocco",
+    "id": "YaTcUhI4B60lebDaAPcL",
+    "model": "eleven_multilingual_v2"
+  },
+  "take": "short02_vo_rocco_take.mp3",
+  "lines": [
+    {
+      "text": "I'm Rocco. I run this farm.",
+      "take": [
+        0,
+        2.84
+      ],
+      "at": 0.2
+    },
+    {
+      "text": "And I have a plan for everything.",
+      "take": [
+        3.78,
+        5.57
+      ],
+      "at": 3.25
+    },
+    {
+      "text": "…EVERY. THING.",
+      "take": [
+        6.94,
+        null
+      ],
+      "at": 5.3
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_rocco.mp3",
+    "at": null
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "clip": "short02_clip.mp4",
+  "video": {
+    "start_frame": "short02_still.png",
+    "raw_clip": "short02_clip.mp4",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "ROCCO the red-orange rooster in a straw farmer's hat and red kerchief stands in front of the red barn and silo.",
+    "negative": [
+      "crowing"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.0,
+      "mouth": "open",
+      "action": "Rocco greets the camera and pulls out a rolled-up paper plan."
+    },
+    {
+      "from": 2.0,
+      "to": 4.4,
+      "mouth": "open",
+      "action": "He unrolls the scroll, which keeps unrolling past his feet."
+    },
+    {
+      "from": 4.4,
+      "to": 8.0,
+      "mouth": "open",
+      "action": "Camera pushes in on his proud face as he savours the punchline."
+    }
+  ]
+}
