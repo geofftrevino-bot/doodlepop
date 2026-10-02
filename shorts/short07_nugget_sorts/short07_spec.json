@@ -41,12 +41,12 @@
         10.69,
         null
       ],
-      "at": 9.05
+      "at": 9.4
     }
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_nugget.mp3",
-    "at": null
+    "at": 12.1
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -81,26 +81,32 @@
     {
       "clip": "short07_clip.mp4",
       "from": 5.5,
-      "use": 2.5,
+      "use": 2.2,
       "note": "existing clip: the carrot appears"
     },
     {
       "clip": "short07_clip_tail.mp4",
       "from": 0.0,
-      "use": 3.0,
+      "use": 2.9,
       "start_frame": "short07_lastframe_v2.png",
       "beats": [
         {
           "from": 0.0,
-          "to": 2.4,
-          "mouth": "open",
-          "action": "Nugget turns to the camera beside his sorted crates and the carrot and says a cheerful catchphrase."
+          "to": 0.45,
+          "mouth": "closed",
+          "action": "Nugget faces the camera beside the carrot."
         },
         {
-          "from": 2.4,
-          "to": 4.0,
+          "from": 0.45,
+          "to": 2.55,
+          "mouth": "open",
+          "action": "He says the catchphrase to camera."
+        },
+        {
+          "from": 2.55,
+          "to": 2.9,
           "mouth": "closed",
-          "action": "He grins and gives a little hop."
+          "action": "He grins (cut before he walks off at ~3.4s)."
         }
       ]
     }

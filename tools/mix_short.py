@@ -65,8 +65,8 @@ def speech_span(take, start, end):
     for s, e in silences(take, 0.05):
         if s <= start < e:
             first = min(e, end)
-        if start < s <= end:
-            last = s
+        if start < s <= end and e >= end - 0.05:
+            last = s  # only a silence that runs to the cut's end; gaps between words don't count
     return first, max(first, last)
 
 
