@@ -42,7 +42,19 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
+  "clip": "short08_clip_joined_lipsync.mp4",
+  "video": {
+    "start_frame": "short08_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket, standing behind a row of terracotta flower pots in a sunny vegetable garden, with NUGGET the tiny fluffy yellow chick beside her.",
+    "negative": [
+      "extra rabbits",
+      "second bunny",
+      "walking out of frame"
+    ]
+  },
+  "beats": [],
+  "built_from_shots": [
     {
       "clip": "short08_clip.mp4",
       "from": 0.0,
@@ -75,16 +87,5 @@
         }
       ]
     }
-  ],
-  "video": {
-    "start_frame": "short08_still.png",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket, standing behind a row of terracotta flower pots in a sunny vegetable garden, with NUGGET the tiny fluffy yellow chick beside her.",
-    "negative": [
-      "extra rabbits",
-      "second bunny",
-      "walking out of frame"
-    ]
-  },
-  "beats": []
+  ]
 }
