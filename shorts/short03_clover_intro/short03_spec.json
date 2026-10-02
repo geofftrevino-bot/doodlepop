@@ -22,7 +22,7 @@
         3.12,
         4.95
       ],
-      "at": 2.7
+      "at": 2.45
     },
     {
       "text": "…and look what happens!",
@@ -91,18 +91,12 @@
       "beats": [
         {
           "from": 0.0,
-          "to": 0.3,
-          "mouth": "closed",
-          "action": "Clover looks up at the camera with a little secret smile."
-        },
-        {
-          "from": 0.3,
-          "to": 2.5,
+          "to": 2.2,
           "mouth": "open",
-          "action": "She talks to the camera, pausing for a beat, and points down at the soil."
+          "action": "Clover looks up at the camera with a little secret smile and says: \"…and… look what happens!\" pointing down at the soil."
         },
         {
-          "from": 2.5,
+          "from": 2.2,
           "to": 4.0,
           "mouth": "closed",
           "action": "A whole row of sunflowers, carrots, tomatoes and daisies springs up around her in a rippling wave; her ears perk straight up and she gives a tiny happy clap."
