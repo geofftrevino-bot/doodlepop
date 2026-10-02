@@ -35,11 +35,17 @@
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_rocco.mp3",
-    "at": null
+    "at": 8.2
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
   "clip": "short02_clip.mp4",
+  "tail": {
+    "clip": "short02_clip_tail.mp4",
+    "raw_clip": "short02_clip_tail.mp4",
+    "use": 2.6,
+    "start_frame": "short02_lastframe_v2.png"
+  },
   "video": {
     "start_frame": "short02_still.png",
     "raw_clip": "short02_clip.mp4",
@@ -67,6 +73,12 @@
       "to": 8.0,
       "mouth": "open",
       "action": "Camera pushes in on his proud face as he savours the punchline."
+    },
+    {
+      "from": 8.0,
+      "to": 10.6,
+      "mouth": "open",
+      "action": "Tail: Rocco opens his eyes, gives a proud wing-up and says the sign-off, then grins."
     }
   ]
 }
