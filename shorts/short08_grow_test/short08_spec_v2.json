@@ -1,0 +1,68 @@
+{
+  "title": "Grow Test",
+  "character": "clover",
+  "voice": {
+    "name": "Clover",
+    "id": "EGiEBftkMhETd6Cyyfyj",
+    "model": "veo-3.1 native dialogue -> eleven_multilingual_sts_v2 (voice changer)"
+  },
+  "take": "short08_vo_clover_take_v2.mp3",
+  "lines": [
+    {
+      "text": "Seeds need three things to grow.",
+      "take": [
+        0,
+        2.6
+      ],
+      "at": 0.0
+    },
+    {
+      "text": "Soil... water... and sunshine!",
+      "take": [
+        2.6,
+        5.8
+      ],
+      "at": 2.6
+    },
+    {
+      "text": "Now we watch them grow!",
+      "take": [
+        5.8,
+        8.0
+      ],
+      "at": 5.8
+    }
+  ],
+  "signoff": {
+    "file": "short08_vo_clover_signoff.mp3",
+    "at": 8.0
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {
+      "clip": "short08_clip_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 8.0,
+      "note": "Veo spoke the lines itself (generate_audio); the voice is that audio re-voiced as Clover, so mouth and words share timing"
+    },
+    {
+      "clip": "short08_clip_tail_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 3.3,
+      "start_frame": "short08_lastframe_v2.png",
+      "note": "Veo spoke 'We can fix anything!'; re-voiced as Clover"
+    }
+  ],
+  "video": {
+    "start_frame": "short08_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "CLOVER the soft white rabbit with long floppy ears and green overalls stands behind three terracotta flower pots in a sunny vegetable garden, with NUGGET the tiny yellow chick beside her.",
+    "negative": [
+      "music",
+      "extra rabbits",
+      "Nugget talking"
+    ]
+  },
+  "beats": []
+}
