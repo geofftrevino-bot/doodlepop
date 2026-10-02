@@ -51,7 +51,20 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short05_clip_joined_lipsync.mp4",
+  "shots": [
+    {
+      "clip": "short05_clip_joined_lipsync.mp4",
+      "from": 0.0,
+      "use": 9.05,
+      "note": "lines 1-4, synced in one pass"
+    },
+    {
+      "clip": "short05_clip_signoff_lipsync.mp4",
+      "from": 0.0,
+      "use": 2.375,
+      "note": "Nugget close-up re-synced to his corrected sign-off"
+    }
+  ],
   "video": {
     "start_frame": "short05_still.png",
     "model": "veo-3.1-fast-generate-001",
