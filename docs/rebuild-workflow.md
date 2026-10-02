@@ -73,7 +73,7 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 
 ---
 
-## WHAT WE LEARNED (Shorts 4, 14, 11, 10, 2, 3 and 5)
+## WHAT WE LEARNED (Shorts 4, 14, 11, 10, 2, 3, 5 and 7)
 
 - **Eleven v4 and v3 ignore `<break>` tags.** The pauses come out at ~0.4s, the
   same as pauses between sentences, so the lines can't be split. Use Multilingual v2.
@@ -137,3 +137,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Match voice energy to the script's direction note with v3 tags.** Each line's
   note in `docs/vo-retake-guide.md` maps straight onto tags: "breathless, all-caps
   energy" → `[excited] [breathless]` + CAPS; "dry and fond" → `[warmly] [chuckles]`.
+- **Stretch a clip with an inserted shot whose first and last frames are cut
+  from the clip itself** (Short 7). The lines ran ~3s longer than the action
+  before the carrot. A 4s Veo shot generated from the clip's frame at 5.4s to its
+  frame at 5.5s slots between them with no visible join, and 1.1× `tempo` took
+  up the rest.
+- **Read the tail before setting `use`.** Short 7's tail walked off at ~3.4s, so
+  the cut is at 2.9s (mouth onset 0.45s + 2.06s sign-off + a short grin).
