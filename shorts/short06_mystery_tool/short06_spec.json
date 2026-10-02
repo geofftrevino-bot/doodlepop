@@ -39,7 +39,17 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
+  "clip": "short06_clip_joined_lipsync.mp4",
+  "video": {
+    "start_frame": "short06_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "SPROCKET the pink piglet (brown tool belt with a gold buckle, no goggles) holds a giant silver wrench, with NUGGET the tiny yellow chick beside him, in the workshop barn.",
+    "negative": [
+      "goggles"
+    ]
+  },
+  "beats": [],
+  "built_from_shots": [
     {
       "clip": "short06_clip.mp4",
       "from": 0.0,
@@ -66,14 +76,5 @@
         }
       ]
     }
-  ],
-  "video": {
-    "start_frame": "short06_still.png",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "SPROCKET the pink piglet (brown tool belt with a gold buckle, no goggles) holds a giant silver wrench, with NUGGET the tiny yellow chick beside him, in the workshop barn.",
-    "negative": [
-      "goggles"
-    ]
-  },
-  "beats": []
+  ]
 }
