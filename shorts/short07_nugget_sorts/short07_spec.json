@@ -50,7 +50,17 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
+  "video": {
+    "start_frame": "short07_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "NUGGET the tiny fluffy yellow chick (pale cream chest patch) sorts bolts into wooden crates on the workshop barn floor.",
+    "negative": [
+      "extra chicks"
+    ]
+  },
+  "beats": [],
+  "clip": "short07_clip_joined_lipsync.mp4",
+  "built_from_shots": [
     {
       "clip": "short07_clip.mp4",
       "from": 0.0,
@@ -110,14 +120,5 @@
         }
       ]
     }
-  ],
-  "video": {
-    "start_frame": "short07_still.png",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "NUGGET the tiny fluffy yellow chick (pale cream chest patch) sorts bolts into wooden crates on the workshop barn floor.",
-    "negative": [
-      "extra chicks"
-    ]
-  },
-  "beats": []
+  ]
 }
