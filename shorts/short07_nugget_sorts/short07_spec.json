@@ -1,0 +1,117 @@
+{
+  "title": "Nugget Sorts the Toolbox",
+  "character": "nugget",
+  "voice": {
+    "name": "Nugget",
+    "id": "wHdWNyHIEKti3ZPcVIFa",
+    "model": "eleven_v3"
+  },
+  "take": "short07_vo_nugget_take.mp3",
+  "lines": [
+    {
+      "text": "[excited] [busily] Sorting time! BIG bolts here…",
+      "take": [
+        0,
+        2.38
+      ],
+      "at": 0.1,
+      "tempo": 1.1
+    },
+    {
+      "text": "[playfully] …and liiittle bolts here!",
+      "take": [
+        3.08,
+        5.91
+      ],
+      "at": 2.45,
+      "tempo": 1.1
+    },
+    {
+      "text": "[excited] Silver ones, gold ones — I DID it!",
+      "take": [
+        6.61,
+        9.99
+      ],
+      "at": 5.5,
+      "tempo": 1.1
+    },
+    {
+      "text": "[confidently] And THIS goes right here.",
+      "take": [
+        10.69,
+        null
+      ],
+      "at": 9.05
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_nugget.mp3",
+    "at": null
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {
+      "clip": "short07_clip.mp4",
+      "from": 0.0,
+      "use": 5.4,
+      "note": "existing clip: sorting bolts into crates"
+    },
+    {
+      "clip": "short07_shot_b.mp4",
+      "from": 0.0,
+      "use": 4.0,
+      "start_frame": "short07_clip_at_5.4.png",
+      "end_frame": "short07_clip_at_5.5.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 3.3,
+          "mouth": "open",
+          "action": "Nugget keeps sorting: drops silver bolts into one crate and gold bolts into another, chattering proudly to the camera."
+        },
+        {
+          "from": 3.3,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "He throws his wings up in triumph and settles back to his starting pose."
+        }
+      ]
+    },
+    {
+      "clip": "short07_clip.mp4",
+      "from": 5.5,
+      "use": 2.5,
+      "note": "existing clip: the carrot appears"
+    },
+    {
+      "clip": "short07_clip_tail.mp4",
+      "from": 0.0,
+      "use": 3.0,
+      "start_frame": "short07_lastframe_v2.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 2.4,
+          "mouth": "open",
+          "action": "Nugget turns to the camera beside his sorted crates and the carrot and says a cheerful catchphrase."
+        },
+        {
+          "from": 2.4,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "He grins and gives a little hop."
+        }
+      ]
+    }
+  ],
+  "video": {
+    "start_frame": "short07_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "NUGGET the tiny fluffy yellow chick (pale cream chest patch) sorts bolts into wooden crates on the workshop barn floor.",
+    "negative": [
+      "extra chicks"
+    ]
+  },
+  "beats": []
+}

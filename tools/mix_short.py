@@ -102,8 +102,12 @@ class Spec:
         for ln in self.d["lines"]:
             s, e = ln["take"][0], ln["take"][1] if ln["take"][1] is not None else tlen
             f, l = speech_span(take, s, e)
-            out.append((ln["text"], s, e, ln["at"], ln["at"] + f - s, ln["at"] + l - s))
+            tp = ln.get("tempo", 1.0)
+            out.append((ln["text"], s, e, ln["at"], ln["at"] + (f - s) / tp, ln["at"] + (l - s) / tp))
         return out
+
+    def tempos(self):
+        return [ln.get("tempo", 1.0) for ln in self.d["lines"]]
 
     def segments(self):
         """[(clip path, seconds used, start in clip)] in order: shots (or the clip), then the tail.
@@ -244,8 +248,9 @@ def cmd_retime(a):
 def voice_bus(sp, lines, out, total, with_signoff, channels=2):
     take = sp.take()
     parts, inputs = [], ["-i", take]
-    for k, (_, s, e, at, *_r) in enumerate(lines):
-        parts.append(f"[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS,adelay={int(at * 1000)}:all=1[l{k}]")
+    for k, ((_, s, e, at, *_r), tp) in enumerate(zip(lines, sp.tempos())):
+        speed = f",atempo={tp}" if tp != 1.0 else ""  # pitch-preserving speed-up for a tight picture
+        parts.append(f"[0:a]atrim={s}:{e},asetpts=PTS-STARTPTS{speed},adelay={int(at * 1000)}:all=1[l{k}]")
     labels = "".join(f"[l{k}]" for k in range(len(lines)))
     n = len(lines)
     if with_signoff:

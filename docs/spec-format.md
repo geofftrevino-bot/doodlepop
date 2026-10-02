@@ -40,6 +40,7 @@ Paths resolve against the Short's folder first, then the repo root, so
   Get them from `mix_short.py pauses <take>`: cut ~0.05s before speech starts and
   ~0.1s into the silence after it ends.
 - `speaker` (optional): who says the line, for Shorts with more than one voice.
+- `tempo` (optional, e.g. `1.1`): play the line faster without changing pitch, when the picture is tight. Keep it at or under ~1.15 so the read still sounds natural.
 - `at`: where the cut starts on the Short's timeline. Speech is heard a little
   later, by however much silence the cut starts with.
 
