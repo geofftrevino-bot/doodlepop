@@ -51,44 +51,7 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
-    {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 0.5,
-      "use": 3.85,
-      "note": "Nugget close-up, line 1"
-    },
-    {
-      "clip": "short05_clip_b_sprocket.mp4",
-      "from": 0.3,
-      "use": 1.5,
-      "note": "Sprocket close-up, hoof out, line 2"
-    },
-    {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 4.2,
-      "use": 1.0,
-      "note": "Nugget close-up, wings up, line 3"
-    },
-    {
-      "clip": "short05_clip_v3.mp4",
-      "from": 3.6,
-      "use": 1.0,
-      "note": "two-shot gag: carrot offered to Sprocket's outstretched hoof (silent)"
-    },
-    {
-      "clip": "short05_clip_b_sprocket.mp4",
-      "from": 6.3,
-      "use": 1.7,
-      "note": "Sprocket close-up, sly look, line 4"
-    },
-    {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 5.6,
-      "use": 1.9,
-      "note": "Nugget close-up, sign-off"
-    }
-  ],
+  "clip": "short05_clip_joined_lipsync.mp4",
   "video": {
     "start_frame": "short05_still.png",
     "model": "veo-3.1-fast-generate-001",
@@ -133,6 +96,44 @@
       "to": 10.95,
       "mouth": "open",
       "action": "Nugget close-up: sign-off."
+    }
+  ],
+  "built_from_shots": [
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 0.5,
+      "use": 3.85,
+      "note": "Nugget close-up, line 1"
+    },
+    {
+      "clip": "short05_clip_b_sprocket.mp4",
+      "from": 0.3,
+      "use": 1.5,
+      "note": "Sprocket close-up, hoof out, line 2"
+    },
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 4.2,
+      "use": 1.0,
+      "note": "Nugget close-up, wings up, line 3"
+    },
+    {
+      "clip": "short05_clip_v3.mp4",
+      "from": 3.6,
+      "use": 1.0,
+      "note": "two-shot gag: carrot offered to Sprocket's outstretched hoof (silent)"
+    },
+    {
+      "clip": "short05_clip_b_sprocket.mp4",
+      "from": 6.3,
+      "use": 1.7,
+      "note": "Sprocket close-up, sly look, line 4"
+    },
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 5.6,
+      "use": 1.9,
+      "note": "Nugget close-up, sign-off"
     }
   ]
 }
