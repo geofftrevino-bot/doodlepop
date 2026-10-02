@@ -100,8 +100,26 @@ class Spec:
             out.append((ln["text"], s, e, ln["at"], ln["at"] + f - s, ln["at"] + l - s))
         return out
 
+    def segments(self):
+        """[(clip path, seconds used)] in order: shots (or the clip), then the tail."""
+        segs = []
+        if self.d.get("shots"):
+            for sh in self.d["shots"]:
+                c = self.res(sh["clip"])
+                segs.append((c, min(duration(c), sh.get("use", 1e9))))
+        else:
+            c = self.res(self.d["clip"])
+            segs.append((c, duration(c)))
+        t = self.d.get("tail", {})
+        if t.get("clip"):
+            c = self.res(t["clip"])
+            segs.append((c, min(duration(c), t.get("use", 1e9))))
+        return segs
+
     def picture(self):
         """(main clip, tail clip or None, total picture length)."""
+        if self.d.get("shots"):
+            return None, None, sum(u for _, u in self.segments())
         clip = self.res(self.d["clip"])
         t = self.d.get("tail", {})
         tail = self.res(t["clip"]) if t.get("clip") else None
@@ -145,8 +163,13 @@ def cmd_check(a):
     if so_at < lines[-1][5] + 0.3:
         problems.append(f"sign-off at {so_at}s starts too close to the last line")
     total = so_at + duration(so_file) + 0.25
-    if sp.d.get("clip"):
-        hold = total - sp.picture()[2]
+    try:
+        pic = sp.picture()[2] if (sp.d.get("clip") or sp.d.get("shots")) else None
+    except SystemExit:
+        pic = None
+        print("picture not complete yet (some shot clips missing)")
+    if pic is not None:
+        hold = total - pic
         print(f"sign-off {so_at:.2f}s, runtime {total:.2f}s" + (f", last frame held {hold:.2f}s" if hold > 0 else ""))
     beats = sp.d.get("beats", [])
     if len(beats) > 6:
@@ -161,23 +184,27 @@ def cmd_check(a):
 def cmd_prompt(a):
     sp = Spec(a.spec)
     v = sp.d["video"]
+    beats, secs, start = sp.d.get("beats", []), 8, v.get("start_frame")
+    if a.shot:
+        sh = sp.d["shots"][a.shot - 1]
+        beats, secs, start = sh["beats"], 4, sh.get("start_frame", start)
     out = [
         "Vertical 9:16 bright 3D cartoon for preschoolers. ONE continuous shot. "
         "LOCKED-OFF CAMERA: the camera never pans, zooms, pushes in or cuts; the framing of the "
-        "provided first frame is kept for all 8 seconds.",
+        f"provided first frame is kept for all {secs} seconds.",
         "Start exactly on the provided frame and keep every character, prop and the set exactly on-model. "
         + v["description"],
         "Mouths move ONLY in the beats marked SPEAKING. In every other beat the mouth stays closed.",
     ]
-    for b in sp.d["beats"]:
+    for b in beats:
         tag = "SPEAKING" if b.get("mouth") == "open" else "mouth closed"
         out.append(f"{b['from']:g} to {b['to']:g} seconds ({tag}): {b['action']}")
     print("PROMPT:\n" + "\n".join(out))
     neg = ["camera movement", "pan", "zoom", "push-in", "cuts", "scene change", "text", "captions",
            "logos", "extra characters"] + v.get("negative", [])
     print("\nNEGATIVE:\n" + ", ".join(neg))
-    print(f"\nSETTINGS: model {v.get('model', 'veo-3.1-fast-generate-001')}, 8s, 9:16, 1080p, "
-          f"generate_audio false, start frame {v['start_frame']}")
+    print(f"\nSETTINGS: model {v.get('model', 'veo-3.1-fast-generate-001')}, {secs}s, 9:16, 1080p, "
+          f"generate_audio false, start frame {start}")
 
 
 def cmd_sheet(a):
@@ -264,7 +291,7 @@ def loudnorm_2pass(src, dst, i, tp):
 
 def cmd_mix(a):
     sp = Spec(a.spec)
-    clip, tail, pic_len = sp.picture()
+    pic_len = sp.picture()[2]
     lines = sp.lines()
     so_file, so_at = sp.signoff(lines)
     total = round(max(pic_len, so_at + duration(so_file) + 0.25), 2)
@@ -296,15 +323,13 @@ def cmd_mix(a):
             f"amix=inputs={len(stems)}:normalize=0:duration=longest,atrim=0:{total}", p("sum.wav"))
         loudnorm_2pass(p("sum.wav"), p("master.wav"), -14, -1.5)
         norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
-        if tail:
-            vin, vf = ["-i", clip, "-i", p("master.wav"), "-i", tail], (
-                f"[0:v]{norm}[a];[2:v]trim=0:{sp.d['tail'].get('use', 1e9)},setpts=PTS-STARTPTS,{norm}[b];"
-                f"[a][b]concat=n=2:v=1:a=0,"
-                f"tpad=stop_mode=clone:stop_duration={hold}[v]")
-        else:
-            vin, vf = ["-i", clip, "-i", p("master.wav")], (
-                f"[0:v]{norm},tpad=stop_mode=clone:stop_duration={hold}[v]")
-        run(*vin, "-filter_complex", vf, "-map", "[v]", "-map", "1:a",
+        segs = sp.segments()
+        ins = sum((["-i", c] for c, _ in segs), [])
+        parts = [f"[{k + 1}:v]trim=0:{u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u) in enumerate(segs)]
+        labels = "".join(f"[s{k}]" for k in range(len(segs)))
+        vf = (";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0,"
+              f"tpad=stop_mode=clone:stop_duration={hold}[v]")
+        run("-i", p("master.wav"), *ins, "-filter_complex", vf, "-map", "[v]", "-map", "0:a",
             "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), "-t", str(total), out)
 
@@ -318,8 +343,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("pauses").add_argument("take")
-    for c in ("check", "prompt"):
-        sub.add_parser(c).add_argument("spec")
+    sub.add_parser("check").add_argument("spec")
+    pp = sub.add_parser("prompt")
+    pp.add_argument("spec")
+    pp.add_argument("--shot", type=int, help="prompt for chained shot N (1-based), 4s")
     s = sub.add_parser("sheet")
     s.add_argument("spec")
     s.add_argument("--clip")
