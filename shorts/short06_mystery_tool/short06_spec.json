@@ -35,7 +35,7 @@
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_sprocket.mp3",
-    "at": null
+    "at": 10.3
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -49,7 +49,7 @@
     {
       "clip": "short06_clip_tail.mp4",
       "from": 0.0,
-      "use": 4.0,
+      "use": 3.95,
       "start_frame": "short06_lastframe_v2.png",
       "beats": [
         {
