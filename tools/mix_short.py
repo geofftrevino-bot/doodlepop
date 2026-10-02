@@ -7,6 +7,8 @@ docs/rebuild-workflow.md for the full loop and docs/spec-format.md for the
 fields.
 
   pauses TAKE                 silences in a take, to pick each line's cut points
+  assemble-take SPEC L1 L2 …  trim separately recorded lines, join them into the take
+                              with even gaps, and write each line's cut points
   check SPEC                  validate timing (overlaps, voice over mouth-closed beats)
   prompt SPEC                 print the Veo prompt, negative prompt and settings
   sheet SPEC [--clip C] [--crop W:H:X:Y] [--to T] [--fps F] --out IMG
@@ -253,6 +255,34 @@ def voice_bus(sp, lines, out, total, with_signoff, channels=2):
     run(*inputs, "-filter_complex", ";".join(parts), "-ac", str(channels), out)
 
 
+def cmd_assemble_take(a):
+    """Trim each separately recorded line, join with even gaps into the take, set the cut points."""
+    sp = Spec(a.spec)
+    if len(a.files) != len(sp.d["lines"]):
+        raise SystemExit(f"{len(a.files)} files for {len(sp.d['lines'])} lines")
+    trim = ("silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+            "silenceremove=start_periods=1:start_threshold=-45dB,areverse,aresample=44100")
+    out = os.path.join(sp.dir, sp.d["take"])
+    with tempfile.TemporaryDirectory() as t:
+        parts, pos = [], 0.0
+        run("-f", "lavfi", "-t", str(a.gap), "-i", "anullsrc=r=44100:cl=mono", os.path.join(t, "gap.wav"))
+        for k, f in enumerate(a.files):
+            w = os.path.join(t, f"l{k}.wav")
+            run("-i", f, "-af", trim, "-ac", "1", w)
+            d = duration(w)
+            # cut 0.05s into the gap on each side so no consonant is clipped
+            sp.d["lines"][k]["take"] = [round(max(0, pos - 0.05), 2),
+                                        round(pos + d + 0.05, 2) if k < len(a.files) - 1 else None]
+            parts += [w] + ([os.path.join(t, "gap.wav")] if k < len(a.files) - 1 else [])
+            pos += d + a.gap
+        ins = sum((["-i", w] for w in parts), [])
+        run(*ins, "-filter_complex", f"concat=n={len(parts)}:v=0:a=1", "-b:a", "192k", out)
+    sp.save()
+    for k, ln in enumerate(sp.d["lines"], 1):
+        print(f"line {k}: take {ln['take']}  {ln['text']}")
+    print(f"wrote {out}; place the lines with retime, then check")
+
+
 def cmd_picture(a):
     """Join shots/clip/tail into one silent picture, e.g. for a single lip-sync pass."""
     sp = Spec(a.spec)
@@ -380,6 +410,10 @@ def main():
     r = sub.add_parser("retime")
     r.add_argument("spec")
     r.add_argument("moves", nargs="+", metavar="N=AT")
+    at = sub.add_parser("assemble-take")
+    at.add_argument("spec")
+    at.add_argument("files", nargs="+", help="one audio file per line, in order")
+    at.add_argument("--gap", type=float, default=1.0)
     pc = sub.add_parser("picture")
     pc.add_argument("spec")
     pc.add_argument("--out")
@@ -394,7 +428,7 @@ def main():
     a = ap.parse_args()
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
           "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix,
-          "picture": cmd_picture}[a.cmd]
+          "picture": cmd_picture, "assemble-take": cmd_assemble_take}[a.cmd]
     return fn(a)
 
 

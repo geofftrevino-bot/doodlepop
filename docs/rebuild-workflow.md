@@ -8,6 +8,30 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
+## FAST PATH (from Short 3 on)
+
+Fewer generations, fewer waits, and the timing and lip-sync gains kept. One
+paid picture step and one paid lip-sync step per Short.
+
+| # | Step | Command / tool | Cost |
+|---|---|---|---|
+| 1 | **Record each line separately with Eleven v3** and audio tags (`[excited]`, `[happy]`, `[curious]`…), 2 variations per line, all lines in parallel. v3 ignores `<break>`, which no longer matters. A bad line is redone alone | ElevenLabs speech | ~1¢ per line |
+| 2 | Join the picked lines into the take and write the cut points | `assemble-take <spec> l1.mp3 l2.mp3 …` | free |
+| 3 | Place lines on the story beats (the bloom, the reveal), not on mouths, and check | `retime`, `check` | free |
+| 4 | **Picture:** reuse the existing clip if its staging works; otherwise one 8s Veo clip for staging. Chain 4s shots only when a gag needs a beat Veo won't hit in 8s (Short 3's bloom). End with a 4s tail for the sign-off | ElevenLabs video | $0.40–$1.60 |
+| 5 | Join everything into one silent picture and build one voice track (lines + sign-off) | `picture <spec>`, `lipsync-track <spec> --full` | free |
+| 6 | **One lip-sync pass over the whole Short** (`sync-lipsync-v3`, `cut_off`). It fixes every line and the sign-off at once, so no 6fps face grids or per-line mouth matching | ElevenLabs video | ~$0.13/s (~$1.36 for 10s) |
+| 7 | Set the synced picture as `clip` (drop `shots`/`tail`), mix, review, approve | `mix <spec>` | free |
+
+**Typical Short on the fast path:** ~$1.80–$3.00 and about 4 waits instead of 8–10.
+
+What the docs say (ElevenLabs model guide, lip-sync family): the audio track
+drives the result, so keep it clean (voice only, no music or SFX); the models
+work best on clear, front-facing faces; `sync_mode` is the only setting. So:
+stage speaking moments face-to-camera and give the pass a voice-only track.
+
+---
+
 ## THE LOOP
 
 | # | Step | Command / tool | Cost |
@@ -32,7 +56,7 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
-## WHAT WE LEARNED (Shorts 4, 14, 11, 10 and 2)
+## WHAT WE LEARNED (Shorts 4, 14, 11, 10, 2 and 3)
 
 - **Eleven v4 and v3 ignore `<break>` tags.** The pauses come out at ~0.4s, the
   same as pauses between sentences, so the lines can't be split. Use Multilingual v2.
@@ -77,3 +101,16 @@ first. All `mix_short.py` steps are local and free.
   line plus the gap and join them. About $0.40 per line, so a 3-line Short plus
   sign-off tail is ~$1.60, less than an 8s clip + lip-sync pass (~$1.86), and
   it should sync better.
+- **Chained 4s shots fix staging, not lip sync** (Short 3). Each shot joined
+  seamlessly and the bloom landed, but Veo kept the talking to ~0.5–1s per shot
+  however long the SPEAKING window was, and quoting the words in the prompt
+  didn't change that. Only the ~1.3–2s sign-off tails line up on their own.
+  Lines over ~1s need the lip-sync pass.
+- **Veo starts the mouth at once and walks off at the end.** Put SPEAKING at
+  0s, and cut a shot before the character turns away (Short 3 shot C at 3.3s).
+- **Eleven v3 + tags for energy.** Multilingual v2 read Clover flat. v3 with
+  `[excited]`/`[happy]` and a capitalised key word ("I GROW things!", "And LOOK
+  what happens!") is livelier. Record line by line so v3's lack of `<break>`
+  doesn't matter.
+- **Watch for repeated words across a cut.** Short 3's "…and… look" read as an
+  extra "and" between shots; script lines so each starts cleanly.
