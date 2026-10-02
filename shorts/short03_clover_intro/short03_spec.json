@@ -39,7 +39,19 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
+  "clip": "short03_clip_joined_lipsync.mp4",
+  "video": {
+    "start_frame": "short03_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket and holds a tiny trowel, in a sunny vegetable garden.",
+    "negative": [
+      "extra rabbits",
+      "second bunny",
+      "walking out of frame"
+    ]
+  },
+  "beats": [],
+  "built_from_shots": [
     {
       "clip": "short03_shot_a.mp4",
       "use": 2.4,
@@ -122,16 +134,5 @@
         }
       ]
     }
-  ],
-  "video": {
-    "start_frame": "short03_still.png",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket and holds a tiny trowel, in a sunny vegetable garden.",
-    "negative": [
-      "extra rabbits",
-      "second bunny",
-      "walking out of frame"
-    ]
-  },
-  "beats": []
+  ]
 }
