@@ -25,12 +25,20 @@
       "at": 3.25
     },
     {
-      "text": "…EVERY. THING.",
+      "text": "…EVERY.",
       "take": [
         6.94,
+        7.86
+      ],
+      "at": 5.45
+    },
+    {
+      "text": "THING.",
+      "take": [
+        8.29,
         null
       ],
-      "at": 5.3
+      "at": 6.44
     }
   ],
   "signoff": {
