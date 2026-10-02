@@ -8,7 +8,30 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
-## FAST PATH (from Short 3 on)
+## NATIVE-DIALOGUE PATH (from Short 8 v2 on) — use this
+
+The lip-sync pass doesn't work on our cartoon faces (see *What we learned*), so
+the mouth and the words have to come from the same generation. Veo animates the
+mouth to speech it generates itself; the voice changer then turns that speech
+into the character's voice without moving a syllable.
+
+| # | Step | Tool | Cost |
+|---|---|---|---|
+| 1 | **Speaking shots:** Veo with `generate_audio: true`, the exact line in quotes, the character facing camera, timed segments for the action, and "Audio: only <character>'s voice and <quiet ambience>" + `music` in the negative prompt | `veo-3.1-fast-generate-001` | $0.60 / 4s, $1.20 / 8s |
+| 2 | Check the words: transcribe the clip's audio (Veo sometimes paraphrases) | `eleven_scribe_v1` | <1¢ |
+| 3 | Strip ambience: voice isolator (needs ≥4.6s; pad shorter audio with silence) | `audio_isolation` | ~2¢ |
+| 4 | Re-voice as the character: voice changer with their voice id, 2 variations. Timing stays within ~0.03s of Veo's | `eleven_multilingual_sts_v2` | ~2¢ |
+| 5 | **Voice-over shots** (character off screen): keep recording with Eleven v3 + tags, no lip sync needed | `eleven_v3` | ~1¢ / line |
+| 6 | The sign-off is spoken in the last speaking shot the same way, so it matches the mouth; save it as `shortNN_vo_<character>_signoff.mp3` | — | — |
+| 7 | Spec: `take` = the re-voiced audio, lines at their real positions, `shots` = the speaking clips + reused cutaways; `check`, `seams`, `mix` | `mix_short.py` | free |
+
+Trade-off: Veo chooses the delivery, so v3 tags don't apply to speaking shots;
+direct the read in the prompt ("says brightly and confidently"). No paid
+lip-sync pass. Typical Short: ~$1.30–$2.
+
+---
+
+## FAST PATH (Shorts 3–8, superseded)
 
 Fewer generations, fewer waits, and the timing and lip-sync gains kept. One
 paid picture step and one paid lip-sync step per Short.
