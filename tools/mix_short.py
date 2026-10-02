@@ -13,7 +13,8 @@ fields.
                               timestamped frame grid of the clip, beats listed;
                               crop to the face at --fps 6 to see when the mouth moves
   retime SPEC N=AT [N=AT ...] move line N (1-based) to play at AT seconds; saves the spec
-  lipsync-track SPEC [--tail] [--out]
+  picture SPEC [--out]        join shots/clip/tail into one silent picture (for one lip-sync pass)
+  lipsync-track SPEC [--tail|--full] [--out]
                               voice-only lines at their positions, padded to the clip;
                               --tail: the sign-off, placed inside the tail clip
   mix SPEC [--out]            mastered Short (default: shortNN_final_test.mp4)
@@ -252,10 +253,32 @@ def voice_bus(sp, lines, out, total, with_signoff, channels=2):
     run(*inputs, "-filter_complex", ";".join(parts), "-ac", str(channels), out)
 
 
+def cmd_picture(a):
+    """Join shots/clip/tail into one silent picture, e.g. for a single lip-sync pass."""
+    sp = Spec(a.spec)
+    segs = sp.segments()
+    norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
+    ins = sum((["-i", c] for c, _ in segs), [])
+    parts = [f"[{k}:v]trim=0:{u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u) in enumerate(segs)]
+    labels = "".join(f"[s{k}]" for k in range(len(segs)))
+    out = a.out or os.path.join(sp.dir, f"{sp.name}_clip_joined.mp4")
+    run(*ins, "-filter_complex", ";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0[v]",
+        "-map", "[v]", "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", "-an", out)
+    print(f"wrote {out} ({duration(out):.2f}s from {len(segs)} segments)")
+
+
 def cmd_lipsync_track(a):
     sp = Spec(a.spec)
     if a.tail:
         return lipsync_tail_track(sp, a.out)
+    if a.full:
+        total = round(sp.picture()[2], 3)
+        out = a.out or os.path.join(sp.dir, f"{sp.name}_vo_lipsync_track.mp3")
+        with tempfile.TemporaryDirectory() as t:
+            voice_bus(sp, sp.lines(), os.path.join(t, "bus.wav"), total, with_signoff=True, channels=1)
+            run("-i", os.path.join(t, "bus.wav"), "-ar", "44100", "-b:a", "192k", out)
+        print(f"wrote {out} ({total}s: all lines + sign-off, for the joined picture)")
+        return
     clip = sp.res(sp.d["video"].get("raw_clip") or sp.d["clip"])
     total = round(duration(clip), 3)
     out = a.out or os.path.join(sp.dir, f"{sp.name}_vo_lipsync_track.mp3")
@@ -357,15 +380,21 @@ def main():
     r = sub.add_parser("retime")
     r.add_argument("spec")
     r.add_argument("moves", nargs="+", metavar="N=AT")
+    pc = sub.add_parser("picture")
+    pc.add_argument("spec")
+    pc.add_argument("--out")
     for c in ("lipsync-track", "mix"):
         p = sub.add_parser(c)
         p.add_argument("spec")
         p.add_argument("--out")
         if c == "lipsync-track":
             p.add_argument("--tail", action="store_true", help="sign-off track for the tail clip")
+            p.add_argument("--full", action="store_true",
+                           help="lines + sign-off over the whole joined picture (shots + tail)")
     a = ap.parse_args()
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
-          "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix}[a.cmd]
+          "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix,
+          "picture": cmd_picture}[a.cmd]
     return fn(a)
 
 

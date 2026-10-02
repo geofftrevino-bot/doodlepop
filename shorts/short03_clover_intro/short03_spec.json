@@ -4,33 +4,33 @@
   "voice": {
     "name": "Clover",
     "id": "EGiEBftkMhETd6Cyyfyj",
-    "model": "eleven_multilingual_v2"
+    "model": "eleven_v3"
   },
   "take": "short03_vo_clover_take.mp3",
   "lines": [
     {
-      "text": "Hi! I'm Clover. I grow things.",
+      "text": "[excited] Hi! I'm Clover. [happy] I GROW things!",
       "take": [
         0,
-        1.98
+        2.9
       ],
       "at": 0.0
     },
     {
-      "text": "A little water, a little sunshine…",
+      "text": "[happy] A little water, a little sunshine…",
       "take": [
-        3.12,
-        4.95
+        3.8,
+        6.16
       ],
-      "at": 2.45
+      "at": 3.05
     },
     {
-      "text": "…and look what happens!",
+      "text": "[excited] And LOOK what happens!",
       "take": [
-        6.93,
+        7.06,
         null
       ],
-      "at": 5.35
+      "at": 5.6
     }
   ],
   "signoff": {
