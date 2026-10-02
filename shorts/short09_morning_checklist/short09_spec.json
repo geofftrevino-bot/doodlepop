@@ -1,0 +1,101 @@
+{
+  "title": "Morning Checklist",
+  "character": "rocco",
+  "voice": {
+    "name": "Rocco",
+    "id": "YaTcUhI4B60lebDaAPcL",
+    "model": "line 1: Veo native dialogue -> eleven_multilingual_sts_v2; lines 2-4 (voice-over): eleven_v3"
+  },
+  "take": "short09_vo_rocco_take.mp3",
+  "lines": [
+    {
+      "text": "Three jobs today!",
+      "take": [
+        0,
+        2.1
+      ],
+      "at": 0.22
+    },
+    {
+      "text": "[proudly] First — WATER the garden!",
+      "take": [
+        3.0,
+        5.32
+      ],
+      "at": 2.5,
+      "tempo": 1.1
+    },
+    {
+      "text": "[proudly] Then — fix the TRACTOR!",
+      "take": [
+        6.22,
+        8.82
+      ],
+      "at": 4.85,
+      "tempo": 1.1
+    },
+    {
+      "text": "[proudly] And last — TIDY the barn!",
+      "take": [
+        9.72,
+        null
+      ],
+      "at": 7.5,
+      "tempo": 1.1
+    }
+  ],
+  "signoff": {
+    "file": "short09_vo_rocco_signoff.mp3",
+    "at": 10.6
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {
+      "clip": "short09_clip_a_rocco_speaking.mp4",
+      "from": 0.0,
+      "use": 2.6,
+      "start_frame": "short09_still_a_rocco.png",
+      "note": "Veo spoke 'Three jobs today!'; re-voiced as Rocco"
+    },
+    {
+      "clip": "short09_clip_02.mp4",
+      "from": 0.6,
+      "use": 2.6,
+      "xfade": 0.2,
+      "note": "Clover waters the garden (voice-over)"
+    },
+    {
+      "clip": "short09_clip_03.mp4",
+      "from": 1.6,
+      "use": 2.9,
+      "xfade": 0.2,
+      "note": "Sprocket fixes the tractor (voice-over)"
+    },
+    {
+      "clip": "short09_clip_04.mp4",
+      "from": 3.4,
+      "use": 3.3,
+      "xfade": 0.2,
+      "note": "Nugget tidies the barn (voice-over)"
+    },
+    {
+      "clip": "short09_clip_e_rocco_signoff_speaking.mp4",
+      "from": 0.0,
+      "use": 3.2,
+      "xfade": 0.2,
+      "start_frame": "short09_still_a_rocco.png",
+      "note": "Veo spoke 'We can fix anything!'; re-voiced as Rocco"
+    }
+  ],
+  "video": {
+    "start_frame": "short09_still_a_rocco.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "ROCCO the proud red rooster in a straw sun hat stands in the farmyard in front of the red barn and silo.",
+    "negative": [
+      "music",
+      "crowing"
+    ]
+  },
+  "beats": []
+}
