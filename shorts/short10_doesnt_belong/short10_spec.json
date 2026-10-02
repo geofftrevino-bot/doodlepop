@@ -39,7 +39,7 @@
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short10_clip_v2.mp4",
+  "clip": "short10_clip_v2_lipsync.mp4",
   "video": {
     "start_frame": "short10_still.png",
     "raw_clip": "short10_clip_v2.mp4",
