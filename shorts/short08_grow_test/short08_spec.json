@@ -38,7 +38,7 @@
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_clover.mp3",
-    "at": null
+    "at": 8.1
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -57,21 +57,21 @@
       "beats": [
         {
           "from": 0.0,
-          "to": 0.4,
+          "to": 0.5,
           "mouth": "closed",
           "action": "Clover smiles at the camera beside the sprouting pots."
         },
         {
-          "from": 0.4,
-          "to": 1.8,
+          "from": 0.5,
+          "to": 1.85,
           "mouth": "open",
-          "action": "She says a short cheerful catchphrase to the camera."
+          "action": "She says the catchphrase to camera."
         },
         {
-          "from": 1.8,
-          "to": 4.0,
+          "from": 1.85,
+          "to": 2.2,
           "mouth": "closed",
-          "action": "She grins and gives a little happy bounce, staying in place."
+          "action": "She throws her arms out with a grin (she leaves frame at ~3.3s, so cut at 2.2s)."
         }
       ]
     }
