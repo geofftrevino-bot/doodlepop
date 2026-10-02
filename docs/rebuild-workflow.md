@@ -32,7 +32,7 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
-## WHAT WE LEARNED (Shorts 4, 14, 11 and 10)
+## WHAT WE LEARNED (Shorts 4, 14, 11, 10 and 2)
 
 - **Eleven v4 and v3 ignore `<break>` tags.** The pauses come out at ~0.4s, the
   same as pauses between sentences, so the lines can't be split. Use Multilingual v2.
@@ -63,3 +63,17 @@ first. All `mix_short.py` steps are local and free.
   Use only as much of the tail as the sign-off needs, to keep Shorts ~10s.
 - **Crops drift when the camera zooms.** On Short 10 a fixed face crop slid off
   the mouth; grid larger full frames instead.
+- **The tails lip-synced almost perfectly without a lip-sync pass** (Shorts 10
+  and 2). What they had that the 8s clips didn't:
+  1. **The audio existed first.** The speaking window was sized to the actual
+     sign-off (Rocco's 2.1s → a 0.4–2.6s SPEAKING beat), not to a plan guess.
+  2. **One line per clip.** One speaking window, a closed beat before and after.
+  3. **Face to camera the whole time**, no walking, turning or business with props.
+  4. **Short clips (4s).** Veo holds timing far better over 4s than over 8s.
+  5. **The audio went where the mouth actually opened** (read off a 6fps face grid).
+- **Next Short to try it on: build the picture as a chain of 4s shots, one per
+  line,** each started from the previous shot's last frame, with its SPEAKING
+  window sized to that line's real length from the take. Trim each shot to its
+  line plus the gap and join them. About $0.40 per line, so a 3-line Short plus
+  sign-off tail is ~$1.60, less than an 8s clip + lip-sync pass (~$1.86), and
+  it should sync better.
