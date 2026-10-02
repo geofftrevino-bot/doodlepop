@@ -19,9 +19,26 @@ paid picture step and one paid lip-sync step per Short.
 | 2 | Join the picked lines into the take and write the cut points | `assemble-take <spec> l1.mp3 l2.mp3 …` | free |
 | 3 | Place lines on the story beats (the bloom, the reveal), not on mouths, and check | `retime`, `check` | free |
 | 4 | **Picture:** reuse the existing clip if its staging works; otherwise one 8s Veo clip for staging. Chain 4s shots only when a gag needs a beat Veo won't hit in 8s (Short 3's bloom). End with a 4s tail for the sign-off | ElevenLabs video | $0.40–$1.60 |
+| 4b | **Check every cut before paying for lip sync.** Fix any seam that jumps (see *Smooth handoffs* below) | `seams <spec> --out …` | free |
 | 5 | Join everything into one silent picture and build one voice track (lines + sign-off) | `picture <spec>`, `lipsync-track <spec> --full` | free |
 | 6 | **One lip-sync pass over the whole Short** (`sync-lipsync-v3`, `cut_off`). It fixes every line and the sign-off at once, so no 6fps face grids or per-line mouth matching | ElevenLabs video | ~$0.13/s (~$1.36 for 10s) |
 | 7 | Set the synced picture as `clip` (drop `shots`/`tail`), mix, review, approve | `mix <spec>` | free |
+
+**Before step 6, confirm shared assets are right** (each sign-off and catchphrase is in its own
+character's voice). Short 5's `signoff_nugget.mp3` turned out to be Sprocket, and fixing
+it after the pass meant re-syncing and splicing the ending.
+
+### Smooth handoffs between sections
+
+What made Short 5's cuts rough (seen with `seams`), and what to do instead:
+
+| Problem | Fix |
+|---|---|
+| **Backgrounds don't match.** Each close-up was generated on a different set (shelves, pegboard, wagon wheel), so every cut jumped rooms | Make every shot of a Short from stills built on the **same location plate** (`refs/locations/`) and camera height. Or chain shots from cut frames (Short 3's chain was seamless) |
+| **Shot scale jumps** close-up → wide → close-up | Use the wide shot once (open or button), and keep dialogue at one scale. One-character close-ups for lip sync, but matched framing |
+| **Cutting mid-blink or mid-gesture** | Pick cut points on a settled pose; check both sides with `seams`, move `from`/`use` by a few frames |
+| **Hard cut between separately generated clips** | Add `"xfade": 0.15`–`0.2` on the incoming shot (a short dissolve). Keep hard cuts for chained shots, where the frames already match. Each dissolve shortens the Short by its length, so re-place lines after |
+| **Patching part of a synced picture** | Get every voice right first so the single lip-sync pass is final |
 
 **Typical Short on the fast path:** ~$1.80–$3.00 and about 4 waits instead of 8–10.
 
@@ -56,7 +73,7 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 
 ---
 
-## WHAT WE LEARNED (Shorts 4, 14, 11, 10, 2 and 3)
+## WHAT WE LEARNED (Shorts 4, 14, 11, 10, 2, 3 and 5)
 
 - **Eleven v4 and v3 ignore `<break>` tags.** The pauses come out at ~0.4s, the
   same as pauses between sentences, so the lines can't be split. Use Multilingual v2.
@@ -114,3 +131,9 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   doesn't matter.
 - **Watch for repeated words across a cut.** Short 3's "…and… look" read as an
   extra "and" between shots; script lines so each starts cleanly.
+- **The fast path works with no new video** (Short 5: ~$1.85). Close-ups cut from
+  existing clips, one character per shot, one lip-sync pass. But cutting between
+  independently generated clips is where it shows its seams; see *Smooth handoffs*.
+- **Match voice energy to the script's direction note with v3 tags.** Each line's
+  note in `docs/vo-retake-guide.md` maps straight onto tags: "breathless, all-caps
+  energy" → `[excited] [breathless]` + CAPS; "dry and fond" → `[warmly] [chuckles]`.

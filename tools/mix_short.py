@@ -15,7 +15,9 @@ fields.
                               timestamped frame grid of the clip, beats listed;
                               crop to the face at --fps 6 to see when the mouth moves
   retime SPEC N=AT [N=AT ...] move line N (1-based) to play at AT seconds; saves the spec
-  picture SPEC [--out]        join shots/clip/tail into one silent picture (for one lip-sync pass)
+  seams SPEC --out IMG        frames either side of every cut, to catch rough handoffs
+  picture SPEC [--out]        join shots/clip/tail into one silent picture (for one lip-sync pass);
+                              a shot's "xfade" dissolves into it instead of hard-cutting
   lipsync-track SPEC [--tail|--full] [--out]
                               voice-only lines at their positions, padded to the clip;
                               --tail: the sign-off, placed inside the tail clip
@@ -110,20 +112,21 @@ class Spec:
         if self.d.get("shots"):
             for sh in self.d["shots"]:
                 c, f = self.res(sh["clip"]), sh.get("from", 0.0)
-                segs.append((c, min(duration(c) - f, sh.get("use", 1e9)), f))
+                segs.append((c, min(duration(c) - f, sh.get("use", 1e9)), f, sh.get("xfade", 0.0)))
         else:
             c = self.res(self.d["clip"])
-            segs.append((c, duration(c), 0.0))
+            segs.append((c, duration(c), 0.0, 0.0))
         t = self.d.get("tail", {})
         if t.get("clip"):
             c = self.res(t["clip"])
-            segs.append((c, min(duration(c), t.get("use", 1e9)), 0.0))
+            segs.append((c, min(duration(c), t.get("use", 1e9)), 0.0, t.get("xfade", 0.0)))
         return segs
 
     def picture(self):
         """(main clip, tail clip or None, total picture length)."""
         if self.d.get("shots"):
-            return None, None, sum(u for _, u, _ in self.segments())
+            segs = self.segments()
+            return None, None, sum(u for _, u, _, _ in segs) - sum(x for _, _, _, x in segs[1:])
         clip = self.res(self.d["clip"])
         t = self.d.get("tail", {})
         tail = self.res(t["clip"]) if t.get("clip") else None
@@ -284,17 +287,61 @@ def cmd_assemble_take(a):
     print(f"wrote {out}; place the lines with retime, then check")
 
 
+NORM = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
+
+
+def video_join(segs, first=0):
+    """Inputs and filter joining segments into [vj]. A segment's xfade (seconds) dissolves
+    into it from the previous one instead of hard-cutting, which smooths handoffs between
+    separately generated clips; each dissolve shortens the picture by its length."""
+    ins = sum((["-i", c] for c, _, _, _ in segs), [])
+    parts = [f"[{k + first}:v]trim={f}:{f + u},setpts=PTS-STARTPTS,{NORM}[s{k}]"
+             for k, (_, u, f, _) in enumerate(segs)]
+    cur, cum = "[s0]", segs[0][1]
+    for k in range(1, len(segs)):
+        u, x = segs[k][1], segs[k][3]
+        out = f"[j{k}]"
+        if x > 0:
+            parts.append(f"{cur}[s{k}]xfade=transition=fade:duration={x}:offset={cum - x:.3f}{out}")
+            cum += u - x
+        else:
+            parts.append(f"{cur}[s{k}]concat=n=2:v=1:a=0{out}")
+            cum += u
+        cur = out
+    parts.append(f"{cur}null[vj]")
+    return ins, ";".join(parts)
+
+
+def cmd_seams(a):
+    """Last frame before and first frame after every cut, side by side, to catch jumps
+    (pose, framing, lighting) before paying for a lip-sync pass."""
+    sp = Spec(a.spec)
+    segs = sp.segments()
+    with tempfile.TemporaryDirectory() as t:
+        tiles = []
+        for k in range(1, len(segs)):
+            (c0, u0, f0, _), (c1, _, f1, x) = segs[k - 1], segs[k]
+            a0, a1 = os.path.join(t, f"{k}a.png"), os.path.join(t, f"{k}b.png")
+            run("-ss", f"{max(0, f0 + u0 - 0.05):.3f}", "-i", c0, "-frames:v", "1", "-vf", "scale=180:-1", a0)
+            run("-ss", f"{f1:.3f}", "-i", c1, "-frames:v", "1", "-vf", "scale=180:-1", a1)
+            pair = os.path.join(t, f"{k}.png")
+            run("-i", a0, "-i", a1, "-filter_complex",
+                f"hstack=2,drawtext=fontfile={FONT}:text='cut {k}{' xfade ' + str(x) if x else ''}':"
+                "x=4:y=4:fontsize=13:fontcolor=white:box=1:boxcolor=black@0.6", pair)
+            tiles.append(pair)
+        ins = sum((["-i", p] for p in tiles), [])
+        run(*ins, "-filter_complex", f"vstack={len(tiles)}" if len(tiles) > 1 else "null", a.out)
+    print(f"wrote {a.out}: {len(segs) - 1} cuts (left = outgoing, right = incoming)")
+
+
 def cmd_picture(a):
     """Join shots/clip/tail into one silent picture, e.g. for a single lip-sync pass."""
     sp = Spec(a.spec)
     segs = sp.segments()
-    norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
-    ins = sum((["-i", c] for c, _, _ in segs), [])
-    parts = [f"[{k}:v]trim={f}:{f + u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u, f) in enumerate(segs)]
-    labels = "".join(f"[s{k}]" for k in range(len(segs)))
+    ins, vf = video_join(segs)
     out = a.out or os.path.join(sp.dir, f"{sp.name}_clip_joined.mp4")
-    run(*ins, "-filter_complex", ";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0[v]",
-        "-map", "[v]", "-c:v", "libx264", "-crf", "16", "-pix_fmt", "yuv420p", "-an", out)
+    run(*ins, "-filter_complex", vf, "-map", "[vj]", "-c:v", "libx264", "-crf", "16",
+        "-pix_fmt", "yuv420p", "-an", out)
     print(f"wrote {out} ({duration(out):.2f}s from {len(segs)} segments)")
 
 
@@ -376,13 +423,8 @@ def cmd_mix(a):
         run(*ins, "-filter_complex",
             f"amix=inputs={len(stems)}:normalize=0:duration=longest,atrim=0:{total}", p("sum.wav"))
         loudnorm_2pass(p("sum.wav"), p("master.wav"), -14, -1.5)
-        norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
-        segs = sp.segments()
-        ins = sum((["-i", c] for c, _, _ in segs), [])
-        parts = [f"[{k + 1}:v]trim={f}:{f + u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u, f) in enumerate(segs)]
-        labels = "".join(f"[s{k}]" for k in range(len(segs)))
-        vf = (";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0,"
-              f"tpad=stop_mode=clone:stop_duration={hold}[v]")
+        ins, vf = video_join(sp.segments(), first=1)
+        vf += f";[vj]tpad=stop_mode=clone:stop_duration={hold}[v]"
         run("-i", p("master.wav"), *ins, "-filter_complex", vf, "-map", "[v]", "-map", "0:a",
             "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k", "-ar", str(SR), "-t", str(total), out)
@@ -415,6 +457,9 @@ def main():
     at.add_argument("spec")
     at.add_argument("files", nargs="+", help="one audio file per line, in order")
     at.add_argument("--gap", type=float, default=1.0)
+    sm = sub.add_parser("seams")
+    sm.add_argument("spec")
+    sm.add_argument("--out", required=True)
     pc = sub.add_parser("picture")
     pc.add_argument("spec")
     pc.add_argument("--out")
@@ -429,7 +474,8 @@ def main():
     a = ap.parse_args()
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
           "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix,
-          "picture": cmd_picture, "assemble-take": cmd_assemble_take}[a.cmd]
+          "picture": cmd_picture, "assemble-take": cmd_assemble_take,
+          "seams": cmd_seams}[a.cmd]
     return fn(a)
 
 

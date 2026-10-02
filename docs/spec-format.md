@@ -25,6 +25,8 @@ Paths resolve against the Short's folder first, then the repo root, so
 | `sfx[]` | `file`, `at` (seconds), `gain_db` (default −8) |
 | `music` | Bed under the whole Short, ducked under the voice. Normally `audio/theme/theme_sting.mp3` |
 | `clip` | The picture the mix uses. After a lip-sync pass this is the synced clip |
+| `shots[]` | Instead of `clip`: cuts joined in order. Each has `clip`, optional `from` (start inside that clip), `use` (seconds), optional `xfade` (dissolve into it, seconds), and for generated shots `start_frame` + `beats` |
+| `built_from_shots[]` | Kept for reference after a whole-Short lip-sync pass replaces `shots` with the synced `clip` |
 | `video` | How the picture is made (below) |
 | `beats[]` | What happens on screen, and when (below) |
 
@@ -37,6 +39,7 @@ Paths resolve against the Short's folder first, then the repo root, so
 - `take`: start and end in the take file, in seconds. `null` end = to the end of the take.
   Get them from `mix_short.py pauses <take>`: cut ~0.05s before speech starts and
   ~0.1s into the silence after it ends.
+- `speaker` (optional): who says the line, for Shorts with more than one voice.
 - `at`: where the cut starts on the Short's timeline. Speech is heard a little
   later, by however much silence the cut starts with.
 
