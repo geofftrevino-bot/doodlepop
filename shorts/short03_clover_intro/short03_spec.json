@@ -35,7 +35,7 @@
   ],
   "signoff": {
     "file": "audio/signoffs/signoff_clover.mp3",
-    "at": 8.3
+    "at": 8.5
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -105,7 +105,7 @@
     },
     {
       "clip": "short03_clip_tail.mp4",
-      "use": 1.9,
+      "use": 2.2,
       "start_frame": "short03_shot_c_cut.png",
       "beats": [
         {
