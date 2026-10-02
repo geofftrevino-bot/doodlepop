@@ -104,25 +104,26 @@ class Spec:
         return out
 
     def segments(self):
-        """[(clip path, seconds used)] in order: shots (or the clip), then the tail."""
+        """[(clip path, seconds used, start in clip)] in order: shots (or the clip), then the tail.
+        A shot's optional "from" starts it partway into its clip, so one clip can supply several cuts."""
         segs = []
         if self.d.get("shots"):
             for sh in self.d["shots"]:
-                c = self.res(sh["clip"])
-                segs.append((c, min(duration(c), sh.get("use", 1e9))))
+                c, f = self.res(sh["clip"]), sh.get("from", 0.0)
+                segs.append((c, min(duration(c) - f, sh.get("use", 1e9)), f))
         else:
             c = self.res(self.d["clip"])
-            segs.append((c, duration(c)))
+            segs.append((c, duration(c), 0.0))
         t = self.d.get("tail", {})
         if t.get("clip"):
             c = self.res(t["clip"])
-            segs.append((c, min(duration(c), t.get("use", 1e9))))
+            segs.append((c, min(duration(c), t.get("use", 1e9)), 0.0))
         return segs
 
     def picture(self):
         """(main clip, tail clip or None, total picture length)."""
         if self.d.get("shots"):
-            return None, None, sum(u for _, u in self.segments())
+            return None, None, sum(u for _, u, _ in self.segments())
         clip = self.res(self.d["clip"])
         t = self.d.get("tail", {})
         tail = self.res(t["clip"]) if t.get("clip") else None
@@ -288,8 +289,8 @@ def cmd_picture(a):
     sp = Spec(a.spec)
     segs = sp.segments()
     norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
-    ins = sum((["-i", c] for c, _ in segs), [])
-    parts = [f"[{k}:v]trim=0:{u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u) in enumerate(segs)]
+    ins = sum((["-i", c] for c, _, _ in segs), [])
+    parts = [f"[{k}:v]trim={f}:{f + u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u, f) in enumerate(segs)]
     labels = "".join(f"[s{k}]" for k in range(len(segs)))
     out = a.out or os.path.join(sp.dir, f"{sp.name}_clip_joined.mp4")
     run(*ins, "-filter_complex", ";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0[v]",
@@ -377,8 +378,8 @@ def cmd_mix(a):
         loudnorm_2pass(p("sum.wav"), p("master.wav"), -14, -1.5)
         norm = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
         segs = sp.segments()
-        ins = sum((["-i", c] for c, _ in segs), [])
-        parts = [f"[{k + 1}:v]trim=0:{u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u) in enumerate(segs)]
+        ins = sum((["-i", c] for c, _, _ in segs), [])
+        parts = [f"[{k + 1}:v]trim={f}:{f + u},setpts=PTS-STARTPTS,{norm}[s{k}]" for k, (_, u, f) in enumerate(segs)]
         labels = "".join(f"[s{k}]" for k in range(len(segs)))
         vf = (";".join(parts) + f";{labels}concat=n={len(segs)}:v=1:a=0,"
               f"tpad=stop_mode=clone:stop_duration={hold}[v]")
