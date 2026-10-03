@@ -76,9 +76,9 @@
     {
       "clip": "short11_clip_v3_tight.mp4",
       "from": 0.0,
-      "use": 7.6,
+      "use": 7.25,
       "start_frame": "short11_still_v2.png",
-      "note": "short11_clip_v3_speaking.mp4 with the silent 1.05-1.75s gap after 'Listen!' played at 2.33x (0.7s -> 0.3s); Veo spoke 'Listen!' 0.4-1.05, 'What's that sound?' 1.35-2.6, 'It's the' 3.15-3.85, 'tractor!' 4.35-5.05, 'We can fix anything!' 5.55-7.0"
+      "note": "short11_clip_v3_speaking.mp4 with the silent 1.05-1.75s gap after 'Listen!' played at 2.33x (0.7s -> 0.3s); Veo spoke 'Listen!' 0.4-1.05, 'What's that sound?' 1.35-2.6, 'It's the' 3.15-3.85, 'tractor!' 4.35-5.05, 'We can fix anything!' 5.55-7.0; cut at 7.25s, before Rocco squints and looks away"
     }
   ]
 }
