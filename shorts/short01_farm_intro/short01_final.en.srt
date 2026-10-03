@@ -1,0 +1,23 @@
+1
+00:00:00,250 --> 00:00:01,950
+[Rocco crows] Cock-a-doodle-doo!
+
+2
+00:00:02,250 --> 00:00:03,450
+Good morning!
+
+3
+00:00:03,700 --> 00:00:05,800
+Welcome to Fix-It Farm!
+
+4
+00:00:06,050 --> 00:00:07,450
+Meet my friends!
+
+5
+00:00:07,650 --> 00:00:10,200
+Clover, Sprocket, and Nugget!
+
+6
+00:00:10,550 --> 00:00:12,900
+We can fix anything!
