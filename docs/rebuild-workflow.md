@@ -210,3 +210,11 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   Splitting "trac-tor" at a dip in loudness read back as "the track"; Veo's long
   pauses inside a phrase are better matched with whole words ("It's the" /
   "tractor!").
+- **Keep the smallest character out of the bottom 30% in group shots** (Short 1).
+  Nugget at Sprocket's feet sat under YouTube's title and buttons and read as
+  missing. Perch him on a shoulder or head instead. To move one character, edit
+  the on-model still (it as image 1 + his ref) rather than re-rendering: a fresh
+  five-reference render drifted Rocco off model.
+- **Pull a shot's dialogue through to the end of the clip** (Short 1). Cutting
+  the extract at Veo's last measured word clipped the tail of "…anything!".
+  Trim silence afterwards, never before re-voicing.

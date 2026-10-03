@@ -33,26 +33,26 @@
       "at": 3.6
     },
     {
-      "text": "Meet my friends, Clover,",
+      "text": "Meet my friends!",
       "take": [
-        6.25,
-        8.5
+        6.1,
+        7.65
       ],
-      "at": 6.1
+      "at": 5.95
     },
     {
-      "text": "Sprocket, and Nugget!",
+      "text": "Clover, Sprocket, and Nugget!",
       "take": [
-        8.6,
-        10.2
+        7.7,
+        10.4
       ],
-      "at": 8.45
+      "at": 7.55
     }
   ],
   "signoff": {
     "file": "short01_vo_rocco_signoff.mp3",
-    "at": 10.35,
-    "note": "cut from the re-voiced take (shot B 4.5-6.1s), so it sits on Rocco's beak; transcribed clean"
+    "at": 10.55,
+    "note": "cut from the re-voiced take (shot B 4.6-7.2s, the whole drawn-out '...anything!'), so it sits on Rocco's beak"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -75,12 +75,12 @@
       "note": "Rocco v2 close: Veo crowed 0.3-1.9, 'Good morning!' 2.3-3.3, 'Welcome to Fix-It Farm!' 3.8-5.6"
     },
     {
-      "clip": "short01_clip_b_speaking.mp4",
+      "clip": "short01_clip_b_v2_speaking.mp4",
       "from": 0.0,
       "use": 8.0,
       "xfade": 0.15,
-      "start_frame": "short01_still_b_v2.png",
-      "note": "the crew, all from refs: 'Meet my friends, Clover' 0.35-2.4, 'Sprocket and Nugget!' 2.75-4.05, 'We can fix anything!' 4.6-6.05, cheering 6.15-7.6"
+      "start_frame": "short01_still_b_v3.png",
+      "note": "the crew from refs, Nugget perched on Sprocket's head (out of the bottom 30%): 'Meet my friends' 0.25-1.65, 'Clover, Sprocket' 1.8-3.25, 'and Nugget' 3.4-4.3, 'We can fix anything!' 4.75-6.9"
     }
   ]
 }
