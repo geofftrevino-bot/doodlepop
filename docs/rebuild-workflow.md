@@ -236,3 +236,9 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   says"), say whose mouth stays closed, and transcribe each speaker's span on
   its own before re-voicing. A two-shot tail can also invent a second prop in
   the free hoof: say "only ONE carrot… his other hoof stays empty".
+- **Grid both faces through every line, not just the speaker's** (Short 5 v2). Veo
+  kept Nugget's audio running to 2.7s but only moved his beak to 1.1s; Sprocket's
+  mouth moved over the rest. The fix was an insert shot generated between the
+  clip's own frames (start 1.1s, end 2.8s), used only until the other character
+  starts talking, then a 0.2s dissolve back. `mix` needed `settb` for a dissolve
+  after a hard cut (fixed in `NORM`).

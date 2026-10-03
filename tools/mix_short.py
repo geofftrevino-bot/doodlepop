@@ -297,7 +297,9 @@ def cmd_assemble_take(a):
     print(f"wrote {out}; place the lines with retime, then check")
 
 
-NORM = "fps=24,scale=1080:1920,setsar=1,format=yuv420p"
+# settb: concat outputs a 1/1000000 timebase and xfade refuses mismatched inputs, so a
+# dissolve after a hard cut failed; give every segment the same timebase up front
+NORM = "fps=24,scale=1080:1920,setsar=1,format=yuv420p,settb=1/1000000"
 
 
 def video_join(segs, first=0):
