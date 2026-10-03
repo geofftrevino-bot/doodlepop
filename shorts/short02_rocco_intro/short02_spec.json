@@ -1,28 +1,60 @@
 {
   "title": "This Is Rocco",
   "character": "rocco",
+  "cast": [
+    "rocco"
+  ],
   "voice": {
     "name": "Rocco",
     "id": "YaTcUhI4B60lebDaAPcL",
-    "model": "eleven_multilingual_v2"
+    "model": "your Multilingual v2 re-take (short02_vo_rocco_take.mp3), each phrase fitted to Veo's mouth spans; picture from Veo native dialogue"
   },
   "take": "short02_vo_rocco_take.mp3",
   "lines": [
     {
-      "text": "I'm Rocco. I run this farm.",
+      "text": "I'm Rocco.",
       "take": [
-        0,
-        2.84
+        0.07,
+        1.09
       ],
-      "at": 0.2
+      "at": 0.17,
+      "tempo": 1.15
     },
     {
-      "text": "And I have a plan for everything.",
+      "text": "I run this farm.",
       "take": [
-        3.78,
-        5.57
+        1.09,
+        2.68
       ],
-      "at": 3.25
+      "at": 1.233,
+      "tempo": 1.12
+    },
+    {
+      "text": "And I have",
+      "take": [
+        3.8,
+        4.37
+      ],
+      "at": 2.863,
+      "tempo": 0.85
+    },
+    {
+      "text": "a plan for",
+      "take": [
+        4.37,
+        4.76
+      ],
+      "at": 3.683,
+      "tempo": 0.85
+    },
+    {
+      "text": "everything.",
+      "take": [
+        4.76,
+        5.47
+      ],
+      "at": 4.505,
+      "tempo": 0.85
     },
     {
       "text": "…EVERY.",
@@ -30,7 +62,8 @@
         6.94,
         7.86
       ],
-      "at": 5.45
+      "at": 5.714,
+      "tempo": 1.08
     },
     {
       "text": "THING.",
@@ -38,55 +71,42 @@
         8.29,
         null
       ],
-      "at": 6.44
+      "at": 6.777,
+      "tempo": 1.15
     }
   ],
   "signoff": {
-    "file": "audio/signoffs/signoff_rocco.mp3",
-    "at": 8.2
+    "file": "short02_vo_rocco_signoff_fitted.mp3",
+    "at": 8.35,
+    "note": "audio/signoffs/signoff_rocco.mp3 at 1.09x, fitted to Veo's span 8.35-10.29s"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short02_clip_lipsync.mp4",
-  "tail": {
-    "clip": "short02_clip_tail.mp4",
-    "raw_clip": "short02_clip_tail.mp4",
-    "use": 2.6,
-    "start_frame": "short02_lastframe_v2.png"
-  },
+  "shots": [
+    {
+      "clip": "short02_clip_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 8.0,
+      "start_frame": "short02_still.png",
+      "note": "Rocco v2 (refs/characters/rocco_ref.png); Veo spoke the lines itself, re-voiced as Rocco"
+    },
+    {
+      "clip": "short02_clip_tail_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 3.0,
+      "start_frame": "short02_lastframe_v3.png",
+      "note": "Veo spoke 'We can fix anything!'; re-voiced as Rocco"
+    }
+  ],
   "video": {
     "start_frame": "short02_still.png",
-    "raw_clip": "short02_clip.mp4",
     "model": "veo-3.1-fast-generate-001",
-    "description": "ROCCO the red-orange rooster in a straw farmer's hat and red kerchief stands in front of the red barn and silo.",
+    "description": "ROCCO (v2): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, golden scalloped chest feathers, a teal tail, and a woven straw hat with a red band, in front of the red barn.",
     "negative": [
-      "crowing"
+      "music",
+      "crowing",
+      "text on the scroll"
     ]
   },
-  "beats": [
-    {
-      "from": 0.0,
-      "to": 2.0,
-      "mouth": "open",
-      "action": "Rocco greets the camera and pulls out a rolled-up paper plan."
-    },
-    {
-      "from": 2.0,
-      "to": 4.4,
-      "mouth": "open",
-      "action": "He unrolls the scroll, which keeps unrolling past his feet."
-    },
-    {
-      "from": 4.4,
-      "to": 8.0,
-      "mouth": "open",
-      "action": "Camera pushes in on his proud face as he savours the punchline."
-    },
-    {
-      "from": 8.0,
-      "to": 10.6,
-      "mouth": "open",
-      "action": "Tail: Rocco opens his eyes, gives a proud wing-up and says the sign-off, then grins."
-    }
-  ]
+  "beats": []
 }

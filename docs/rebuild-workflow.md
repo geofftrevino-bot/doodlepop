@@ -42,6 +42,7 @@ into the character's voice without moving a syllable.
 | 2 | Check the words: transcribe the clip's audio (Veo sometimes paraphrases) | `eleven_scribe_v1` | <1¢ |
 | 3 | Strip ambience: voice isolator (needs ≥4.6s; pad shorter audio with silence) | `audio_isolation` | ~2¢ |
 | 4 | Re-voice as the character: voice changer with their voice id, 2 variations. Timing stays within ~0.03s of Veo's | `eleven_multilingual_sts_v2` | ~2¢ |
+| 4c | **Prefer the user's own recorded take when one exists** (Short 2 v3, approved over the voice-changed version). Split it at its natural pauses into phrases and fit each to Veo's mouth span: `at` = the span's onset minus the cut's lead-in, `tempo` = take phrase length / span length, kept within 0.85–1.15. Fit the shared sign-off the same way (pre-rendered with `atempo`). Transcribe the voice-only track (`lipsync-track --full`) to confirm no word was clipped | `mix_short.py` | free |
 | 5 | **Voice-over shots** (character off screen): keep recording with Eleven v3 + tags, no lip sync needed | `eleven_v3` | ~1¢ / line |
 | 4b | **Listen to / transcribe the re-voiced audio too.** The voice changer can garble a word (Short 12: "anything" → "anythang"). Fix a garbled line by fitting a v3 recording of it to Veo's speaking span (`atempo` to the span's length, placed at its onset); for the sign-off, use the shared `audio/signoffs/` file the same way | — | free |
 | 6 | The sign-off is spoken in the last speaking shot the same way, so it matches the mouth; save it as `shortNN_vo_<character>_signoff.mp3` | — | — |
