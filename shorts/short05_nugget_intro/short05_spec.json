@@ -4,7 +4,7 @@
   "voice": {
     "name": "Nugget + Sprocket",
     "id": "wHdWNyHIEKti3ZPcVIFa / 7cz9fvECOZ5B0zNWkN2v",
-    "model": "Veo native dialogue, isolated, split by speaker and re-voiced with eleven_multilingual_sts_v2 (Nugget and Sprocket voices)"
+    "model": "Nugget's intro and Sprocket's 'Close' from Veo's own dialogue (isolated, re-voiced with eleven_multilingual_sts_v2); 'Wrench, please' and 'Wrench!' from the eleven_v3 recordings short05_vo_sprocket_01 / short05_vo_nugget_02, placed on the mouths (Veo voiced those two late, over the wrong beak)"
   },
   "take": "short05_vo_take_v2.mp3",
   "lines": [
@@ -21,34 +21,34 @@
       "speaker": "sprocket",
       "text": "Wrench, please.",
       "take": [
-        2.9,
-        3.5
+        2.85,
+        3.6
       ],
-      "at": 2.9
+      "at": 2.85
     },
     {
       "speaker": "nugget",
       "text": "Wrench!",
       "take": [
-        3.6,
-        4.85
+        3.75,
+        4.4
       ],
-      "at": 3.6
+      "at": 3.75
     },
     {
       "speaker": "sprocket",
       "text": "...Close.",
       "take": [
-        4.95,
-        7.3
+        6.15,
+        7.05
       ],
-      "at": 4.95
+      "at": 6.15
     }
   ],
   "signoff": {
     "file": "short05_vo_nugget_signoff_fitted.mp3",
-    "at": 7.65,
-    "note": "audio/signoffs/signoff_nugget.mp3 at 1.06x, on Nugget's beak 0.25-2.2s into the tail"
+    "at": 8.1,
+    "note": "audio/signoffs/signoff_nugget.mp3 at 1.15x, on Nugget's beak 0.6-2.4s into the tail"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -71,18 +71,18 @@
   ],
   "shots": [
     {
-      "clip": "short05_clip_v4_speaking.mp4",
+      "clip": "short05_clip_v5_speaking.mp4",
       "from": 0.0,
-      "use": 7.4,
+      "use": 7.5,
       "start_frame": "short05_still_v2.png",
-      "note": "one continuous two-shot (v1 cut between close-ups on different sets). Veo spoke Nugget 'I'm Nugget! I help with everything!' 0.05-2.75, Sprocket 'Wrench, please' 3.0-3.5, Nugget 'Wrench!' 3.6-4.7 while handing over the carrot (~3.9), Sprocket '...Close' + chuckle 5.0-7.25; Sprocket steps toward camera ~2s; cut at 7.4 (both eyes open)"
+      "note": "one continuous two-shot (v1 cut between close-ups on different sets). Mouths: Nugget 0-2.7, Sprocket 2.9-3.5, Nugget 3.8-4.5 as he hands over the carrot (~3.7), Sprocket looks down at it ~4.7, Sprocket 6.0-6.8; Sprocket steps toward camera ~2s; cut at 7.5 (both eyes open). The first attempt (Veo gave Sprocket's line to Nugget) is in archive/shorts/short05/v2_lines_swapped/"
     },
     {
-      "clip": "short05_clip_tail_v4_speaking.mp4",
+      "clip": "short05_clip_tail_v5_speaking.mp4",
       "from": 0.0,
-      "use": 2.45,
-      "start_frame": "short05_clip_at_7.4.png",
-      "note": "from the main clip at 7.4s; Nugget cheers 'We can fix anything!' 0.25-2.2 with wings up, Sprocket holds the carrot; cut at 2.45 before Sprocket blinks and turns"
+      "use": 2.5,
+      "start_frame": "short05_clip_at_7.5.png",
+      "note": "from the main clip at 7.5s; Nugget cheers 'We can fix anything!' with wings up ~0.6-2.3, one carrot that never moves (the first tail invented a second carrot in Sprocket's free hoof); cut at 2.5 before Nugget's eyes squint shut"
     }
   ]
 }
