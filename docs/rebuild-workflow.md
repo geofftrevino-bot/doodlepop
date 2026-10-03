@@ -8,6 +8,27 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
+## CHARACTER CONSISTENCY (from Short 2 v2 on) — every new picture
+
+The official look of each character is its reference in `refs/characters/`
+(`rocco_ref.png` is the v2 look from Short 15). Veo copies whatever its start
+frame shows, so the start frame decides whether a character is on model.
+
+1. **Start frames come from the ref, never from an older Short's still or clip.**
+   Make each new still with `gemini-3-pro-image`: the character's ref as image 1,
+   the old still or a location plate as image 2 for the setting only, 9:16, 2K.
+   Crop to 1080x1920.
+2. **Paste the character bible's description into every Veo prompt** (the
+   `> **NAME:**` line), plus "keep every character exactly on-model".
+3. **List everyone on screen in the spec's `cast`** (e.g. `["rocco", "nugget"]`).
+4. **Run `refcheck` on every new still and clip before any voice work:**
+   `mix_short.py refcheck <spec> --out check.png` puts each cast member's ref beside
+   frames from every shot. Off model → regenerate the still, not the voice.
+5. **A tail starts from a frame of the clip it follows**, which is already on model.
+6. **Changing a character's look** = a new ref in `refs/characters/`, the old one in
+   `archive/refs/`, the bible updated, and the Shorts that show the old look listed
+   in the bible until they're rebuilt.
+
 ## NATIVE-DIALOGUE PATH (from Short 8 v2 on) — use this
 
 The lip-sync pass doesn't work on our cartoon faces (see *What we learned*), so
