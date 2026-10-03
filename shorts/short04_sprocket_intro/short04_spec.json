@@ -14,7 +14,7 @@
         0.1,
         0.75
       ],
-      "at": 0.29,
+      "at": 0.14,
       "tempo": 0.85
     },
     {
@@ -23,7 +23,7 @@
         0.75,
         1.55
       ],
-      "at": 1.24,
+      "at": 1.09,
       "tempo": 0.87
     },
     {
@@ -32,7 +32,7 @@
         1.6,
         2.2
       ],
-      "at": 2.2,
+      "at": 2.11,
       "tempo": 1.15
     },
     {
@@ -41,8 +41,7 @@
         3.35,
         4.42
       ],
-      "at": 2.8,
-      "tempo": 0.85
+      "at": 3.18
     },
     {
       "text": "needed one little part.",
@@ -50,7 +49,7 @@
         4.42,
         5.55
       ],
-      "at": 4.44,
+      "at": 4.36,
       "tempo": 0.85
     },
     {
@@ -59,7 +58,7 @@
         7.25,
         7.5
       ],
-      "at": 6.3
+      "at": 6.15
     },
     {
       "text": "Told you.",
@@ -67,14 +66,14 @@
         7.6,
         null
       ],
-      "at": 6.94,
+      "at": 6.89,
       "tempo": 0.89
     }
   ],
   "signoff": {
     "file": "short04_vo_sprocket_signoff_fitted.mp3",
-    "at": 8.09,
-    "note": "audio/signoffs/signoff_sprocket.mp3 at 0.85x, on Sprocket's mouth 0.4s into the tail"
+    "at": 8.14,
+    "note": "audio/signoffs/signoff_sprocket.mp3 at 0.85x, on Sprocket's mouth 0.5s into the tail"
   },
   "sfx": [
     {
@@ -85,9 +84,9 @@
   ],
   "music": "audio/theme/theme_sting.mp3",
   "video": {
-    "start_frame": "short04_still_v3.png",
+    "start_frame": "short04_still_v4.png",
     "model": "veo-3.1-fast-generate-001",
-    "description": "SPROCKET (refs/characters/sprocket_ref.png) beside the small blue tractor with yellow wheels in the tractor yard; the gear comes out of the tool pouch; Veo's own tractor sputter and putt-putt are kept in the clip audio only as reference.",
+    "description": "SPROCKET (refs/characters/sprocket_ref.png) beside the small blue tractor with yellow wheels; hooves empty except for the one gear, which comes out of the tool pouch and goes into the engine.",
     "negative": [
       "goggles",
       "red tractor",
@@ -100,18 +99,18 @@
   ],
   "shots": [
     {
-      "clip": "short04_clip_v3_speaking.mp4",
+      "clip": "short04_clip_v4_speaking.mp4",
       "from": 0.0,
-      "use": 7.75,
-      "start_frame": "short04_still_v3.png",
-      "note": "Veo spoke 'Sprocket here' 0.35-1.05, 'If it's broken' 1.3-2.05, 'I fix it' 2.3-2.55, 'This old tractor' 2.75-4.1, 'just needed one little part' 4.4-5.9, 'Ha' 6.35, 'told ya' 7.05-7.5; gear from the pouch ~1.2s; tractor starts ~4.5-6; cut at 7.75 (eyes open)"
+      "use": 7.7,
+      "start_frame": "short04_still_v4.png",
+      "note": "start frame edited so Sprocket holds no wrench (v3 had a second wrench appear from nowhere); Veo spoke 'Sprocket here' 0.2-0.9, 'If it's broken' 1.15-1.95, 'I fix it' 2.15-2.55, 'This old tractor just needed' 3.3-4.6, 'one little part' 4.8-5.7, 'Ha' 6.2, 'told ya' 7.0-7.45; cut at 7.7 (eyes open)"
     },
     {
-      "clip": "short04_clip_tail_v3_speaking.mp4",
+      "clip": "short04_clip_tail_v4_speaking.mp4",
       "from": 0.0,
       "use": 2.6,
-      "start_frame": "short04_clip_at_7.75.png",
-      "note": "from the main clip at 7.75s (eyes open); Veo spoke 'We can fix anything!' 0.4-2.1; cut at 2.6 before Sprocket turns to the tractor"
+      "start_frame": "short04_clip_at_7.7.png",
+      "note": "from the main clip at 7.7s (eyes open); thumbs-up, tools stay in the pouch; Veo spoke 'We can fix anything!' 0.5-2.4; cut at 2.6 before the blink at 2.7"
     }
   ]
 }
