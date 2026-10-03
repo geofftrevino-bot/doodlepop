@@ -243,3 +243,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   clip's own frames (start 1.1s, end 2.8s), used only until the other character
   starts talking, then a 0.2s dissolve back. `mix` needed `settb` for a dissolve
   after a hard cut (fixed in `NORM`).
+- **End an insert on a frame where nobody is talking, and cut where Veo actually
+  lands on it** (Short 5 v2). An end frame with Sprocket's mouth open made Veo
+  have him talk through the insert, and the dissolve needed to skip that ghosted.
+  With a mouth-closed end frame, Veo reached it at 3.67s of 4s; a PSNR search
+  (`ffmpeg -lavfi psnr`) found the matching main-clip frame (3.72s) for a hard cut.
+- **Tails with a free hoof: give it a job.** Twice Veo filled Sprocket's empty
+  hoof (a second carrot, then a wrench); an explicit empty-hoofed thumbs-up held.
