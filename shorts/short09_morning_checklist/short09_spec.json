@@ -62,7 +62,7 @@
       "clip": "short09_clip_a_rocco_v2_speaking.mp4",
       "from": 0.0,
       "use": 2.6,
-      "start_frame": "short09_still_a_rocco_v2.png",
+      "start_frame": "short09_still_a_rocco.png",
       "note": "Rocco v2; Veo spoke 'Three jobs today!' (0.25-2.15s); your take fitted to it"
     },
     {
@@ -91,12 +91,12 @@
       "from": 0.0,
       "use": 3.2,
       "xfade": 0.2,
-      "start_frame": "short09_still_a_rocco_v2.png",
+      "start_frame": "short09_still_a_rocco.png",
       "note": "Rocco v2; Veo spoke the sign-off (0.45-2.10s); shared sign-off fitted to it"
     }
   ],
   "video": {
-    "start_frame": "short09_still_a_rocco_v2.png",
+    "start_frame": "short09_still_a_rocco.png",
     "model": "veo-3.1-fast-generate-001",
     "description": "ROCCO (v2): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, golden scalloped chest feathers, a teal tail and a woven straw hat with a red band, in the farmyard in front of the red barn.",
     "negative": [

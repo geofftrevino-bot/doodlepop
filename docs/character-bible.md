@@ -50,7 +50,7 @@ Prepend to **every** image and video prompt:
 
 *Updated after Short 15 (v2 look): taller and slimmer than v1, bigger blue-iris
 eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
-`archive/refs/rocco_ref_v1.png`. Shorts 9 and 11 still show the v1 look.*
+`archive/refs/rocco_ref_v1.png`. Short 11 still shows the v1 look.*
 
 - **Silhouette cue:** the teal tail. It reads instantly at thumbnail size.
 - **Posture:** chest out, upright, confident. He takes up space.
