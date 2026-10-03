@@ -229,3 +229,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   Veo nodes default to 16:9 (images also to 1K, Veo to 720p) whatever the prompt
   says, and a 16:9 still cost a wasted pair of renders. Create with
   `estimate_only`, read the node, set `aspect_ratio: 9:16` and `2K` / `1080p`, then run.
+- **Two speakers in one Veo clip: check who says each line** (Short 5 v2). With
+  "SPROCKET says… / NUGGET says…" Veo gave "Wrench, please" to Nugget's beak and
+  added a "Ha!" and a second "Wrench" for Sprocket; the full transcript still
+  read almost right. Tag every line by species ("THE PIG says", "THE CHICK
+  says"), say whose mouth stays closed, and transcribe each speaker's span on
+  its own before re-voicing. A two-shot tail can also invent a second prop in
+  the free hoof: say "only ONE carrot… his other hoof stays empty".
