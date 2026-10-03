@@ -33,7 +33,7 @@ Each mix stage is rendered to its own WAV: a single filter graph dropped the
 end of Short 4's last line. Master: voice -16 LUFS, music -22 ducked under the
 voice, final -14 LUFS / -1.5 dBTP (two-pass, leaves room for AAC).
 """
-import argparse, json, os, re, subprocess, sys, tempfile
+import argparse, glob, json, os, re, subprocess, sys, tempfile
 
 SR = 48000
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -364,8 +364,11 @@ def cmd_refcheck(a):
     right, one row per shot. Run it on every new start frame and clip before any voice work."""
     sp = Spec(a.spec)
     cast = sp.d.get("cast") or [sp.d["character"]]
-    refs = [os.path.join(REPO, "refs", "characters", f"{c}_ref.png") for c in cast]
-    refs = [r for r in refs if os.path.exists(r)]
+    refs = []
+    for c in cast:  # nugget has hero/sidekick variants: take the first match
+        found = sorted(glob.glob(os.path.join(REPO, "refs", "characters", f"{c}*_ref.png")))
+        exact = os.path.join(REPO, "refs", "characters", f"{c}_ref.png")
+        refs += [exact] if os.path.exists(exact) else found[:1]
     if not refs:
         sys.exit(f"no reference in refs/characters/ for {cast}")
     clips = [(a.clip, 0.0, duration(a.clip))] if a.clip else [(c, f, u) for c, u, f, _ in sp.segments()]

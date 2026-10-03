@@ -4,59 +4,66 @@
   "voice": {
     "name": "Rocco",
     "id": "YaTcUhI4B60lebDaAPcL",
-    "model": "line 1: Veo native dialogue -> eleven_multilingual_sts_v2; lines 2-4 (voice-over): eleven_v3"
+    "model": "your Multilingual v2 re-take (short09_vo_rocco_take_recorded.mp3): line 1 split and fitted to Rocco v2's beak, lines 2-4 as voice-over; picture from Veo"
   },
-  "take": "short09_vo_rocco_take.mp3",
+  "take": "short09_vo_rocco_take_recorded.mp3",
   "lines": [
     {
-      "text": "Three jobs today!",
+      "text": "Three jobs",
       "take": [
-        0,
-        2.1
+        0.05,
+        1.05
       ],
-      "at": 0.22
+      "at": 0.2
     },
     {
-      "text": "[proudly] First — WATER the garden!",
+      "text": "today!",
       "take": [
-        3.0,
-        5.32
+        1.05,
+        1.68
       ],
-      "at": 2.5,
-      "tempo": 1.1
+      "at": 1.341,
+      "tempo": 0.85
     },
     {
-      "text": "[proudly] Then — fix the TRACTOR!",
+      "text": "First — water the garden.",
       "take": [
-        6.22,
-        8.82
+        1.93,
+        3.8
       ],
-      "at": 4.85,
-      "tempo": 1.1
+      "at": 2.5
     },
     {
-      "text": "[proudly] And last — TIDY the barn!",
+      "text": "Then — fix the tractor.",
       "take": [
-        9.72,
+        4.02,
+        5.86
+      ],
+      "at": 4.95
+    },
+    {
+      "text": "Last — tidy the barn!",
+      "take": [
+        6.15,
         null
       ],
-      "at": 7.5,
-      "tempo": 1.1
+      "at": 7.6
     }
   ],
   "signoff": {
-    "file": "short09_vo_rocco_signoff.mp3",
-    "at": 10.6
+    "file": "short09_vo_rocco_signoff_fitted.mp3",
+    "at": 11.03,
+    "note": "audio/signoffs/signoff_rocco.mp3 at 1.15x, placed on Rocco v2's beak (0.45s into shot E)"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
   "shots": [
     {
-      "clip": "short09_clip_a_rocco_speaking.mp4",
+      "clip": "short09_clip_a_rocco_v2_speaking.mp4",
       "from": 0.0,
       "use": 2.6,
-      "start_frame": "short09_still_a_rocco.png",
-      "note": "Veo spoke 'Three jobs today!'; re-voiced as Rocco"
+      "start_frame": "short09_still_a_rocco_v2.png",
+      "note": "Rocco v2; Veo spoke 'Three jobs today!' (0.25-2.15s); your take fitted to it"
     },
     {
       "clip": "short09_clip_02.mp4",
@@ -80,22 +87,28 @@
       "note": "Nugget tidies the barn (voice-over)"
     },
     {
-      "clip": "short09_clip_e_rocco_signoff_speaking.mp4",
+      "clip": "short09_clip_e_rocco_v2_signoff_speaking.mp4",
       "from": 0.0,
       "use": 3.2,
       "xfade": 0.2,
-      "start_frame": "short09_still_a_rocco.png",
-      "note": "Veo spoke 'We can fix anything!'; re-voiced as Rocco"
+      "start_frame": "short09_still_a_rocco_v2.png",
+      "note": "Rocco v2; Veo spoke the sign-off (0.45-2.10s); shared sign-off fitted to it"
     }
   ],
   "video": {
-    "start_frame": "short09_still_a_rocco.png",
+    "start_frame": "short09_still_a_rocco_v2.png",
     "model": "veo-3.1-fast-generate-001",
-    "description": "ROCCO the proud red rooster in a straw sun hat stands in the farmyard in front of the red barn and silo.",
+    "description": "ROCCO (v2): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, golden scalloped chest feathers, a teal tail and a woven straw hat with a red band, in the farmyard in front of the red barn.",
     "negative": [
       "music",
       "crowing"
     ]
   },
-  "beats": []
+  "beats": [],
+  "cast": [
+    "rocco",
+    "clover",
+    "sprocket",
+    "nugget"
+  ]
 }
