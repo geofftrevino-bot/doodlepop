@@ -179,3 +179,9 @@ Every file used to live at the repo root. This is where each one went when the r
 | `tractor_yard.png` | `refs/locations/tractor_yard.png` |
 | `windmill_field.png` | `refs/locations/windmill_field.png` |
 | `workshop.png` | `refs/locations/workshop.png` |
+| `shorts/short09_morning_checklist/short09_vo_a_rocco.mp3` | `shorts/short09_morning_checklist/short09_vo_rocco_01.mp3` |
+| `shorts/short09_morning_checklist/short09_vo_b_clover.mp3` | `shorts/short09_morning_checklist/short09_vo_rocco_02.mp3` |
+| `shorts/short09_morning_checklist/short09_vo_c_sprocket.mp3` | `shorts/short09_morning_checklist/short09_vo_rocco_03.mp3` |
+| `shorts/short09_morning_checklist/short09_vo_d_nugget.mp3` | `shorts/short09_morning_checklist/short09_vo_rocco_04.mp3` |
+| `shorts/short09_morning_checklist/short09_vo_a_rocco_tag.mp3` | `shorts/short09_morning_checklist/short09_vo_rocco_tag.mp3` |
+| `c03_andnugget.mp3` | `shorts/short13_color_garden/short13_vo_clover_tag.mp3` |

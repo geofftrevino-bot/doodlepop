@@ -1,0 +1,91 @@
+{
+  "title": "Grow Test",
+  "character": "clover",
+  "voice": {
+    "name": "Clover",
+    "id": "EGiEBftkMhETd6Cyyfyj",
+    "model": "eleven_v3"
+  },
+  "take": "short08_vo_clover_take.mp3",
+  "lines": [
+    {
+      "text": "[warmly] Seeds need THREE things to grow.",
+      "take": [
+        0,
+        2.35
+      ],
+      "at": 0.1,
+      "tempo": 1.15
+    },
+    {
+      "text": "[happy] Soil… water… and SUNSHINE!",
+      "take": [
+        3.25,
+        6.48
+      ],
+      "at": 2.25,
+      "tempo": 1.1
+    },
+    {
+      "text": "[excited] Now we watch them GROW!",
+      "take": [
+        7.38,
+        null
+      ],
+      "at": 5.4,
+      "tempo": 1.1
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_clover.mp3",
+    "at": 8.1
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "clip": "short08_clip_joined_lipsync.mp4",
+  "video": {
+    "start_frame": "short08_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket, standing behind a row of terracotta flower pots in a sunny vegetable garden, with NUGGET the tiny fluffy yellow chick beside her.",
+    "negative": [
+      "extra rabbits",
+      "second bunny",
+      "walking out of frame"
+    ]
+  },
+  "beats": [],
+  "built_from_shots": [
+    {
+      "clip": "short08_clip.mp4",
+      "from": 0.0,
+      "use": 7.6,
+      "note": "existing clip: soil, watering, the sun comes out, sprouts pop up"
+    },
+    {
+      "clip": "short08_clip_tail.mp4",
+      "from": 0.0,
+      "use": 2.2,
+      "start_frame": "short08_clip_at_7.6.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 0.5,
+          "mouth": "closed",
+          "action": "Clover smiles at the camera beside the sprouting pots."
+        },
+        {
+          "from": 0.5,
+          "to": 1.85,
+          "mouth": "open",
+          "action": "She says the catchphrase to camera."
+        },
+        {
+          "from": 1.85,
+          "to": 2.2,
+          "mouth": "closed",
+          "action": "She throws her arms out with a grin (she leaves frame at ~3.3s, so cut at 2.2s)."
+        }
+      ]
+    }
+  ]
+}

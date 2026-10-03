@@ -1,0 +1,138 @@
+{
+  "title": "This Is Clover",
+  "character": "clover",
+  "voice": {
+    "name": "Clover",
+    "id": "EGiEBftkMhETd6Cyyfyj",
+    "model": "eleven_v3"
+  },
+  "take": "short03_vo_clover_take.mp3",
+  "lines": [
+    {
+      "text": "[excited] Hi! I'm Clover. [happy] I GROW things!",
+      "take": [
+        0,
+        2.9
+      ],
+      "at": 0.0
+    },
+    {
+      "text": "[happy] A little water, a little sunshine…",
+      "take": [
+        3.8,
+        6.16
+      ],
+      "at": 3.05
+    },
+    {
+      "text": "[excited] And LOOK what happens!",
+      "take": [
+        7.06,
+        null
+      ],
+      "at": 5.6
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_clover.mp3",
+    "at": 8.5
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "clip": "short03_clip_joined_lipsync.mp4",
+  "video": {
+    "start_frame": "short03_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket and holds a tiny trowel, in a sunny vegetable garden.",
+    "negative": [
+      "extra rabbits",
+      "second bunny",
+      "walking out of frame"
+    ]
+  },
+  "beats": [],
+  "built_from_shots": [
+    {
+      "clip": "short03_shot_a.mp4",
+      "use": 2.4,
+      "start_frame": "short03_still.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 0.3,
+          "mouth": "closed",
+          "action": "Clover smiles at the camera."
+        },
+        {
+          "from": 0.3,
+          "to": 2.2,
+          "mouth": "open",
+          "action": "Clover talks to the camera with a friendly little wave of her trowel."
+        },
+        {
+          "from": 2.2,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "She kneels down beside the garden bed in front of her, still smiling at the camera."
+        }
+      ]
+    },
+    {
+      "clip": "short03_shot_b.mp4",
+      "use": 2.3,
+      "start_frame": "short03_shot_a_cut.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 1.7,
+          "mouth": "open",
+          "action": "Clover looks at the camera and talks softly in a sing-song way while sprinkling a handful of seeds onto the soil of the garden bed beside her."
+        },
+        {
+          "from": 1.7,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "She stops talking, kneels and gently taps the soil twice with her trowel, smiling."
+        }
+      ]
+    },
+    {
+      "clip": "short03_shot_c.mp4",
+      "use": 3.3,
+      "start_frame": "short03_shot_b_cut.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 2.2,
+          "mouth": "open",
+          "action": "Clover looks up at the camera with a little secret smile and says: \"…and… look what happens!\" pointing down at the soil."
+        },
+        {
+          "from": 2.2,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "A whole row of sunflowers, carrots, tomatoes and daisies springs up around her in a rippling wave; her ears perk straight up and she gives a tiny happy clap."
+        }
+      ]
+    },
+    {
+      "clip": "short03_clip_tail.mp4",
+      "use": 2.2,
+      "start_frame": "short03_shot_c_cut.png",
+      "beats": [
+        {
+          "from": 0.0,
+          "to": 1.5,
+          "mouth": "open",
+          "action": "Clover looks straight at the camera among the new flowers and says: \"We can fix anything!\" with a little thumbs-up."
+        },
+        {
+          "from": 1.5,
+          "to": 4.0,
+          "mouth": "closed",
+          "action": "She holds a big happy grin and gives a small wave, staying in place."
+        }
+      ]
+    }
+  ]
+}

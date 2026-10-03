@@ -1,0 +1,70 @@
+{
+  "title": "Nugget Counts Everything",
+  "character": "nugget",
+  "voice": {
+    "name": "Nugget",
+    "id": "wHdWNyHIEKti3ZPcVIFa",
+    "model": "Veo native dialogue -> eleven_multilingual_sts_v2 (voice changer)"
+  },
+  "take": "short12_vo_nugget_take.mp3",
+  "lines": [
+    {
+      "text": "One… two… three carrots!",
+      "take": [
+        0,
+        2.75
+      ],
+      "at": 0.0
+    },
+    {
+      "text": "And… four!",
+      "take": [
+        2.75,
+        4.6
+      ],
+      "at": 2.75
+    },
+    {
+      "text": "…Oh, oh! One, two, three!",
+      "take": [
+        4.6,
+        null
+      ],
+      "at": 4.6
+    }
+  ],
+  "signoff": {
+    "file": "short12_vo_nugget_signoff.mp3",
+    "at": 7.73,
+    "note": "audio/signoffs/signoff_nugget.mp3 at 1.04x, fitted to Veo's speaking span (7.73-9.65s); the voice-changed version said 'anythang'"
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {
+      "clip": "short12_clip_v4_speaking.mp4",
+      "from": 0.0,
+      "use": 7.4,
+      "start_frame": "short12_still_v2.png",
+      "note": "Veo spoke the counting itself; carrots fade after 7.5s, so cut at 7.4"
+    },
+    {
+      "clip": "short12_clip_tail_v4_speaking.mp4",
+      "from": 0.0,
+      "use": 3.4,
+      "start_frame": "short12_clip_v4_at_7.4.png",
+      "note": "Veo spoke 'We can fix anything!'; the main clip's giggle runs over its first 0.35s"
+    }
+  ],
+  "video": {
+    "start_frame": "short12_still_v2.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "NUGGET the tiny fluffy yellow chick stands in a sunny farm garden beside three orange carrots lying on the dirt.",
+    "negative": [
+      "music",
+      "extra chicks",
+      "extra carrots"
+    ]
+  },
+  "beats": []
+}

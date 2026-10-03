@@ -20,6 +20,10 @@ docs/                     show bibles and production notes
   asset-pipeline.md         how assets move between the repo and ElevenLabs
   intro-shorts-pack.md      the first five Shorts and the repeatable formats
   file-renames.md           old root-level filename -> new path
+  vo-retake-guide.md        recording + PR steps for single-take VO
+  vo-retake-plan.md         timing anchors for re-timing takes to picture
+  rebuild-workflow.md       step-by-step loop for rebuilding a Short, with costs
+  spec-format.md            fields of shortNN_spec.json
 episodes/
   ep01/                     "Welcome to Fix-It Farm": script.md, shot-list.md
 refs/
@@ -31,6 +35,8 @@ audio/
   signoffs/                 signoff_<character>.mp3
 shorts/
   shortNN_<slug>/           everything for one Short (see below)
+tools/
+  mix_short.py              prompt, frame grid, re-time, lip-sync track and mix from a spec
 archive/                  superseded takes, old doc versions, exact duplicates
 ```
 
@@ -67,6 +73,11 @@ still makes sense on its own once it's downloaded or uploaded somewhere else.
 | Silent generated clip | `shortNN_clip[_<shot>][_vN].mp4` | `short12_clip_v3.mp4` |
 | Finished Short with sound | `shortNN_final.mp4` | `short14_final.mp4` |
 | Voice line | `shortNN_vo_<character>_NN.mp3` (or `_tag`) | `short07_vo_nugget_03.mp3` |
+| Voice take (whole Short, one file) | `shortNN_vo_<character>_take.mp3` | `short07_vo_nugget_take.mp3` |
+| Continuation tail clip | `shortNN_clip_tail.mp4` | `short06_clip_tail.mp4` |
+| Lip-synced clip | `shortNN_clip_vN_lipsync.mp4` | `short14_clip_v3_lipsync.mp4` |
+| Lip-sync voice track | `shortNN_vo_lipsync_track.mp3` | `short14_vo_lipsync_track.mp3` |
+| Short spec | `shortNN_spec.json` | `short14_spec.json` |
 | Sound effect | `shortNN_sfx_<name>.mp3` | `short11_sfx_tractor.mp3` |
 | Character reference | `<character>[_<variant>]_ref.png` | `nugget_hero_ref.png` |
 
