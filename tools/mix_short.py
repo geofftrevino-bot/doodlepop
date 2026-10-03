@@ -16,6 +16,9 @@ fields.
                               crop to the face at --fps 6 to see when the mouth moves
   retime SPEC N=AT [N=AT ...] move line N (1-based) to play at AT seconds; saves the spec
   seams SPEC --out IMG        frames either side of every cut, to catch rough handoffs
+  refcheck SPEC [--clip C] --out IMG
+                              each cast member's official ref (refs/characters/) beside
+                              frames from every shot, to catch an off-model character
   picture SPEC [--out]        join shots/clip/tail into one silent picture (for one lip-sync pass);
                               a shot's "xfade" dissolves into it instead of hard-cutting
   lipsync-track SPEC [--tail|--full] [--out]
@@ -356,6 +359,39 @@ def cmd_seams(a):
     print(f"wrote {a.out}: {len(segs) - 1} cuts (left = outgoing, right = incoming)")
 
 
+def cmd_refcheck(a):
+    """Official reference(s) on the left, frames at 20/50/80% of each shot (or --clip) on the
+    right, one row per shot. Run it on every new start frame and clip before any voice work."""
+    sp = Spec(a.spec)
+    cast = sp.d.get("cast") or [sp.d["character"]]
+    refs = [os.path.join(REPO, "refs", "characters", f"{c}_ref.png") for c in cast]
+    refs = [r for r in refs if os.path.exists(r)]
+    if not refs:
+        sys.exit(f"no reference in refs/characters/ for {cast}")
+    clips = [(a.clip, 0.0, duration(a.clip))] if a.clip else [(c, f, u) for c, u, f, _ in sp.segments()]
+    with tempfile.TemporaryDirectory() as t:
+        ref_tile = os.path.join(t, "refs.png")
+        ins = sum((["-i", r] for r in refs), [])
+        scaled = "".join(f"[{i}]scale=-1:240[r{i}];" for i in range(len(refs)))
+        stack = "".join(f"[r{i}]" for i in range(len(refs)))
+        run(*ins, "-filter_complex", scaled + (f"{stack}hstack={len(refs)}" if len(refs) > 1 else f"{stack}null"), ref_tile)
+        rows = []
+        for k, (c, f, u) in enumerate(clips):
+            frames = []
+            for j, frac in enumerate((0.2, 0.5, 0.8)):
+                fp = os.path.join(t, f"{k}_{j}.png")
+                run("-ss", f"{f + u * frac:.3f}", "-i", c, "-frames:v", "1", "-vf", "scale=-1:240", fp)
+                frames.append(fp)
+            row = os.path.join(t, f"row{k}.png")
+            run("-i", ref_tile, *sum((["-i", x] for x in frames), []), "-filter_complex",
+                f"hstack=4,drawtext=fontfile={FONT}:text='{os.path.basename(c)}':x=4:y=4:fontsize=12:"
+                "fontcolor=white:box=1:boxcolor=black@0.6", row)
+            rows.append(row)
+        run(*sum((["-i", r] for r in rows), []), "-filter_complex",
+            f"vstack={len(rows)}" if len(rows) > 1 else "null", a.out)
+    print(f"wrote {a.out}: refs {', '.join(os.path.basename(r) for r in refs)} vs {len(clips)} shot(s)")
+
+
 def cmd_picture(a):
     """Join shots/clip/tail into one silent picture, e.g. for a single lip-sync pass."""
     sp = Spec(a.spec)
@@ -479,6 +515,10 @@ def main():
     at.add_argument("spec")
     at.add_argument("files", nargs="+", help="one audio file per line, in order")
     at.add_argument("--gap", type=float, default=1.0)
+    rc = sub.add_parser("refcheck")
+    rc.add_argument("spec")
+    rc.add_argument("--clip")
+    rc.add_argument("--out", required=True)
     sc = sub.add_parser("sync-check")
     sc.add_argument("before")
     sc.add_argument("after")
@@ -500,7 +540,7 @@ def main():
     fn = {"pauses": cmd_pauses, "check": cmd_check, "prompt": cmd_prompt, "sheet": cmd_sheet,
           "retime": cmd_retime, "lipsync-track": cmd_lipsync_track, "mix": cmd_mix,
           "picture": cmd_picture, "assemble-take": cmd_assemble_take,
-          "seams": cmd_seams, "sync-check": cmd_sync_check}[a.cmd]
+          "seams": cmd_seams, "sync-check": cmd_sync_check, "refcheck": cmd_refcheck}[a.cmd]
     return fn(a)
 
 
