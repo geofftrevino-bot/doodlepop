@@ -4,17 +4,26 @@
   "voice": {
     "name": "Rocco",
     "id": "YaTcUhI4B60lebDaAPcL",
-    "model": "eleven_multilingual_v2"
+    "model": "your Multilingual v2 re-take (short11_vo_rocco_take.mp3), each phrase fitted to Rocco v2's beak; picture from Veo"
   },
   "take": "short11_vo_rocco_take.mp3",
   "lines": [
     {
-      "text": "Listen! What's that sound?",
+      "text": "Listen!",
       "take": [
         0,
-        1.84
+        0.6
       ],
-      "at": 0.85
+      "at": 0.55
+    },
+    {
+      "text": "What's that sound?",
+      "take": [
+        0.6,
+        1.7
+      ],
+      "at": 4.14,
+      "tempo": 0.85
     },
     {
       "text": "It's the tractor!",
@@ -22,61 +31,51 @@
         3.44,
         null
       ],
-      "at": 5.25
+      "at": 5.99,
+      "tempo": 0.85
     }
   ],
   "signoff": {
-    "file": "audio/signoffs/signoff_rocco.mp3",
-    "at": null
+    "file": "short11_vo_rocco_signoff_fitted.mp3",
+    "at": 8.43,
+    "note": "audio/signoffs/signoff_rocco.mp3 at 1.15x, on Rocco v2's beak (0.45s into the tail)"
   },
   "sfx": [
     {
       "file": "short11_sfx_tractor.mp3",
-      "at": 0.1,
-      "gain_db": -14
-    },
-    {
-      "file": "short11_sfx_tractor.mp3",
-      "at": 3.5,
-      "gain_db": -8
+      "at": 2.3,
+      "gain_db": -10
     }
   ],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short11_clip.mp4",
   "video": {
-    "start_frame": "short11_still.png",
+    "start_frame": "short11_still_v2.png",
     "raw_clip": "short11_clip.mp4",
     "model": "veo-3.1-fast-generate-001",
-    "description": "The rooster is ROCCO: red-orange feathers, straw farmer's hat, in front of the red barn. The tractor is blue and in good condition.",
+    "description": "ROCCO (v2): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, golden scalloped chest feathers, a teal tail and a woven straw hat with a red band, in the farmyard; a small blue tractor rolls in.",
     "negative": [
       "red tractor",
       "rusty tractor"
     ]
   },
-  "beats": [
+  "beats": [],
+  "cast": [
+    "rocco"
+  ],
+  "shots": [
     {
+      "clip": "short11_clip_v2_speaking.mp4",
       "from": 0.0,
-      "to": 0.85,
-      "mouth": "closed",
-      "action": "Rocco stands by the barn and perks up at a distant engine sound."
+      "use": 8.0,
+      "start_frame": "short11_still_v2.png",
+      "note": "Rocco v2; Veo spoke 'Listen.' 0.55s, 'What's that sound?' 4.2s, 'It's the tractor!' 6.05s; the tractor rolls in ~2.5-3s"
     },
     {
-      "from": 0.85,
-      "to": 3.0,
-      "mouth": "open",
-      "action": "He cups a wing to his ear, leaning in, curious and hushed."
-    },
-    {
-      "from": 3.0,
-      "to": 5.25,
-      "mouth": "closed",
-      "action": "He looks around, then toward the right as the engine sound grows."
-    },
-    {
-      "from": 5.25,
-      "to": 8.0,
-      "mouth": "open",
-      "action": "The blue tractor rolls in from the right and Rocco points at it with a big happy reveal."
+      "clip": "short11_clip_tail_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 3.0,
+      "start_frame": "short11_lastframe_v2.png",
+      "note": "Veo spoke the sign-off 0.45-2.15s"
     }
   ]
 }
