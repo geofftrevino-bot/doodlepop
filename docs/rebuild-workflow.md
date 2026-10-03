@@ -225,3 +225,7 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Props come from somewhere** (Short 3). Anything the action needs (a soil
   patch, a seed packet) is either in the start frame or pulled from a pocket on
   camera; otherwise Veo pops it in from nowhere.
+- **Check a new node's settings before running it** (Short 5 v2). New image and
+  Veo nodes default to 16:9 (images also to 1K, Veo to 720p) whatever the prompt
+  says, and a 16:9 still cost a wasted pair of renders. Create with
+  `estimate_only`, read the node, set `aspect_ratio: 9:16` and `2K` / `1080p`, then run.
