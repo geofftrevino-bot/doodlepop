@@ -1,0 +1,22 @@
+{
+  "title": "Rocco Says Stop, Look, Listen",
+  "character": "rocco",
+  "voice": {"name": "Rocco", "id": "YaTcUhI4B60lebDaAPcL", "model": "Veo native dialogue -> eleven_multilingual_sts_v2 (voice changer)"},
+  "take": "short15_vo_rocco_take.mp3",
+  "lines": [
+    {"text": "Ready?", "take": [0, 1.3], "at": 0.0},
+    {"text": "Stop.", "take": [1.3, 2.4], "at": 1.3},
+    {"text": "Look.", "take": [2.4, 3.35], "at": 2.4},
+    {"text": "Listen.", "take": [3.35, 4.4], "at": 3.35},
+    {"text": "Now we can go!", "take": [4.4, null], "at": 4.4}
+  ],
+  "signoff": {"file": "short15_vo_rocco_signoff.mp3", "at": 6.6},
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {"clip": "short15_clip_speaking.mp4", "from": 0.0, "use": 6.6, "start_frame": "short15_still.png", "note": "Veo spoke the lines itself; Nugget jumps early, freezes, then copies. The camera pulls back after ~7s, so cut at 6.6"},
+    {"clip": "short15_clip_tail_speaking.mp4", "from": 0.0, "use": 3.1, "start_frame": "short15_clip_at_6.6.png", "note": "Veo spoke 'We can fix anything!'; re-voiced as Rocco"}
+  ],
+  "video": {"start_frame": "short15_still.png", "model": "veo-3.1-fast-generate-001", "description": "ROCCO the proud red rooster in a straw sun hat by a wooden farm gate, NUGGET the tiny yellow chick at his feet.", "negative": ["music", "crowing", "Nugget talking"]},
+  "beats": []
+}
