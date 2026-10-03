@@ -56,8 +56,8 @@
   ],
   "signoff": {
     "file": "short03_vo_clover_signoff_fitted.mp3",
-    "at": 8.34,
-    "note": "audio/signoffs/signoff_clover.mp3 at 0.85x, placed on Clover's mouth in the tail (0.4s in)"
+    "at": 7.99,
+    "note": "audio/signoffs/signoff_clover.mp3 at 0.85x, on Clover's mouth 0.45s into the tail"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -79,16 +79,16 @@
     {
       "clip": "short03_clip_v3_speaking.mp4",
       "from": 0.0,
-      "use": 8.0,
+      "use": 7.6,
       "start_frame": "short03_still_v2.png",
-      "note": "Veo spoke 'Hi, I'm Clover' 0.3-1.8, 'I grow things' 2.1-2.9, 'A little water, a little sunshine' 3.35-5.55, 'And look what happens' 5.9-7.2; seed packet comes out of her pocket ~2s; bloom ~5.5-6.5"
+      "note": "Veo spoke 'Hi, I'm Clover' 0.3-1.8, 'I grow things' 2.1-2.9, 'A little water, a little sunshine' 3.35-5.55, 'And look what happens' 5.9-7.2; seed packet comes out of her pocket ~2s; bloom ~5.5-6.5; cut at 7.6s, before she blinks"
     },
     {
       "clip": "short03_clip_tail_v3_speaking.mp4",
       "from": 0.0,
       "use": 3.0,
-      "start_frame": "short03_lastframe_v3.png",
-      "note": "from the main clip's last frame; Veo spoke 'We can fix anything!' from 0.4s"
+      "start_frame": "short03_clip_at_7.6.png",
+      "note": "from the main clip at 7.6s (eyes open; starting from a blink made Veo invent coloured irises); Veo spoke 'We can fix anything!' 0.45-2.3"
     }
   ]
 }
