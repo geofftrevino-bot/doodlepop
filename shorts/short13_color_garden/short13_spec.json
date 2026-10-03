@@ -1,0 +1,21 @@
+{
+  "title": "Clover's Colour Garden",
+  "character": "clover",
+  "voice": {"name": "Clover", "id": "EGiEBftkMhETd6Cyyfyj", "model": "lines 1-2 and sign-off: Veo native dialogue -> eleven_multilingual_sts_v2; '…And Nugget.' = the original short13_vo_clover_tag.mp3, split at its natural break and placed on Veo's mouth"},
+  "take": "short13_vo_clover_take.mp3",
+  "lines": [
+    {"text": "Red apples. Yellow sunflowers.", "take": [0, 3.15], "at": 0.0},
+    {"text": "Orange carrots. Green lettuce!", "take": [3.15, 6.15], "at": 3.15},
+    {"text": "…And", "take": [7.15, 7.5], "at": 6.21},
+    {"text": "Nugget.", "take": [8.5, null], "at": 6.97}
+  ],
+  "signoff": {"file": "short13_vo_clover_signoff.mp3", "at": 8.0},
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {"clip": "short13_clip_v2_speaking.mp4", "from": 0.0, "use": 8.0, "start_frame": "short13_still.png", "note": "Veo spoke the colour lines and 'And Nugget' itself; Nugget waddles in with a bucket on his head at ~4s"},
+    {"clip": "short13_clip_tail_v2_speaking.mp4", "from": 0.0, "use": 3.3, "start_frame": "short13_lastframe_v2.png", "note": "Veo spoke 'We can fix anything!'; re-voiced as Clover"}
+  ],
+  "video": {"start_frame": "short13_still.png", "model": "veo-3.1-fast-generate-001", "description": "CLOVER the soft white rabbit in green overalls in a colourful vegetable garden; NUGGET the tiny yellow chick with a blue bucket on his head.", "negative": ["music", "extra rabbits", "Nugget talking"]},
+  "beats": []
+}
