@@ -1,0 +1,86 @@
+{
+  "title": "Welcome to Fix-It Farm!",
+  "character": "rocco",
+  "voice": {
+    "name": "Rocco",
+    "id": "YaTcUhI4B60lebDaAPcL",
+    "model": "Veo native dialogue -> audio_isolation -> eleven_multilingual_sts_v2 (voice changer); no user take for Short 1 yet"
+  },
+  "take": "short01_vo_rocco_take.mp3",
+  "lines": [
+    {
+      "text": "Cock-a-doodle-doo!",
+      "take": [
+        0.2,
+        2.1
+      ],
+      "at": 0.2
+    },
+    {
+      "text": "Good morning!",
+      "take": [
+        2.15,
+        3.5
+      ],
+      "at": 2.15
+    },
+    {
+      "text": "Welcome to Fix-It Farm!",
+      "take": [
+        3.6,
+        5.95
+      ],
+      "at": 3.6
+    },
+    {
+      "text": "Meet my friends!",
+      "take": [
+        6.1,
+        7.65
+      ],
+      "at": 5.95
+    },
+    {
+      "text": "Clover, Sprocket, and Nugget!",
+      "take": [
+        7.7,
+        10.4
+      ],
+      "at": 7.55
+    }
+  ],
+  "signoff": {
+    "file": "short01_vo_rocco_signoff.mp3",
+    "at": 10.55,
+    "note": "cut from the re-voiced take (shot B 4.6-7.2s, the whole drawn-out '...anything!'), so it sits on Rocco's beak"
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "cast": [
+    "rocco",
+    "clover",
+    "sprocket",
+    "nugget"
+  ],
+  "video": {
+    "model": "veo-3.1-fast-generate-001",
+    "description": "ROCCO (v2) crows and welcomes viewers in the windmill field; then CLOVER, ROCCO, SPROCKET and NUGGET in a row as he names them."
+  },
+  "shots": [
+    {
+      "clip": "short01_clip_a_speaking.mp4",
+      "from": 0.0,
+      "use": 6.0,
+      "start_frame": "short01_still_a_v2.png",
+      "note": "Rocco v2 close: Veo crowed 0.3-1.9, 'Good morning!' 2.3-3.3, 'Welcome to Fix-It Farm!' 3.8-5.6"
+    },
+    {
+      "clip": "short01_clip_b_v2_speaking.mp4",
+      "from": 0.0,
+      "use": 8.0,
+      "xfade": 0.15,
+      "start_frame": "short01_still_b_v3.png",
+      "note": "the crew from refs, Nugget perched on Sprocket's head (out of the bottom 30%): 'Meet my friends' 0.25-1.65, 'Clover, Sprocket' 1.8-3.25, 'and Nugget' 3.4-4.3, 'We can fix anything!' 4.75-6.9"
+    }
+  ]
+}

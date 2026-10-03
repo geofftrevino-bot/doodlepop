@@ -8,6 +8,27 @@ first. All `mix_short.py` steps are local and free.
 
 ---
 
+## CHARACTER CONSISTENCY (from Short 2 v2 on) — every new picture
+
+The official look of each character is its reference in `refs/characters/`
+(`rocco_ref.png` is the v2 look from Short 15). Veo copies whatever its start
+frame shows, so the start frame decides whether a character is on model.
+
+1. **Start frames come from the ref, never from an older Short's still or clip.**
+   Make each new still with `gemini-3-pro-image`: the character's ref as image 1,
+   the old still or a location plate as image 2 for the setting only, 9:16, 2K.
+   Crop to 1080x1920.
+2. **Paste the character bible's description into every Veo prompt** (the
+   `> **NAME:**` line), plus "keep every character exactly on-model".
+3. **List everyone on screen in the spec's `cast`** (e.g. `["rocco", "nugget"]`).
+4. **Run `refcheck` on every new still and clip before any voice work:**
+   `mix_short.py refcheck <spec> --out check.png` puts each cast member's ref beside
+   frames from every shot. Off model → regenerate the still, not the voice.
+5. **A tail starts from a frame of the clip it follows**, which is already on model.
+6. **Changing a character's look** = a new ref in `refs/characters/`, the old one in
+   `archive/refs/`, the bible updated, and the Shorts that show the old look listed
+   in the bible until they're rebuilt.
+
 ## NATIVE-DIALOGUE PATH (from Short 8 v2 on) — use this
 
 The lip-sync pass doesn't work on our cartoon faces (see *What we learned*), so
@@ -21,6 +42,7 @@ into the character's voice without moving a syllable.
 | 2 | Check the words: transcribe the clip's audio (Veo sometimes paraphrases) | `eleven_scribe_v1` | <1¢ |
 | 3 | Strip ambience: voice isolator (needs ≥4.6s; pad shorter audio with silence) | `audio_isolation` | ~2¢ |
 | 4 | Re-voice as the character: voice changer with their voice id, 2 variations. Timing stays within ~0.03s of Veo's | `eleven_multilingual_sts_v2` | ~2¢ |
+| 4c | **Prefer the user's own recorded take when one exists** (Short 2 v3, approved over the voice-changed version). Split it at its natural pauses into phrases and fit each to Veo's mouth span: `at` = the span's onset minus the cut's lead-in, `tempo` = take phrase length / span length, kept within 0.85–1.15. Fit the shared sign-off the same way (pre-rendered with `atempo`). Transcribe the voice-only track (`lipsync-track --full`) to confirm no word was clipped | `mix_short.py` | free |
 | 5 | **Voice-over shots** (character off screen): keep recording with Eleven v3 + tags, no lip sync needed | `eleven_v3` | ~1¢ / line |
 | 4b | **Listen to / transcribe the re-voiced audio too.** The voice changer can garble a word (Short 12: "anything" → "anythang"). Fix a garbled line by fitting a v3 recording of it to Veo's speaking span (`atempo` to the span's length, placed at its onset); for the sign-off, use the shared `audio/signoffs/` file the same way | — | free |
 | 6 | The sign-off is spoken in the last speaking shot the same way, so it matches the mouth; save it as `shortNN_vo_<character>_signoff.mp3` | — | — |
@@ -181,3 +203,18 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   stretch (it's already on the mouth), and transcribe every re-voiced file.
 - **Check every reused recording's voice, not just its file name.**
   `short13_vo_clover_tag.mp3` was Nugget's voice, like Short 5's sign-off.
+- **Keep the action behind the speaker, not between lines** (Short 11). Prompting
+  "a tractor rolls in" made Rocco stop and wait for it. Write the lines on a
+  continuous timeline and put the event in the background while he talks.
+- **Split a take only at word boundaries the transcript confirms** (Short 11).
+  Splitting "trac-tor" at a dip in loudness read back as "the track"; Veo's long
+  pauses inside a phrase are better matched with whole words ("It's the" /
+  "tractor!").
+- **Keep the smallest character out of the bottom 30% in group shots** (Short 1).
+  Nugget at Sprocket's feet sat under YouTube's title and buttons and read as
+  missing. Perch him on a shoulder or head instead. To move one character, edit
+  the on-model still (it as image 1 + his ref) rather than re-rendering: a fresh
+  five-reference render drifted Rocco off model.
+- **Pull a shot's dialogue through to the end of the clip** (Short 1). Cutting
+  the extract at Veo's last measured word clipped the tail of "…anything!".
+  Trim silence afterwards, never before re-voicing.

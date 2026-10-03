@@ -65,5 +65,9 @@
       "Nugget talking"
     ]
   },
-  "beats": []
+  "beats": [],
+  "cast": [
+    "clover",
+    "nugget"
+  ]
 }

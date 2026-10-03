@@ -18,6 +18,7 @@ Paths resolve against the Short's folder first, then the repo root, so
 |---|---|
 | `title` | The Short's name |
 | `character` | Who speaks (`rocco`, `clover`, `sprocket`, `nugget`) |
+| `cast` | Everyone on screen, for `refcheck` (defaults to `[character]`) |
 | `voice` | `name`, ElevenLabs `id`, `model`. Fast path: **`eleven_v3`**, one line per generation with audio tags, joined by `assemble-take` (v3 ignores `<break>`, which doesn't matter then). Single-take recordings with `<break>` tags must use `eleven_multilingual_v2` |
 | `take` | The single VO take, e.g. `short14_vo_sprocket_take.mp3` |
 | `lines[]` | One entry per spoken line, in order (below) |

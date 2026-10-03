@@ -1,0 +1,22 @@
+{
+  "title": "This Is Rocco",
+  "character": "rocco",
+  "cast": ["rocco"],
+  "voice": {"name": "Rocco", "id": "YaTcUhI4B60lebDaAPcL", "model": "Veo native dialogue -> eleven_multilingual_sts_v2 (voice changer)"},
+  "take": "short02_vo_rocco_take_v2.mp3",
+  "lines": [
+    {"text": "I'm Rocco. I run this farm.", "take": [0, 2.75], "at": 0.0},
+    {"text": "And I have a plan for everything.", "take": [2.75, 5.55], "at": 2.75},
+    {"text": "…EVERY.", "take": [5.55, 6.65], "at": 5.55},
+    {"text": "THING.", "take": [6.65, null], "at": 6.65}
+  ],
+  "signoff": {"file": "short02_vo_rocco_signoff.mp3", "at": 8.0},
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {"clip": "short02_clip_v2_speaking.mp4", "from": 0.0, "use": 8.0, "start_frame": "short02_still_v2.png", "note": "Rocco v2 (refs/characters/rocco_ref.png); Veo spoke the lines itself, re-voiced as Rocco"},
+    {"clip": "short02_clip_tail_v2_speaking.mp4", "from": 0.0, "use": 3.0, "start_frame": "short02_lastframe_v3.png", "note": "Veo spoke 'We can fix anything!'; re-voiced as Rocco"}
+  ],
+  "video": {"start_frame": "short02_still_v2.png", "model": "veo-3.1-fast-generate-001", "description": "ROCCO (v2): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, golden scalloped chest feathers, a teal tail, and a woven straw hat with a red band, in front of the red barn.", "negative": ["music", "crowing", "text on the scroll"]},
+  "beats": []
+}
