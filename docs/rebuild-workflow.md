@@ -175,3 +175,9 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   Only Short 5's sign-off, 7, 10 and 14 were edited at all. Wide shots with two
   characters and small rabbit or chick mouths fail most. **Run `sync-check`
   after every pass**, and don't pay for one on wide two-character shots.
+- **The voice changer garbles short phrases** (Shorts 12–13). "Anything" came out
+  as "anythang", and a 1s "…And Nugget." came out as "And magic" on both takes.
+  Longer passages convert cleanly. Prefer the line as Veo spoke it inside a longer
+  stretch (it's already on the mouth), and transcribe every re-voiced file.
+- **Check every reused recording's voice, not just its file name.**
+  `short13_vo_clover_tag.mp3` was Nugget's voice, like Short 5's sign-off.
