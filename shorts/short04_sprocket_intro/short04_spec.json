@@ -1,29 +1,116 @@
 {
   "title": "This Is Sprocket",
   "character": "sprocket",
-  "voice": {"name": "Sprocket", "id": "7cz9fvECOZ5B0zNWkN2v", "model": "eleven_multilingual_v2"},
+  "voice": {
+    "name": "Sprocket",
+    "id": "7cz9fvECOZ5B0zNWkN2v",
+    "model": "your recorded take (short04_vo_sprocket_take.mp3), each phrase fitted to Sprocket's mouth in the Veo clip"
+  },
   "take": "short04_vo_sprocket_take.mp3",
   "lines": [
-    {"text": "Sprocket here. If it's broken, I fix it.", "take": [0, 2.2], "at": 0.15},
-    {"text": "This old tractor just needed one little part.", "take": [3.37, 5.48], "at": 2.4},
-    {"text": "Ha! Told you.", "take": [7.27, null], "at": 6.15}
+    {
+      "text": "Sprocket here.",
+      "take": [
+        0.1,
+        0.75
+      ],
+      "at": 0.14,
+      "tempo": 0.85
+    },
+    {
+      "text": "If it's broken,",
+      "take": [
+        0.75,
+        1.55
+      ],
+      "at": 1.09,
+      "tempo": 0.87
+    },
+    {
+      "text": "I fix it.",
+      "take": [
+        1.6,
+        2.2
+      ],
+      "at": 2.11,
+      "tempo": 1.15
+    },
+    {
+      "text": "This old tractor just",
+      "take": [
+        3.35,
+        4.42
+      ],
+      "at": 3.18
+    },
+    {
+      "text": "needed one little part.",
+      "take": [
+        4.42,
+        5.55
+      ],
+      "at": 4.36,
+      "tempo": 0.85
+    },
+    {
+      "text": "Ha!",
+      "take": [
+        7.25,
+        7.5
+      ],
+      "at": 6.15
+    },
+    {
+      "text": "Told you.",
+      "take": [
+        7.6,
+        null
+      ],
+      "at": 6.89,
+      "tempo": 0.89
+    }
   ],
-  "signoff": {"file": "audio/signoffs/signoff_sprocket.mp3", "at": 7.98},
-  "sfx": [{"file": "shorts/short11_what_sound/short11_sfx_tractor.mp3", "at": 4.0, "gain_db": -8}],
-  "music": "audio/theme/theme_sting.mp3",
-  "clip": "short04_clip_v2.mp4",
-  "video": {
-    "start_frame": "short04_firstframe.png",
-    "raw_clip": "short04_clip_v2.mp4",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "The piglet is SPROCKET: brown tool belt with a gold buckle and two brown pouches, silver wrench in one hoof, no goggles. The tractor is blue and in good condition.",
-    "negative": ["goggles", "red tractor", "rusty tractor"]
+  "signoff": {
+    "file": "short04_vo_sprocket_signoff_fitted.mp3",
+    "at": 8.14,
+    "note": "audio/signoffs/signoff_sprocket.mp3 at 0.85x, on Sprocket's mouth 0.5s into the tail"
   },
-  "beats": [
-    {"from": 0.0, "to": 1.4, "mouth": "open", "action": "Sprocket faces the camera and chats cheerfully with small proud gestures of the wrench."},
-    {"from": 1.4, "to": 3.0, "mouth": "open", "action": "He turns and trots over to the blue tractor behind him."},
-    {"from": 3.0, "to": 4.6, "mouth": "open", "action": "He works on the tractor's engine with the wrench, a couple of tiny sparks."},
-    {"from": 4.6, "to": 6.0, "mouth": "closed", "action": "The tractor shudders, a puff of grey smoke pops from the exhaust stack and the headlights flick on while he watches."},
-    {"from": 6.0, "to": 8.0, "mouth": "open", "action": "He turns to the camera with a big proud grin and throws both hooves up."}
+  "sfx": [
+    {
+      "file": "shorts/short11_what_sound/short11_sfx_tractor.mp3",
+      "at": 4.8,
+      "gain_db": -12
+    }
+  ],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short04_still_v4.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "SPROCKET (refs/characters/sprocket_ref.png) beside the small blue tractor with yellow wheels; hooves empty except for the one gear, which comes out of the tool pouch and goes into the engine.",
+    "negative": [
+      "goggles",
+      "red tractor",
+      "rusty tractor"
+    ]
+  },
+  "beats": [],
+  "cast": [
+    "sprocket"
+  ],
+  "shots": [
+    {
+      "clip": "short04_clip_v4_speaking.mp4",
+      "from": 0.0,
+      "use": 7.7,
+      "start_frame": "short04_still_v4.png",
+      "note": "start frame edited so Sprocket holds no wrench (v3 had a second wrench appear from nowhere); Veo spoke 'Sprocket here' 0.2-0.9, 'If it's broken' 1.15-1.95, 'I fix it' 2.15-2.55, 'This old tractor just needed' 3.3-4.6, 'one little part' 4.8-5.7, 'Ha' 6.2, 'told ya' 7.0-7.45; cut at 7.7 (eyes open)"
+    },
+    {
+      "clip": "short04_clip_tail_v4_speaking.mp4",
+      "from": 0.0,
+      "use": 2.6,
+      "start_frame": "short04_clip_at_7.7.png",
+      "note": "from the main clip at 7.7s (eyes open); thumbs-up, tools stay in the pouch; Veo spoke 'We can fix anything!' 0.5-2.4; cut at 2.6 before the blink at 2.7"
+    }
   ]
 }

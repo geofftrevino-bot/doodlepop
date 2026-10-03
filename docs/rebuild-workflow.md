@@ -218,3 +218,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Pull a shot's dialogue through to the end of the clip** (Short 1). Cutting
   the extract at Veo's last measured word clipped the tail of "…anything!".
   Trim silence afterwards, never before re-voicing.
+- **Never start a tail from a blink** (Short 3). The main clip's last frame had
+  Clover's eyes shut, so Veo invented her eyes and gave her blue, then brown
+  irises (two fast tries and one standard try). Grid the last second, pick a
+  frame with the eyes open, cut the main clip there and start the tail from it.
+- **Props come from somewhere** (Short 3). Anything the action needs (a soil
+  patch, a seed packet) is either in the start frame or pulled from a pocket on
+  camera; otherwise Veo pops it in from nowhere.

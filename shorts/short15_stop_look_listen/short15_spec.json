@@ -11,7 +11,7 @@
     {
       "text": "Ready?",
       "take": [
-        0,
+        0.4,
         1.3
       ],
       "at": 0.0
@@ -22,7 +22,7 @@
         1.3,
         2.4
       ],
-      "at": 1.3
+      "at": 0.9
     },
     {
       "text": "Look.",
@@ -30,7 +30,7 @@
         2.4,
         3.35
       ],
-      "at": 2.4
+      "at": 2.0
     },
     {
       "text": "Listen.",
@@ -38,7 +38,7 @@
         3.35,
         4.4
       ],
-      "at": 3.35
+      "at": 2.95
     },
     {
       "text": "Now we can go!",
@@ -46,22 +46,22 @@
         4.4,
         null
       ],
-      "at": 4.4
+      "at": 4.0
     }
   ],
   "signoff": {
     "file": "short15_vo_rocco_signoff.mp3",
-    "at": 6.6
+    "at": 6.2
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
   "shots": [
     {
       "clip": "short15_clip_speaking.mp4",
-      "from": 0.0,
-      "use": 6.6,
+      "from": 0.4,
+      "use": 6.2,
       "start_frame": "short15_still.png",
-      "note": "Veo spoke the lines itself; Nugget jumps early, freezes, then copies. The camera pulls back after ~7s, so cut at 6.6"
+      "note": "Veo spoke the lines itself; Nugget jumps early, freezes, then copies. The camera pulls back after ~7s, so cut at 6.6; the first 0.4s (start frame morphing into Rocco v2 and Nugget) is trimmed"
     },
     {
       "clip": "short15_clip_tail_speaking.mp4",

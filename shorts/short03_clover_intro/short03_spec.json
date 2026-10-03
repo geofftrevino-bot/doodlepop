@@ -4,46 +4,67 @@
   "voice": {
     "name": "Clover",
     "id": "EGiEBftkMhETd6Cyyfyj",
-    "model": "eleven_v3"
+    "model": "your recorded take (short03_vo_clover_take.mp3), each phrase fitted to Clover's mouth in the Veo clip"
   },
   "take": "short03_vo_clover_take.mp3",
   "lines": [
     {
-      "text": "[excited] Hi! I'm Clover. [happy] I GROW things!",
+      "text": "Hi!",
       "take": [
         0,
-        2.9
+        0.45
       ],
-      "at": 0.0
+      "at": 0.24,
+      "tempo": 0.85
     },
     {
-      "text": "[happy] A little water, a little sunshine…",
+      "text": "I'm Clover.",
+      "take": [
+        0.45,
+        1.4
+      ],
+      "at": 0.89,
+      "tempo": 0.88
+    },
+    {
+      "text": "I grow things!",
+      "take": [
+        1.45,
+        2.95
+      ],
+      "at": 1.97,
+      "tempo": 1.15
+    },
+    {
+      "text": "A little water, a little sunshine\u2026",
       "take": [
         3.8,
-        6.16
+        6.15
       ],
-      "at": 3.05
+      "at": 3.3,
+      "tempo": 1.02
     },
     {
-      "text": "[excited] And LOOK what happens!",
+      "text": "\u2026and look what happens!",
       "take": [
-        7.06,
+        7.05,
         null
       ],
-      "at": 5.6
+      "at": 5.86,
+      "tempo": 1.15
     }
   ],
   "signoff": {
-    "file": "audio/signoffs/signoff_clover.mp3",
-    "at": 8.5
+    "file": "short03_vo_clover_signoff_fitted.mp3",
+    "at": 7.99,
+    "note": "audio/signoffs/signoff_clover.mp3 at 0.85x, on Clover's mouth 0.45s into the tail"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short03_clip_joined_lipsync.mp4",
   "video": {
-    "start_frame": "short03_still.png",
+    "start_frame": "short03_still_v2.png",
     "model": "veo-3.1-fast-generate-001",
-    "description": "CLOVER the soft white rabbit with long floppy ears wears green overalls with a carrot in the pocket and holds a tiny trowel, in a sunny vegetable garden.",
+    "description": "CLOVER (refs/characters/clover_ref.png): soft white rabbit, tall upright ears, green overalls with a carrot in the front pocket, holding a trowel beside a bare soil patch that is in the garden from the first frame; she pulls a seed packet from her overalls pocket.",
     "negative": [
       "extra rabbits",
       "second bunny",
@@ -51,88 +72,23 @@
     ]
   },
   "beats": [],
-  "built_from_shots": [
+  "cast": [
+    "clover"
+  ],
+  "shots": [
     {
-      "clip": "short03_shot_a.mp4",
-      "use": 2.4,
-      "start_frame": "short03_still.png",
-      "beats": [
-        {
-          "from": 0.0,
-          "to": 0.3,
-          "mouth": "closed",
-          "action": "Clover smiles at the camera."
-        },
-        {
-          "from": 0.3,
-          "to": 2.2,
-          "mouth": "open",
-          "action": "Clover talks to the camera with a friendly little wave of her trowel."
-        },
-        {
-          "from": 2.2,
-          "to": 4.0,
-          "mouth": "closed",
-          "action": "She kneels down beside the garden bed in front of her, still smiling at the camera."
-        }
-      ]
+      "clip": "short03_clip_v3_speaking.mp4",
+      "from": 0.0,
+      "use": 7.6,
+      "start_frame": "short03_still_v2.png",
+      "note": "Veo spoke 'Hi, I'm Clover' 0.3-1.8, 'I grow things' 2.1-2.9, 'A little water, a little sunshine' 3.35-5.55, 'And look what happens' 5.9-7.2; seed packet comes out of her pocket ~2s; bloom ~5.5-6.5; cut at 7.6s, before she blinks"
     },
     {
-      "clip": "short03_shot_b.mp4",
-      "use": 2.3,
-      "start_frame": "short03_shot_a_cut.png",
-      "beats": [
-        {
-          "from": 0.0,
-          "to": 1.7,
-          "mouth": "open",
-          "action": "Clover looks at the camera and talks softly in a sing-song way while sprinkling a handful of seeds onto the soil of the garden bed beside her."
-        },
-        {
-          "from": 1.7,
-          "to": 4.0,
-          "mouth": "closed",
-          "action": "She stops talking, kneels and gently taps the soil twice with her trowel, smiling."
-        }
-      ]
-    },
-    {
-      "clip": "short03_shot_c.mp4",
-      "use": 3.3,
-      "start_frame": "short03_shot_b_cut.png",
-      "beats": [
-        {
-          "from": 0.0,
-          "to": 2.2,
-          "mouth": "open",
-          "action": "Clover looks up at the camera with a little secret smile and says: \"…and… look what happens!\" pointing down at the soil."
-        },
-        {
-          "from": 2.2,
-          "to": 4.0,
-          "mouth": "closed",
-          "action": "A whole row of sunflowers, carrots, tomatoes and daisies springs up around her in a rippling wave; her ears perk straight up and she gives a tiny happy clap."
-        }
-      ]
-    },
-    {
-      "clip": "short03_clip_tail.mp4",
-      "use": 2.2,
-      "start_frame": "short03_shot_c_cut.png",
-      "beats": [
-        {
-          "from": 0.0,
-          "to": 1.5,
-          "mouth": "open",
-          "action": "Clover looks straight at the camera among the new flowers and says: \"We can fix anything!\" with a little thumbs-up."
-        },
-        {
-          "from": 1.5,
-          "to": 4.0,
-          "mouth": "closed",
-          "action": "She holds a big happy grin and gives a small wave, staying in place."
-        }
-      ]
+      "clip": "short03_clip_tail_v3_speaking.mp4",
+      "from": 0.0,
+      "use": 3.0,
+      "start_frame": "short03_clip_at_7.6.png",
+      "note": "from the main clip at 7.6s (eyes open; starting from a blink made Veo invent coloured irises); Veo spoke 'We can fix anything!' 0.45-2.3"
     }
   ]
 }
