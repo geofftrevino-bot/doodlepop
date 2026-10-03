@@ -36,22 +36,22 @@
       "tempo": 1.15
     },
     {
-      "text": "This old tractor",
+      "text": "This old tractor just",
       "take": [
         3.35,
-        4.05
+        4.42
       ],
-      "at": 2.83,
+      "at": 2.8,
       "tempo": 0.85
     },
     {
-      "text": "just needed one little part.",
+      "text": "needed one little part.",
       "take": [
-        4.05,
-        5.5
+        4.42,
+        5.55
       ],
-      "at": 4.34,
-      "tempo": 0.9
+      "at": 4.44,
+      "tempo": 0.85
     },
     {
       "text": "Ha!",
