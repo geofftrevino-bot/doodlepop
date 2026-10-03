@@ -41,10 +41,16 @@ Prepend to **every** image and video prompt:
 
 ## ROCCO — the rooster who runs the farm
 
-> **ROCCO:** a cheerful chunky cartoon rooster with a bright orange-red body,
-> golden-yellow neck and chest feathers, a large curved **teal-turquoise tail**
-> and teal wingtips, a small red comb and red wattle, a yellow beak, yellow
-> legs and feet, and a woven straw farmer's hat with a red band.
+> **ROCCO:** a cheerful tall cartoon rooster with an orange-red body, a long
+> neck and a red face, big round expressive eyes with blue irises, a large
+> yellow beak, a red comb and wattle, golden-yellow scalloped neck and chest
+> feathers, a large curved **teal-turquoise tail**, teal wingtips he gestures
+> with like hands, yellow legs and feet, and a woven straw farmer's hat with a
+> red band.
+
+*Updated after Short 15 (v2 look): taller and slimmer than v1, bigger blue-iris
+eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
+`archive/refs/rocco_ref_v1.png`. Shorts 2, 9 and 11 still show the v1 look.*
 
 - **Silhouette cue:** the teal tail. It reads instantly at thumbnail size.
 - **Posture:** chest out, upright, confident. He takes up space.
