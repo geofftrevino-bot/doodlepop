@@ -203,3 +203,10 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   stretch (it's already on the mouth), and transcribe every re-voiced file.
 - **Check every reused recording's voice, not just its file name.**
   `short13_vo_clover_tag.mp3` was Nugget's voice, like Short 5's sign-off.
+- **Keep the action behind the speaker, not between lines** (Short 11). Prompting
+  "a tractor rolls in" made Rocco stop and wait for it. Write the lines on a
+  continuous timeline and put the event in the background while he talks.
+- **Split a take only at word boundaries the transcript confirms** (Short 11).
+  Splitting "trac-tor" at a dip in loudness read back as "the track"; Veo's long
+  pauses inside a phrase are better matched with whole words ("It's the" /
+  "tractor!").
