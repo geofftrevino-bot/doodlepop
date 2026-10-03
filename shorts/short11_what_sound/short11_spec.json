@@ -4,59 +4,50 @@
   "voice": {
     "name": "Rocco",
     "id": "YaTcUhI4B60lebDaAPcL",
-    "model": "your Multilingual v2 re-take (short11_vo_rocco_take.mp3), split by syllable group and fitted to Rocco v2's beak; picture from Veo"
+    "model": "'Listen! What's that sound?' from short11_vo_rocco_01.mp3 (clean start, clear 'What's'), 'It's the tractor!' from your re-take short11_vo_rocco_take.mp3; each phrase fitted to Rocco v2's beak"
   },
-  "take": "short11_vo_rocco_take.mp3",
+  "take": "short11_vo_rocco_take_v2.mp3",
   "lines": [
     {
       "text": "Listen!",
       "take": [
         0,
-        0.6
+        0.65
       ],
       "at": 0.37,
-      "tempo": 0.85
+      "tempo": 0.89
     },
     {
-      "text": "What's that",
+      "text": "What's that sound?",
       "take": [
-        0.6,
-        0.95
+        0.8,
+        1.95
       ],
-      "at": 1.66,
-      "tempo": 0.85
-    },
-    {
-      "text": "sound?",
-      "take": [
-        0.95,
-        1.7
-      ],
-      "at": 2.44,
+      "at": 1.27,
       "tempo": 0.85
     },
     {
       "text": "It's the",
       "take": [
-        3.44,
-        4.08
+        2.04,
+        2.68
       ],
-      "at": 3.54,
+      "at": 3.14,
       "tempo": 0.85
     },
     {
       "text": "tractor!",
       "take": [
-        4.08,
-        null
+        2.68,
+        3.25
       ],
-      "at": 4.73,
+      "at": 4.33,
       "tempo": 0.85
     }
   ],
   "signoff": {
     "file": "short11_vo_rocco_signoff_fitted.mp3",
-    "at": 5.93,
+    "at": 5.53,
     "note": "audio/signoffs/signoff_rocco.mp3 at 1.15x, on Rocco v2's beak 5.95-7.4s in the same clip"
   },
   "sfx": [
@@ -83,11 +74,11 @@
   ],
   "shots": [
     {
-      "clip": "short11_clip_v3_speaking.mp4",
+      "clip": "short11_clip_v3_tight.mp4",
       "from": 0.0,
-      "use": 8.0,
+      "use": 7.6,
       "start_frame": "short11_still_v2.png",
-      "note": "Rocco v2, one continuous take: Veo spoke 'Listen!' 0.4-1.05, 'What's that sound?' 1.75-3.0, 'It's the' 3.55-4.25, 'tractor!' 4.75-5.45, 'We can fix anything!' 5.95-7.4; the tractor crosses behind him ~0.5-3.5s"
+      "note": "short11_clip_v3_speaking.mp4 with the silent 1.05-1.75s gap after 'Listen!' played at 2.33x (0.7s -> 0.3s); Veo spoke 'Listen!' 0.4-1.05, 'What's that sound?' 1.35-2.6, 'It's the' 3.15-3.85, 'tractor!' 4.35-5.05, 'We can fix anything!' 5.55-7.0"
     }
   ]
 }
