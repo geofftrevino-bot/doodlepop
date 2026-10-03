@@ -1,0 +1,29 @@
+{
+  "title": "This Is Sprocket",
+  "character": "sprocket",
+  "voice": {"name": "Sprocket", "id": "7cz9fvECOZ5B0zNWkN2v", "model": "eleven_multilingual_v2"},
+  "take": "short04_vo_sprocket_take.mp3",
+  "lines": [
+    {"text": "Sprocket here. If it's broken, I fix it.", "take": [0, 2.2], "at": 0.15},
+    {"text": "This old tractor just needed one little part.", "take": [3.37, 5.48], "at": 2.4},
+    {"text": "Ha! Told you.", "take": [7.27, null], "at": 6.15}
+  ],
+  "signoff": {"file": "audio/signoffs/signoff_sprocket.mp3", "at": 7.98},
+  "sfx": [{"file": "shorts/short11_what_sound/short11_sfx_tractor.mp3", "at": 4.0, "gain_db": -8}],
+  "music": "audio/theme/theme_sting.mp3",
+  "clip": "short04_clip_v2.mp4",
+  "video": {
+    "start_frame": "short04_firstframe.png",
+    "raw_clip": "short04_clip_v2.mp4",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "The piglet is SPROCKET: brown tool belt with a gold buckle and two brown pouches, silver wrench in one hoof, no goggles. The tractor is blue and in good condition.",
+    "negative": ["goggles", "red tractor", "rusty tractor"]
+  },
+  "beats": [
+    {"from": 0.0, "to": 1.4, "mouth": "open", "action": "Sprocket faces the camera and chats cheerfully with small proud gestures of the wrench."},
+    {"from": 1.4, "to": 3.0, "mouth": "open", "action": "He turns and trots over to the blue tractor behind him."},
+    {"from": 3.0, "to": 4.6, "mouth": "open", "action": "He works on the tractor's engine with the wrench, a couple of tiny sparks."},
+    {"from": 4.6, "to": 6.0, "mouth": "closed", "action": "The tractor shudders, a puff of grey smoke pops from the exhaust stack and the headlights flick on while he watches."},
+    {"from": 6.0, "to": 8.0, "mouth": "open", "action": "He turns to the camera with a big proud grin and throws both hooves up."}
+  ]
+}
