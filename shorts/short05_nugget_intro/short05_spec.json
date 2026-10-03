@@ -4,7 +4,7 @@
   "voice": {
     "name": "Nugget + Sprocket",
     "id": "wHdWNyHIEKti3ZPcVIFa / 7cz9fvECOZ5B0zNWkN2v",
-    "model": "Nugget's lines from the eleven_v3 recordings short05_vo_nugget_01/02 (the voice-changed 'everything' came out as 'eeverything'), Sprocket's 'Wrench, please' from short05_vo_sprocket_01, his 'Close' from Veo's own take re-voiced with eleven_multilingual_sts_v2; all placed on the mouths"
+    "model": "Nugget's lines: the eleven_v3 reads in short05_vo_nugget_01/02_SPROCKET_VOICE (mislabelled: they are in Sprocket's voice) converted to Nugget's voice with eleven_multilingual_sts_v2, timing kept (short05_vo_nugget_lines_sts.mp3); Sprocket's 'Wrench, please' from short05_vo_sprocket_01, his 'Close' from Veo's own take re-voiced; all placed on the mouths"
   },
   "take": "short05_vo_take_v2.mp3",
   "lines": [

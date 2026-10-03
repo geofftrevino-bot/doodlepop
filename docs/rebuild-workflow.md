@@ -203,6 +203,7 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   stretch (it's already on the mouth), and transcribe every re-voiced file.
 - **Check every reused recording's voice, not just its file name.**
   `short13_vo_clover_tag.mp3` was Nugget's voice, like Short 5's sign-off.
+  Short 5's `short05_vo_nugget_01/02` were Sprocket too (renamed `_SPROCKET_VOICE`).
 - **Keep the action behind the speaker, not between lines** (Short 11). Prompting
   "a tractor rolls in" made Rocco stop and wait for it. Write the lines on a
   continuous timeline and put the event in the background while he talks.
