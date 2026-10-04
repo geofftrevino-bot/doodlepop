@@ -100,11 +100,11 @@
       "note": "main clip from 3.7: Nugget grabs the carrot and says 'Wrench!' 3.8-4.5, Sprocket looks down at it ~4.7, 'Close' 6.0-6.8; cut at 7.5 (both eyes open). The first attempt (Veo gave Sprocket's line to Nugget) is in archive/shorts/short05/v2_lines_swapped/"
     },
     {
-      "clip": "short05_clip_tail_v6_speaking.mp4",
+      "clip": "short05_clip_tail_v10_speaking.mp4",
       "from": 0.0,
-      "use": 2.4,
+      "use": 2.15,
       "start_frame": "short05_clip_at_7.5.png",
-      "note": "from the main clip at 7.5s; Nugget cheers 'We can fix anything!' ~0.4-1.6 with wings up; Sprocket gives an empty-hoofed thumbs-up from ~0.4 (the previous tail produced a wrench in his free hoof, the one before that a second carrot); one carrot throughout; cut at 2.4 before Sprocket blinks and Nugget walks off"
+      "note": "veo-3.1-generate-001 (standard) from the main clip at 7.5s: Nugget cheers 'We can fix anything!' with wings up, beak moving ~0.5-1.5, Sprocket's mouth closed 0.4-2.1; cut at 2.15, before Sprocket starts mouthing and reaches for his pouch. The fast model gave the line to Sprocket's mouth three times (v6-v9, archived)"
     }
   ]
 }

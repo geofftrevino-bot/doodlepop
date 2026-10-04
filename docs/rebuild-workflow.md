@@ -250,3 +250,9 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   (`ffmpeg -lavfi psnr`) found the matching main-clip frame (3.72s) for a hard cut.
 - **Tails with a free hoof: give it a job.** Twice Veo filled Sprocket's empty
   hoof (a second carrot, then a wrench); an explicit empty-hoofed thumbs-up held.
+- **When the fast model keeps giving a line to the wrong mouth, switch to
+  `veo-3.1-generate-001`** (Short 5 v2 sign-off). Three fast tails in a row had
+  Sprocket mouthing Nugget's "We can fix anything!" (with audio, re-sequenced,
+  and silent); the first standard-model try kept the pig's mouth shut. A
+  gesture such as a thumbs-up also draws Veo to animate that character's mouth,
+  so cut before it or give the gesture after the line.
