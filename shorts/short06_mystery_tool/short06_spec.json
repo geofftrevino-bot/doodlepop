@@ -4,77 +4,88 @@
   "voice": {
     "name": "Sprocket",
     "id": "7cz9fvECOZ5B0zNWkN2v",
-    "model": "eleven_v3"
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2; the sign-off is the tail's own 'We can fix anything!', re-voiced"
   },
-  "take": "short06_vo_sprocket_take.mp3",
+  "take": "short06_vo_take_v2.mp3",
   "lines": [
     {
-      "text": "[playfully] What do you think THIS does?",
+      "text": "What do you think THIS does?",
       "take": [
-        0,
-        1.91
+        0.2,
+        1.98
       ],
-      "at": 0.3
+      "at": 0.2
     },
     {
-      "text": "[mischievously] A back scratcher? [laughs] Nope!",
+      "text": "A back scratcher?",
       "take": [
-        2.61,
-        5.55
+        2.25,
+        3.5
       ],
-      "at": 2.45
+      "at": 2.25
     },
     {
-      "text": "[excited] It tightens BOLTS! [warmly] Always ask a grown-up first.",
+      "text": "Ha! Nope!",
       "take": [
-        6.25,
-        null
+        3.75,
+        5.05
       ],
-      "at": 5.65
+      "at": 3.75
+    },
+    {
+      "text": "It tightens BOLTS!",
+      "take": [
+        5.3,
+        7.2
+      ],
+      "at": 5.3
+    },
+    {
+      "text": "Always ask a grown-up first.",
+      "take": [
+        7.6,
+        9.8
+      ],
+      "at": 7.6
     }
   ],
   "signoff": {
-    "file": "audio/signoffs/signoff_sprocket.mp3",
-    "at": 10.3
+    "file": "short06_vo_sprocket_signoff_tail.mp3",
+    "at": 10.09,
+    "note": "Sprocket's own 'We can fix anything!' from tail v3 (2.88-5.05s), re-voiced; on his mouth (+0.03s to clear the 0.3s gap check)"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "clip": "short06_clip_joined_lipsync.mp4",
   "video": {
-    "start_frame": "short06_still.png",
-    "model": "veo-3.1-fast-generate-001",
-    "description": "SPROCKET the pink piglet (brown tool belt with a gold buckle, no goggles) holds a giant silver wrench, with NUGGET the tiny yellow chick beside him, in the workshop barn.",
+    "start_frame": "short06_still_v2.png",
+    "model": "veo-3.1-generate-001",
+    "description": "SPROCKET (refs/characters/sprocket_noprop_ref.png) with empty hooves; the one giant wrench leans against the workbench from the first frame and he picks it up on camera.",
     "negative": [
+      "coloured irises",
+      "second wrench",
+      "music",
+      "cuts",
       "goggles"
     ]
   },
   "beats": [],
-  "built_from_shots": [
+  "cast": [
+    "sprocket"
+  ],
+  "shots": [
     {
-      "clip": "short06_clip.mp4",
+      "clip": "short06_clip_v5_speaking.mp4",
       "from": 0.0,
-      "use": 8.0,
-      "note": "existing one-shot clip: Nugget drags in the giant wrench, Sprocket lifts it ~6.25s"
+      "use": 7.17,
+      "start_frame": "short06_still_v2.png",
+      "note": "standard Veo (the fast model drifted Sprocket's black eyes to brown/blue irises in three tries, archived). Picks up the giant wrench ~1.5s, back-scratches with it ~2-3.2s; Veo never showed the bolt being turned. Cut at 7.17 with the wrench still upright (he swings it to the floor after 7.3)"
     },
     {
-      "clip": "short06_clip_tail.mp4",
+      "clip": "short06_clip_tail_v3_speaking.mp4",
       "from": 0.0,
-      "use": 3.95,
-      "start_frame": "short06_lastframe_v2.png",
-      "beats": [
-        {
-          "from": 0.0,
-          "to": 2.4,
-          "mouth": "open",
-          "action": "Sprocket, holding the giant wrench, turns to the camera and talks warmly, giving a little nod."
-        },
-        {
-          "from": 2.4,
-          "to": 4.0,
-          "mouth": "open",
-          "action": "He says a cheerful catchphrase with a thumbs-up, then grins."
-        }
-      ]
+      "use": 5.2,
+      "start_frame": "short06_clip_at_7.17.png",
+      "note": "standard Veo from the main clip at 7.17s, prompted to keep the one wrench upright in his right hoof all clip (tail v2 dropped it and the floor wrench smeared, archived). 'Always ask a grown-up first' 0.45-2.61, 'We can fix anything!' 2.9-5.0 with the empty-hoof thumbs-up; ends 5.2 before he lowers the wrench further"
     }
   ]
 }
