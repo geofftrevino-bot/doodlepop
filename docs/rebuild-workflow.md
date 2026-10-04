@@ -256,3 +256,15 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   and silent); the first standard-model try kept the pig's mouth shut. A
   gesture such as a thumbs-up also draws Veo to animate that character's mouth,
   so cut before it or give the gesture after the line.
+- **Start a tail from a frame where the prop is held the way you want it kept,
+  and say so** (Short 6 v2). Tail v2 started as Sprocket swung the wrench to the
+  floor; Veo dropped it and the floor wrench smeared under the sign-off. Cutting
+  0.4s earlier (wrench upright) and prompting "holds it UPRIGHT in his right hoof
+  for the WHOLE clip… never drops it… the floor stays empty" held it.
+- **Fix one garbled word by splicing, not regenerating** (Short 6 v2). Veo
+  stretched "BOLTS" to "beeolts". Keeping its "It tightens" and splicing "bolts"
+  from an `eleven_multilingual_v2` read in the same voice (word cut from the
+  envelope, `atempo` 0.78 to fill the mouth span) cost $0.003 and transcribed
+  clean.
+- **Short 6 eyes: the fast model gave Sprocket brown, then blue irises** in three
+  tries; the standard model kept them black (now stated in the character bible).

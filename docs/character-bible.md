@@ -74,7 +74,8 @@ eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
 ## SPROCKET — the pig who fixes everything
 
 > **SPROCKET:** a cheerful chunky cartoon piglet with a soft pink body, floppy
-> pink ears, a big pink snout, rosy cheeks, dark brown hooves, a curly pink
+> pink ears, a big pink snout, rosy cheeks, solid glossy black eyes with a
+> small white highlight (no coloured irises), dark brown hooves, a curly pink
 > tail, wearing a **brown leather tool belt with a gold buckle** and two brown
 > tool pouches holding a red-handled screwdriver and a blue-handled tool.
 
