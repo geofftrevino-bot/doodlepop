@@ -4,7 +4,7 @@
   "voice": {
     "name": "Nugget",
     "id": "wHdWNyHIEKti3ZPcVIFa",
-    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2; the sign-off is the tail's own 'We can fix anything!', re-voiced"
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2; the sign-off is the tail's own 'We can fix anything!', re-voiced; 'anything' in the sign-off is spliced from a TTS read"
   },
   "take": "short07_vo_take_v2.mp3",
   "lines": [
@@ -42,9 +42,9 @@
     }
   ],
   "signoff": {
-    "file": "short07_vo_nugget_signoff_tail_tamed.mp3",
+    "file": "short07_vo_nugget_signoff_tail_fixed.mp3",
     "at": 10.68,
-    "note": "Nugget's own 'We can fix anything!' from the tail (3.36-6.0s), re-voiced; the shouted 'A' of 'anything' (1.32-1.74s in the file, ~15 dB over the rest) is brought down ~5 dB with a 4 kHz low-pass so it sits with the line"
+    "note": "Nugget's own 'We can fix' from the tail (3.36-4.66s), re-voiced; Veo shouted 'aah!nything', so 'anything' is spliced from an eleven_multilingual_v2 Nugget read (short07_vo_nugget_tts_anything.mp3, 0.64-1.36s at 0.82x tempo) at 1.34s"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
