@@ -278,3 +278,8 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   see-through.
 - **Veo creeps the camera in during the last ~0.7s even when told it's locked.**
   Grid the last second and cut before it (Short 7: 7.32s main, 6.3s tail).
+- **A shouted syllable can't be turned down into a normal one; replace the word**
+  (Short 7 v2 sign-off). Veo's "aah!nything" peaked ~15 dB over the line; a 5 dB
+  dip with a low-pass still read as a scream. Splicing "anything" from an
+  `eleven_multilingual_v2` read in Nugget's voice (`atempo` 0.82 to fill the beak
+  span, no gain boost) fixed it.
