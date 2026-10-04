@@ -42,9 +42,9 @@
     }
   ],
   "signoff": {
-    "file": "short07_vo_nugget_signoff_tail.mp3",
+    "file": "short07_vo_nugget_signoff_tail_tamed.mp3",
     "at": 10.68,
-    "note": "Nugget's own 'We can fix anything!' from the tail (3.36-6.0s), re-voiced; on his mouth with a wing wave"
+    "note": "Nugget's own 'We can fix anything!' from the tail (3.36-6.0s), re-voiced; the shouted 'A' of 'anything' (1.32-1.74s in the file, ~15 dB over the rest) is brought down ~5 dB with a 4 kHz low-pass so it sits with the line"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
