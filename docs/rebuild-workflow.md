@@ -203,6 +203,7 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   stretch (it's already on the mouth), and transcribe every re-voiced file.
 - **Check every reused recording's voice, not just its file name.**
   `short13_vo_clover_tag.mp3` was Nugget's voice, like Short 5's sign-off.
+  Short 5's `short05_vo_nugget_01/02` were Sprocket too (renamed `_SPROCKET_VOICE`).
 - **Keep the action behind the speaker, not between lines** (Short 11). Prompting
   "a tractor rolls in" made Rocco stop and wait for it. Write the lines on a
   continuous timeline and put the event in the background while he talks.
@@ -225,3 +226,33 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Props come from somewhere** (Short 3). Anything the action needs (a soil
   patch, a seed packet) is either in the start frame or pulled from a pocket on
   camera; otherwise Veo pops it in from nowhere.
+- **Check a new node's settings before running it** (Short 5 v2). New image and
+  Veo nodes default to 16:9 (images also to 1K, Veo to 720p) whatever the prompt
+  says, and a 16:9 still cost a wasted pair of renders. Create with
+  `estimate_only`, read the node, set `aspect_ratio: 9:16` and `2K` / `1080p`, then run.
+- **Two speakers in one Veo clip: check who says each line** (Short 5 v2). With
+  "SPROCKET says… / NUGGET says…" Veo gave "Wrench, please" to Nugget's beak and
+  added a "Ha!" and a second "Wrench" for Sprocket; the full transcript still
+  read almost right. Tag every line by species ("THE PIG says", "THE CHICK
+  says"), say whose mouth stays closed, and transcribe each speaker's span on
+  its own before re-voicing. A two-shot tail can also invent a second prop in
+  the free hoof: say "only ONE carrot… his other hoof stays empty".
+- **Grid both faces through every line, not just the speaker's** (Short 5 v2). Veo
+  kept Nugget's audio running to 2.7s but only moved his beak to 1.1s; Sprocket's
+  mouth moved over the rest. The fix was an insert shot generated between the
+  clip's own frames (start 1.1s, end 2.8s), used only until the other character
+  starts talking, then a 0.2s dissolve back. `mix` needed `settb` for a dissolve
+  after a hard cut (fixed in `NORM`).
+- **End an insert on a frame where nobody is talking, and cut where Veo actually
+  lands on it** (Short 5 v2). An end frame with Sprocket's mouth open made Veo
+  have him talk through the insert, and the dissolve needed to skip that ghosted.
+  With a mouth-closed end frame, Veo reached it at 3.67s of 4s; a PSNR search
+  (`ffmpeg -lavfi psnr`) found the matching main-clip frame (3.72s) for a hard cut.
+- **Tails with a free hoof: give it a job.** Twice Veo filled Sprocket's empty
+  hoof (a second carrot, then a wrench); an explicit empty-hoofed thumbs-up held.
+- **When the fast model keeps giving a line to the wrong mouth, switch to
+  `veo-3.1-generate-001`** (Short 5 v2 sign-off). Three fast tails in a row had
+  Sprocket mouthing Nugget's "We can fix anything!" (with audio, re-sequenced,
+  and silent); the first standard-model try kept the pig's mouth shut. A
+  gesture such as a thumbs-up also draws Veo to animate that character's mouth,
+  so cut before it or give the gesture after the line.

@@ -1,0 +1,152 @@
+{
+  "title": "This Is Nugget",
+  "character": "nugget",
+  "voice": {
+    "name": "Nugget + Sprocket",
+    "id": "wHdWNyHIEKti3ZPcVIFa / 7cz9fvECOZ5B0zNWkN2v",
+    "model": "eleven_v3"
+  },
+  "take": "short05_vo_take.mp3",
+  "lines": [
+    {
+      "speaker": "nugget",
+      "text": "[excited] [breathless] I'm Nugget! I help with EVERYTHING!",
+      "take": [
+        0,
+        3.63
+      ],
+      "at": 0.1
+    },
+    {
+      "speaker": "sprocket",
+      "text": "[casually] Wrench, please.",
+      "take": [
+        4.33,
+        5.73
+      ],
+      "at": 3.85
+    },
+    {
+      "speaker": "nugget",
+      "text": "[excited] [proudly] WRENCH!",
+      "take": [
+        6.43,
+        7.23
+      ],
+      "at": 5.35
+    },
+    {
+      "speaker": "sprocket",
+      "text": "[warmly] [chuckles] …Close.",
+      "take": [
+        7.93,
+        null
+      ],
+      "at": 7.35
+    }
+  ],
+  "signoff": {
+    "file": "audio/signoffs/signoff_nugget.mp3",
+    "at": 9.15
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "shots": [
+    {
+      "clip": "short05_clip_joined_lipsync.mp4",
+      "from": 0.0,
+      "use": 9.05,
+      "note": "lines 1-4, synced in one pass"
+    },
+    {
+      "clip": "short05_clip_signoff_lipsync.mp4",
+      "from": 0.0,
+      "use": 2.375,
+      "note": "Nugget close-up re-synced to his corrected sign-off"
+    }
+  ],
+  "video": {
+    "start_frame": "short05_still.png",
+    "model": "veo-3.1-fast-generate-001",
+    "description": "NUGGET the tiny fluffy yellow chick and SPROCKET the pink piglet (brown tool belt, gold buckle, no goggles) in the workshop barn.",
+    "negative": [
+      "goggles"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 3.85,
+      "mouth": "open",
+      "action": "Nugget close-up: line 1."
+    },
+    {
+      "from": 3.85,
+      "to": 5.35,
+      "mouth": "open",
+      "action": "Sprocket close-up: line 2."
+    },
+    {
+      "from": 5.35,
+      "to": 6.35,
+      "mouth": "open",
+      "action": "Nugget close-up: line 3."
+    },
+    {
+      "from": 6.35,
+      "to": 7.35,
+      "mouth": "closed",
+      "action": "Two-shot gag, no dialogue."
+    },
+    {
+      "from": 7.35,
+      "to": 9.05,
+      "mouth": "open",
+      "action": "Sprocket close-up: line 4."
+    },
+    {
+      "from": 9.05,
+      "to": 10.95,
+      "mouth": "open",
+      "action": "Nugget close-up: sign-off."
+    }
+  ],
+  "built_from_shots": [
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 0.5,
+      "use": 3.85,
+      "note": "Nugget close-up, line 1"
+    },
+    {
+      "clip": "short05_clip_b_sprocket.mp4",
+      "from": 0.3,
+      "use": 1.5,
+      "note": "Sprocket close-up, hoof out, line 2"
+    },
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 4.2,
+      "use": 1.0,
+      "note": "Nugget close-up, wings up, line 3"
+    },
+    {
+      "clip": "short05_clip_v3.mp4",
+      "from": 3.6,
+      "use": 1.0,
+      "note": "two-shot gag: carrot offered to Sprocket's outstretched hoof (silent)"
+    },
+    {
+      "clip": "short05_clip_b_sprocket.mp4",
+      "from": 6.3,
+      "use": 1.7,
+      "note": "Sprocket close-up, sly look, line 4"
+    },
+    {
+      "clip": "short05_clip_c_nugget.mp4",
+      "from": 5.6,
+      "use": 1.9,
+      "note": "Nugget close-up, sign-off"
+    }
+  ]
+}

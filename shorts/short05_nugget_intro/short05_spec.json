@@ -4,149 +4,107 @@
   "voice": {
     "name": "Nugget + Sprocket",
     "id": "wHdWNyHIEKti3ZPcVIFa / 7cz9fvECOZ5B0zNWkN2v",
-    "model": "eleven_v3"
+    "model": "Nugget's lines: the eleven_v3 reads in short05_vo_nugget_01/02_SPROCKET_VOICE (mislabelled: they are in Sprocket's voice) converted to Nugget's voice with eleven_multilingual_sts_v2, timing kept (short05_vo_nugget_lines_sts.mp3); Sprocket's 'Wrench, please' from short05_vo_sprocket_01, his 'Close' from Veo's own take re-voiced; all placed on the mouths"
   },
-  "take": "short05_vo_take.mp3",
+  "take": "short05_vo_take_v2.mp3",
   "lines": [
     {
       "speaker": "nugget",
-      "text": "[excited] [breathless] I'm Nugget! I help with EVERYTHING!",
+      "text": "I'm Nugget!",
       "take": [
-        0,
-        3.63
+        0.25,
+        1.1
       ],
-      "at": 0.1
-    },
-    {
-      "speaker": "sprocket",
-      "text": "[casually] Wrench, please.",
-      "take": [
-        4.33,
-        5.73
-      ],
-      "at": 3.85
+      "at": 0.25
     },
     {
       "speaker": "nugget",
-      "text": "[excited] [proudly] WRENCH!",
+      "text": "I help with EVERYTHING!",
       "take": [
-        6.43,
-        7.23
+        1.2,
+        2.7
       ],
-      "at": 5.35
+      "at": 1.2
     },
     {
       "speaker": "sprocket",
-      "text": "[warmly] [chuckles] …Close.",
+      "text": "Wrench, please.",
       "take": [
-        7.93,
-        null
+        4.15,
+        4.8
       ],
-      "at": 7.35
+      "at": 4.15
+    },
+    {
+      "speaker": "nugget",
+      "text": "Wrench!",
+      "take": [
+        4.9,
+        5.65
+      ],
+      "at": 4.9
+    },
+    {
+      "speaker": "sprocket",
+      "text": "...Close.",
+      "take": [
+        7.2,
+        8.2
+      ],
+      "at": 7.2
     }
   ],
   "signoff": {
-    "file": "audio/signoffs/signoff_nugget.mp3",
-    "at": 9.15
+    "file": "short05_vo_nugget_signoff_fitted.mp3",
+    "at": 8.9,
+    "note": "audio/signoffs/signoff_nugget.mp3 at 1.15x, on Nugget's beak ~0.35-2.1s into the tail"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
-  "shots": [
-    {
-      "clip": "short05_clip_joined_lipsync.mp4",
-      "from": 0.0,
-      "use": 9.05,
-      "note": "lines 1-4, synced in one pass"
-    },
-    {
-      "clip": "short05_clip_signoff_lipsync.mp4",
-      "from": 0.0,
-      "use": 2.375,
-      "note": "Nugget close-up re-synced to his corrected sign-off"
-    }
-  ],
   "video": {
-    "start_frame": "short05_still.png",
+    "start_frame": "short05_still_v2.png",
     "model": "veo-3.1-fast-generate-001",
-    "description": "NUGGET the tiny fluffy yellow chick and SPROCKET the pink piglet (brown tool belt, gold buckle, no goggles) in the workshop barn.",
+    "description": "SPROCKET (refs/characters/sprocket_noprop_ref.png) beside the workbench, NUGGET hero form (refs/characters/nugget_hero_ref.png) standing on it; the wrench and the carrot lie on the bench from the first frame. One continuous two-shot, both speaking on camera.",
     "negative": [
-      "goggles"
+      "music",
+      "cuts",
+      "camera zoom",
+      "goggles",
+      "cap"
     ]
   },
-  "beats": [
-    {
-      "from": 0.0,
-      "to": 3.85,
-      "mouth": "open",
-      "action": "Nugget close-up: line 1."
-    },
-    {
-      "from": 3.85,
-      "to": 5.35,
-      "mouth": "open",
-      "action": "Sprocket close-up: line 2."
-    },
-    {
-      "from": 5.35,
-      "to": 6.35,
-      "mouth": "open",
-      "action": "Nugget close-up: line 3."
-    },
-    {
-      "from": 6.35,
-      "to": 7.35,
-      "mouth": "closed",
-      "action": "Two-shot gag, no dialogue."
-    },
-    {
-      "from": 7.35,
-      "to": 9.05,
-      "mouth": "open",
-      "action": "Sprocket close-up: line 4."
-    },
-    {
-      "from": 9.05,
-      "to": 10.95,
-      "mouth": "open",
-      "action": "Nugget close-up: sign-off."
-    }
+  "beats": [],
+  "cast": [
+    "sprocket",
+    "nugget"
   ],
-  "built_from_shots": [
+  "shots": [
     {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 0.5,
-      "use": 3.85,
-      "note": "Nugget close-up, line 1"
+      "clip": "short05_clip_v5_speaking.mp4",
+      "from": 0.0,
+      "use": 1.1,
+      "start_frame": "short05_still_v2.png",
+      "note": "Nugget's beak moves 0.3-1.1 ('I'm Nugget!'); in the clip Sprocket's mouth moves 1.5-2.9 under Nugget's line, so 1.1-3.7 is replaced by the insert"
     },
     {
-      "clip": "short05_clip_b_sprocket.mp4",
-      "from": 0.3,
-      "use": 1.5,
-      "note": "Sprocket close-up, hoof out, line 2"
+      "clip": "short05_clip_insert_v6.mp4",
+      "from": 0.0,
+      "use": 3.67,
+      "start_frame": "short05_clip_at_1.1.png",
+      "note": "4s insert from the main clip's frames at 1.1s (start) and 3.7s (end, Sprocket's mouth closed): Nugget 'I help with EVERYTHING!' 0.1-1.6, Sprocket steps forward ~0.9-1.5, holds out his hoof and says 'Wrench, please' 3.3-3.6. Veo reaches the end frame at 3.67s (matches the main clip at 3.72s, PSNR 32.8), so it is cut there, so the cut back is a hard cut (the earlier insert ended on a mouth-open frame and needed a dissolve that ghosted)"
     },
     {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 4.2,
-      "use": 1.0,
-      "note": "Nugget close-up, wings up, line 3"
+      "clip": "short05_clip_v5_speaking.mp4",
+      "from": 3.72,
+      "use": 3.78,
+      "note": "main clip from 3.7: Nugget grabs the carrot and says 'Wrench!' 3.8-4.5, Sprocket looks down at it ~4.7, 'Close' 6.0-6.8; cut at 7.5 (both eyes open). The first attempt (Veo gave Sprocket's line to Nugget) is in archive/shorts/short05/v2_lines_swapped/"
     },
     {
-      "clip": "short05_clip_v3.mp4",
-      "from": 3.6,
-      "use": 1.0,
-      "note": "two-shot gag: carrot offered to Sprocket's outstretched hoof (silent)"
-    },
-    {
-      "clip": "short05_clip_b_sprocket.mp4",
-      "from": 6.3,
-      "use": 1.7,
-      "note": "Sprocket close-up, sly look, line 4"
-    },
-    {
-      "clip": "short05_clip_c_nugget.mp4",
-      "from": 5.6,
-      "use": 1.9,
-      "note": "Nugget close-up, sign-off"
+      "clip": "short05_clip_tail_v10_speaking.mp4",
+      "from": 0.0,
+      "use": 2.15,
+      "start_frame": "short05_clip_at_7.5.png",
+      "note": "veo-3.1-generate-001 (standard) from the main clip at 7.5s: Nugget cheers 'We can fix anything!' with wings up, beak moving ~0.5-1.5, Sprocket's mouth closed 0.4-2.1; cut at 2.15, before Sprocket starts mouthing and reaches for his pouch. The fast model gave the line to Sprocket's mouth three times (v6-v9, archived)"
     }
   ]
 }
