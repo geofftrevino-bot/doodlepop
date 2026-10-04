@@ -268,3 +268,13 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   clean.
 - **Short 6 eyes: the fast model gave Sprocket brown, then blue irises** in three
   tries; the standard model kept them black (now stated in the character bible).
+- **Never write a short word in ALL CAPS in a Veo line** (Short 7 v2). Veo read
+  "BIG" and "DID" as letters ("B-I-G bolts", "I D-I-D it"). Plain lowercase plus
+  "He speaks in ordinary words, never spelling anything out" fixed it.
+- **Nugget's wings: describe them as solid, opaque fluff "even when he moves
+  them"** (Short 7 v2). With that in the prompt and "transparent / see-through /
+  motion-blurred wings" in the negative, the standard model kept them solid
+  through a hop with wings out and a wing wave; v1 (fast model) smeared them
+  see-through.
+- **Veo creeps the camera in during the last ~0.7s even when told it's locked.**
+  Grid the last second and cut before it (Short 7: 7.32s main, 6.3s tail).
