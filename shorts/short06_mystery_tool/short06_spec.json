@@ -4,7 +4,7 @@
   "voice": {
     "name": "Sprocket",
     "id": "7cz9fvECOZ5B0zNWkN2v",
-    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2; the sign-off is the tail's own 'We can fix anything!', re-voiced"
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2; the sign-off is the tail's own 'We can fix anything!', re-voiced; the drawn-out 'beeolts' in 'It tightens BOLTS!' is replaced by 'bolts' from an eleven_multilingual_v2 Sprocket read (short06_vo_sprocket_tts_bolts.mp3, 0.58-1.16s at 0.78x tempo) spliced in at 6.29s (short06_vo_sprocket_sts_v5_bolts.mp3)"
   },
   "take": "short06_vo_take_v2.mp3",
   "lines": [
@@ -38,7 +38,8 @@
         5.3,
         7.2
       ],
-      "at": 5.3
+      "at": 5.3,
+      "note": "'It tightens' is Veo's own read, re-voiced; 'bolts' is spliced from a TTS take because the original stretched it to 'beeolts'"
     },
     {
       "text": "Always ask a grown-up first.",
