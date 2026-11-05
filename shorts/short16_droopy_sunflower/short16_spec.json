@@ -15,19 +15,19 @@
       "text": "Oh! A droopy sunflower.",
       "take": null,
       "at": 0.4,
-      "note": "PLAN: concerned, gentle. Beat after: head tilt, ears stay up"
+      "note": "Veo v1: 'Oh,' 0.00-0.32, 'a droopy sunflower.' 0.82-2.30. 'Oh' is lost if the clip starts at 0.75 (see shots)"
     },
     {
       "text": "It needs a drink.",
       "take": null,
       "at": 2.6,
-      "note": "PLAN: soft, sure. Then she lifts the watering can"
+      "note": "Veo v1: 2.82-4.12, words exact"
     },
     {
       "text": "Look! It's happy!",
       "take": null,
       "at": 6.2,
-      "note": "PLAN: delighted, after the silent pour + flower rising (the lesson beat)"
+      "note": "PLAN: in the tail, with the sign-off"
     }
   ],
   "signoff": {
@@ -78,5 +78,21 @@
       "action": "She sets the can down, turns to camera, delighted, says the line."
     }
   ],
-  "notes": "Pacing standard: 11 words + sign-off, gaps >= 0.7s, the silent pour is the lesson beat and never shortens. Franchise: Clover Grows It."
+  "notes": "Pacing standard: 11 words + sign-off, gaps >= 0.7s, the silent pour is the lesson beat and never shortens. Franchise: Clover Grows It.",
+  "shots": [
+    {
+      "clip": "short16_clip_v1_speaking.mp4",
+      "from": 0.75,
+      "use": 6.65,
+      "start_frame": "short16_still.png",
+      "note": "standard Veo, words transcribe exact. 0.50-0.67 her ears stretch taller during a blink (a visible morph; background scale unchanged, so not a push-in); from 0.75 the look holds. Proposed from=0.75 (drops 'Oh'). Pour 4.0-6.5, sunflower lifts 4.5-4.75, one can, one flower, camera locked. Cut at 7.40: eyes open, can set down, before the 7.65 blink"
+    },
+    {
+      "clip": null,
+      "from": 0.0,
+      "use": null,
+      "start_frame": "short16_clip_at_7.40.png",
+      "note": "TAIL to generate: 'look! it's happy!' + 'We can fix anything!'"
+    }
+  ]
 }
