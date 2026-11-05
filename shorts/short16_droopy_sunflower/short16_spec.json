@@ -15,13 +15,13 @@
       "text": "Oh! A droopy sunflower.",
       "take": null,
       "at": 0.4,
-      "note": "Veo v1: 'Oh,' 0.00-0.32, 'a droopy sunflower.' 0.82-2.30. 'Oh' is lost if the clip starts at 0.75 (see shots)"
+      "note": "Veo v2: 'Oh,' 0.54-0.92, 'a droopy sunflower.' 1.22-2.82 (v1: 0.00-0.32 / 0.82-2.30). 'Oh' falls inside the ear growth in both runs"
     },
     {
       "text": "It needs a drink.",
       "take": null,
       "at": 2.6,
-      "note": "Veo v1: 2.82-4.12, words exact"
+      "note": "Veo v2: 3.28-4.42 (v1: 2.82-4.12), words exact in both"
     },
     {
       "text": "Look! It's happy!",
@@ -81,18 +81,25 @@
   "notes": "Pacing standard: 11 words + sign-off, gaps >= 0.7s, the silent pour is the lesson beat and never shortens. Franchise: Clover Grows It.",
   "shots": [
     {
-      "clip": "short16_clip_v1_speaking.mp4",
-      "from": 0.75,
-      "use": 6.65,
+      "clip": "short16_clip_v2_speaking.mp4",
+      "from": 0.92,
+      "use": 6.48,
       "start_frame": "short16_still.png",
-      "note": "standard Veo, words transcribe exact. 0.50-0.67 her ears stretch taller during a blink (a visible morph; background scale unchanged, so not a push-in); from 0.75 the look holds. Proposed from=0.75 (drops 'Oh'). Pour 4.0-6.5, sunflower lifts 4.5-4.75, one can, one flower, camera locked. Cut at 7.40: eyes open, can set down, before the 7.65 blink"
+      "note": "PROPOSED. standard Veo v2 (prompt locks ear length; didn't hold). Ears grow 0.25-0.875 in both runs: Veo lengthens them from the still's ref-length ears to about Short 3's look, then holds. from=0.92 drops 'Oh' and opens on 'a droopy sunflower' 0.30s in. Blinks 0.25, 1.25, 4.75, 6.5. Pour 4.4-6.4, flower lifts 4.5-5.0, can set down by 6.6. Cut at 7.40: eyes open, mouth closed, before the 7.75 blink"
     },
     {
       "clip": null,
       "from": 0.0,
       "use": null,
-      "start_frame": "short16_clip_at_7.40.png",
+      "start_frame": "short16_clip_v2_at_7.40.png",
       "note": "TAIL to generate: 'look! it's happy!' + 'We can fix anything!'"
+    }
+  ],
+  "alternatives": [
+    {
+      "clip": "short16_clip_v1_speaking.mp4",
+      "from": 0.75,
+      "note": "v1: ears jump 0.50-0.67 mid-blink; from 0.75 'a droopy' starts 0.07s in (abrupt). Tail frame short16_clip_at_7.40.png"
     }
   ]
 }
