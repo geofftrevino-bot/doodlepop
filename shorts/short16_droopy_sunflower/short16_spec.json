@@ -26,14 +26,14 @@
     {
       "text": "Look! It's happy!",
       "take": null,
-      "at": 6.2,
-      "note": "PLAN: in the tail, with the sign-off"
+      "at": 7.07,
+      "note": "Veo tail: 'Look,' 0.02-0.46, 'it's happy.' 1.22-2.10 (Short time 7.07-9.15); words exact"
     }
   ],
   "signoff": {
     "file": null,
-    "at": null,
-    "note": "PLAN: 'We can fix anything!' spoken on camera in the tail, re-voiced"
+    "at": 9.65,
+    "note": "Veo tail 2.60-4.38 (Short time 9.65-11.43), re-voiced; gap after 'happy' is 0.50s"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -88,11 +88,11 @@
       "note": "standard Veo from still v2 (ears pre-lengthened): ears hold from frame one. Blinks 0.2, 1.1. Pour 3.5-6.0, sunflower lifts 4.5-5.25, can set down by 6.75, camera locked. Veo adds an 'Ah.' at 7.46, after the cut. Cut at 7.05: eyes open, mouth closed, before the 7.15 blink"
     },
     {
-      "clip": null,
+      "clip": "short16_clip_tail_v1_speaking.mp4",
       "from": 0.0,
-      "use": null,
+      "use": 4.4,
       "start_frame": "short16_clip_v3_at_7.05.png",
-      "note": "TAIL to generate: 'look! it's happy!' + 'We can fix anything!'"
+      "note": "Tail v1 from short16_clip_v3_at_7.05.png: first frame matches v3 at 7.05, ears hold, can stays on the ground, paws empty. Words exact: 'Look,' 0.02-0.46, 'it's happy.' 1.22-2.10, 'We can fix anything.' 2.60-4.38. Points at flower 0.2-1.6, steps to centre 1.6-2.3 (camera still locked), waves 2.3-4.4. Push-in, blink (4.48-4.73) and a 'Mm-hmm' (4.72) start after the cut. Cut at 4.40: eyes open, mouth closed."
     }
   ],
   "history": "v1 and v2 main clips (archive/shorts/short16/v1_v2_ears_grow/) grew her ears over the first ~0.9s from still v1's ref-length ears; prompting didn't stop it. Fix: lengthen the ears in the still to Veo's settled length."
