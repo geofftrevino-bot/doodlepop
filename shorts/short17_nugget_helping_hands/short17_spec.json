@@ -1,0 +1,99 @@
+{
+  "title": "Nugget's Helping Hands",
+  "character": "nugget",
+  "cast": [
+    "nugget"
+  ],
+  "voice": {
+    "name": "Nugget",
+    "id": "wHdWNyHIEKti3ZPcVIFa",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": null,
+  "lines": [
+    {
+      "text": "I can help!",
+      "take": null,
+      "at": 0.4,
+      "note": "PLAN: proud, hugging the wobbly stack of bolts"
+    },
+    {
+      "text": "I've got it!",
+      "take": null,
+      "at": 2.6,
+      "note": "PLAN: the stack leans, he steadies it"
+    },
+    {
+      "text": "Oops! There!",
+      "take": null,
+      "at": 6.0,
+      "note": "PLAN: after he catches the toppling bolt and drops it in the toolbox"
+    }
+  ],
+  "signoff": {
+    "file": null,
+    "at": null,
+    "note": "PLAN: 'We can fix anything!' spoken on camera in the tail, re-voiced"
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short17_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "NUGGET hero form (refs/characters/nugget_hero_ref.png): round fluffy yellow chick, three-feather tuft, and the mandatory pale cream patch across his chest and belly. In the Fix-It Farm workshop (refs/locations/workshop.png), standing at an open wooden toolbox, hugging a tall wobbly stack of three big colorful bolts (red, blue, yellow) from the first frame.",
+    "negative": [
+      "missing chest patch",
+      "extra chicks",
+      "extra bolts appearing",
+      "a fourth bolt",
+      "camera push-in",
+      "spelling out letters",
+      "music",
+      "floppy features"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.3,
+      "mouth": "open",
+      "action": "Nugget hugs the wobbly stack of bolts, beams at camera, says the line."
+    },
+    {
+      "from": 2.3,
+      "to": 3.8,
+      "mouth": "open",
+      "action": "The stack leans; he leans the other way to steady it and says the line."
+    },
+    {
+      "from": 3.8,
+      "to": 6.0,
+      "mouth": "closed",
+      "action": "Silent: the top bolt topples off; he lunges and catches it with both wings."
+    },
+    {
+      "from": 6.0,
+      "to": 7.3,
+      "mouth": "open",
+      "action": "He drops the bolt into the toolbox, turns to camera proud, says the line."
+    }
+  ],
+  "notes": "Pacing standard: 8 words + sign-off, gaps >= 0.7s, the silent catch is the beat and never shortens. Nugget hero: cream chest patch mandatory (he leads, >20% of frame). Franchise: Nugget Helps.",
+  "shots": [
+    {
+      "clip": null,
+      "from": 0.0,
+      "use": null,
+      "start_frame": "short17_still.png",
+      "note": "main clip TO GENERATE: lines 1-3; camera locked, catch is the silent beat"
+    },
+    {
+      "clip": null,
+      "from": 0.0,
+      "use": null,
+      "start_frame": null,
+      "note": "tail TO GENERATE from the main clip's last eyes-open frame: 'We can fix anything!' with a wing thumbs-up"
+    }
+  ],
+  "history": ""
+}
