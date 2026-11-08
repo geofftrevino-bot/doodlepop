@@ -59,7 +59,7 @@ archive/                  superseded takes, old doc versions, exact duplicates
 | 13 | `short13_color_garden` | Clover |
 | 14 | `short14_before_you_fix_it` | Sprocket |
 | 15 | `short15_stop_look_listen` | Rocco |
-| 17 | `short17_nugget_helping_hands` | Nugget |
+| 17 | `short17_nugget_learns_to_fly` | Nugget |
 
 ## Naming convention
 
