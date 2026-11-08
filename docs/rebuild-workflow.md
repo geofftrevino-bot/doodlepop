@@ -1,10 +1,10 @@
 # Fix-It Farm — REBUILD WORKFLOW
 
 > **Tool:** `tools/mix_short.py` · **Spec:** `docs/spec-format.md`
-> **Worked examples:** Short 4 (`short04_spec.json`), Short 14 (`short14_spec.json`)
+> **Worked examples:** Short 6 (`short06_spec.json`), Short 7 (`short07_spec.json`), Short 5 for two speakers
 
-One Short at a time. Every paid step gets a cost estimate and the user's OK
-first. All `mix_short.py` steps are local and free.
+One Short at a time. All `mix_short.py` steps are local and free. **Start with
+*THE PLAYBOOK* below**; the older paths further down are kept for reference.
 
 ---
 
@@ -29,7 +29,91 @@ frame shows, so the start frame decides whether a character is on model.
    `archive/refs/`, the bible updated, and the Shorts that show the old look listed
    in the bible until they're rebuilt.
 
-## NATIVE-DIALOGUE PATH (from Short 8 v2 on) — use this
+## THE PLAYBOOK (Shorts 4–7 rebuilds) — use this
+
+Veo's standard model speaks the lines on camera, the voice changer turns that
+speech into the character's voice without moving a syllable, and a tail clip
+carries the sign-off. Every step below comes from a fix in *What we learned*.
+
+**Setup**
+1. Fast-forward the branch to `main` (start fresh once a PR has merged) and open
+   a draft PR for the Short.
+2. Move the old version to `archive/shorts/shortNN/v1_<problem>/`; keep
+   `shortNN_final.mp4` in place until the new one is approved.
+
+**Start still**
+3. `gemini-3-pro-image`, 9:16, 2K: the character's ref from `refs/characters/`
+   as image 1 (never an old still), an old still or location plate as image 2 for
+   the setting only. Hero Nugget gets his cream chest patch.
+4. Put every prop the story needs in the frame from the start, placed where the
+   action will use it. Nothing may appear later.
+5. Two options; pick the one closest to the ref. Commit and push it, then attach
+   it to the flow by its `raw.githubusercontent.com/<owner>/<repo>/<sha>/…` URL
+   (asset uploads are blocked).
+
+**Main clip** — `veo-3.1-generate-001`, 8s, ~$3.20
+6. Prompt:
+   - The bible's description line and "keep exactly on-model".
+   - "The camera is LOCKED OFF… never pushes in"; crates/props "stay fully in frame".
+   - Timed segments, each line in quotes, in plain lowercase (all caps gets spelled
+     out) plus "He speaks in ordinary words, never spelling anything out".
+   - Wings/hooves "SOLID, OPAQUE… never see-through, even when he moves them";
+     give any free hoof a job; "only ONE <prop>… no new objects appear".
+   - Two speakers: tag lines by species ("THE PIG says") and say whose mouth stays shut.
+   - "Audio: only <character>'s voice and <quiet ambience>. No music."
+   - Negative: see-through wings, camera push-in, spelling out letters, objects
+     appearing, second <prop>, music, cuts, text.
+7. New nodes default to 16:9 / 720p (images 1K). Set 9:16 and 1080p, read the
+   node back, then run. The standard model is worth it: the fast one drifted eye
+   colours, smeared wings and gave lines to the wrong mouth.
+8. Check: a 4fps frame grid (staging, props, camera), full-size crops of anything
+   that could smear, and a transcript of the clip's audio. Two speakers: grid both
+   faces through every line.
+
+**Tail** — same model, 6–8s, $2.40–$3.20
+9. Grid the main clip's last second. Cut on a frame with eyes open, mouth closed,
+   props held the way they should stay, and before Veo's late camera push-in
+   (usually the last ~0.7s). Save it as `shortNN_clip_at_T.png`.
+10. Generate the tail from that frame with the remaining line(s) and the sign-off
+    spoken on camera; give the free hoof/wing the gesture (thumbs-up, wave). Grid
+    it and cut before the push-in or walk-off.
+
+**Voice** — pennies
+11. Extract each clip's audio, commit and attach it, then `audio_isolation` →
+    `eleven_multilingual_sts_v2` with the character's voice id. Check the voice
+    changer's reference is the new isolator output, not an earlier run.
+12. Transcribe every converted file. Fix a bad word by splicing it from an
+    `eleven_multilingual_v2` read in the same voice (word cut from the loudness
+    envelope, `atempo` 0.75–0.85 to fill the mouth span, no gain boost). Covers
+    stretched ("beeolts"), shouted ("aah!nything") and garbled words. Don't try
+    to turn a shout down; replace the word.
+13. `silencedetect=n=-38dB:d=0.2` on the converted files gives each line's span.
+
+**Assemble**
+14. Take = the main clip's converted voice up to the cut + the tail's converted
+    voice `adelay`ed to the cut. Cut the sign-off from the tail's own audio as
+    `shortNN_vo_<character>_signoff_tail.mp3`.
+15. Spec: `lines` at their real spans, `signoff` {file, at} at least 0.3s after
+    the last line, `shots` (main `use` = cut point, tail `use` = past the
+    sign-off), `cast`, `beats: []`. Then `check`, `seams`, `refcheck`, `mix`.
+16. Commit, attach the mix's audio, transcribe it, and compare word for word.
+
+**Approval**
+17. Send `shortNN_v2_test.mp4`. Fix what the user flags (usually one word or one
+    prop) and re-send.
+18. On approval: test → `shortNN_final.mp4`, delete the test files, add the
+    lessons below, update the PR description and mark it ready.
+
+**Typical Short:** ~$11–14 including retries (still $0.80, main $3.20, tail
+$2.40–3.20, plus one or two re-runs).
+
+Still valid from the older paths: prefer the user's own recorded take when one
+exists (row 4c below), and record voice-over shots (character off screen) with
+Eleven v3 + tags.
+
+---
+
+## NATIVE-DIALOGUE PATH (from Short 8 v2, fast model; superseded by *THE PLAYBOOK*)
 
 The lip-sync pass doesn't work on our cartoon faces (see *What we learned*), so
 the mouth and the words have to come from the same generation. Veo animates the
