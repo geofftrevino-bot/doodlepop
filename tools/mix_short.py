@@ -38,6 +38,9 @@ import argparse, glob, json, os, re, subprocess, sys, tempfile
 SR = 48000
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
+if not os.path.exists(FONT) and os.name == "nt":
+    # Windows: Consolas ships with every install; escape the drive colon for drawtext.
+    FONT = "'C\\:/Windows/Fonts/consola.ttf'"
 SIGNOFF_GAP = 0.72
 
 
