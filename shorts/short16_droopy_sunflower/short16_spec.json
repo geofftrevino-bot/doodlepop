@@ -9,31 +9,40 @@
     "id": "EGiEBftkMhETd6Cyyfyj",
     "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
   },
-  "take": null,
+  "take": "short16_vo_clover_take.mp3",
   "lines": [
     {
       "text": "Oh! A droopy sunflower.",
-      "take": null,
-      "at": 0.4,
-      "note": "Veo v3: 'Oh,' 0.38-0.76, 'a droopy sunflower.' 1.10-2.60; words exact"
+      "take": [
+        0.0,
+        2.8
+      ],
+      "at": 0.09,
+      "note": "Clover sts (main take A): 'Oh a droopy sunflower' speech 0.29-2.66 in take; lands 0.38-2.75, on Veo's mouth"
     },
     {
       "text": "It needs a drink.",
-      "take": null,
-      "at": 2.6,
-      "note": "Veo v3: 3.06-4.24; words exact"
+      "take": [
+        2.8,
+        4.6
+      ],
+      "at": 2.85,
+      "note": "Clover sts (main take A): 'It needs a drink' speech 3.01-4.28 in take; lands 3.06-4.33"
     },
     {
       "text": "Look! It's happy!",
-      "take": null,
-      "at": 7.07,
-      "note": "Veo tail: 'Look,' 0.02-0.46, 'it's happy.' 1.22-2.10 (Short time 7.07-9.15); words exact"
+      "take": [
+        4.6,
+        7.0
+      ],
+      "at": 6.86,
+      "note": "Clover sts (tail take B): 'Look it's happy' speech 4.81-6.92 in take; lands 7.07-9.18, matches tail mouth at Short 7.05"
     }
   ],
   "signoff": {
-    "file": null,
-    "at": 9.65,
-    "note": "Veo tail 2.60-4.38 (Short time 9.65-11.43), re-voiced; gap after 'happy' is 0.50s"
+    "file": "short16_vo_clover_signoff_tail.mp3",
+    "at": 9.58,
+    "note": "Clover sts (tail take B), 'We can fix anything' cut 2.55-4.60; 'We' lands 9.65, 'anything' ends ~11.41, on Veo's tail mouth"
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -52,32 +61,7 @@
       "music"
     ]
   },
-  "beats": [
-    {
-      "from": 0.0,
-      "to": 2.3,
-      "mouth": "open",
-      "action": "Clover notices the drooping sunflower, says the line, tilts her head with ears up."
-    },
-    {
-      "from": 2.3,
-      "to": 3.8,
-      "mouth": "open",
-      "action": "She looks at camera and says the line, then reaches down to the watering can."
-    },
-    {
-      "from": 3.8,
-      "to": 6.0,
-      "mouth": "closed",
-      "action": "Silent: she pours water onto the pot; the sunflower slowly lifts its head up tall."
-    },
-    {
-      "from": 6.0,
-      "to": 7.3,
-      "mouth": "open",
-      "action": "She sets the can down, turns to camera, delighted, says the line."
-    }
-  ],
+  "beats": [],
   "notes": "Pacing standard: 11 words + sign-off, gaps >= 0.7s, the silent pour is the lesson beat and never shortens. Franchise: Clover Grows It.",
   "shots": [
     {
