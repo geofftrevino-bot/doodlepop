@@ -91,5 +91,5 @@
   "notes": "Pacing standard: 6 words + sign-off, gaps >= 0.7s, the silent leap-and-flop is the beat and never shortens. Nugget hero: cream chest patch mandatory (he leads, >20% of frame). Franchise: Nugget's World. Distinct from Short 5 (helper), 7 (sorting bolts), 12 (counting): this is physical comedy, a chick trying to fly.",
   "shots": [],
   "_picture": "Single main clip (short17_clip_v1_speaking.mp4, 8s) + tail (short17_clip_tail.mp4, 4s) via top-level clip/tail. Main start_frame short17_still.png; tail start_frame short17_tailstart.png (main clip's last grin frame).",
-  "history": ""
+  "history": "APPROVED FINAL 2026-11-08 (short17_final.mp4, 12.01s, -14.3 LUFS). Main clip v1 accepted as-is (Veo front-loaded the lines 0.42/1.66/2.70 and said 'Ta-da!' before the leap; reframed as an over-confident pre-announcement that the silent leap-and-flop pays off). Pipeline: gemini-3-pro-image still (reworded past a ToS block) -> veo-3.1 native-dialogue main clip (8s) -> tail from the last grin frame (4s, 'We can fix anything!') -> audio_isolation -> eleven_multilingual_sts_v2 to Nugget. Tail voice-change garbled when run on the raw 4s clip; fixed by padding the tail past the 4.6s isolation floor, isolating, then re-voicing. ~$12 total."
 }
