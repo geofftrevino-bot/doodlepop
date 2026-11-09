@@ -61,6 +61,7 @@ archive/                  superseded takes, old doc versions, exact duplicates
 | 15 | `short15_stop_look_listen` | Rocco |
 | 16 | `short16_droopy_sunflower` | Clover |
 | 17 | `short17_nugget_learns_to_fly` | Nugget |
+| 18 | `short18_wobbly_wheel` | Sprocket |
 
 ## Naming convention
 

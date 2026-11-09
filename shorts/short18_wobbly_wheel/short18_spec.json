@@ -1,0 +1,88 @@
+{
+  "title": "Sprocket's Wobbly Wheel",
+  "character": "sprocket",
+  "cast": [
+    "sprocket"
+  ],
+  "voice": {
+    "name": "Sprocket",
+    "id": "7cz9fvECOZ5B0zNWkN2v",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short18_vo_sprocket_sts_main.mp3",
+  "clip": "short18_clip_v1_speaking.mp4",
+  "tail": {
+    "clip": "short18_clip_tail.mp4"
+  },
+  "lines": [
+    {
+      "text": "Uh-oh, a wobbly wheel!",
+      "take": null,
+      "at": 0.4,
+      "note": "PLAN: pushes the wheelbarrow in, the front wheel wobbles"
+    },
+    {
+      "text": "The bolt is loose.",
+      "take": null,
+      "at": 2.6,
+      "note": "PLAN: crouches, points at the loose bolt on the wheel hub"
+    },
+    {
+      "text": "All fixed!",
+      "take": null,
+      "at": 6.2,
+      "note": "PLAN: spins the wheel, it rolls true, beams"
+    }
+  ],
+  "signoff": {
+    "file": "short18_vo_sprocket_signoff.mp3",
+    "at": null,
+    "note": "LOCKED STANDARD: copy of audio/signoffs/signoff_sprocket.mp3 (clean studio read), fitted to the Veo tail's mouth span. NOT a voice-changed tail. Set at = main length + tail mouth onset once the tail is generated."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short18_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "SPROCKET the piglet (refs/characters/sprocket_ref.png): round friendly pig, brown tool belt with a gold buckle and two brown pouches, a silver wrench in one hoof, no goggles. ONE wooden wheelbarrow with a SINGLE front wheel, in the workshop (refs/locations/workshop.png). The wheel has one visible bolt on its hub.",
+    "negative": [
+      "extra wheelbarrows",
+      "second wrench",
+      "two wheels on the wheelbarrow",
+      "goggles",
+      "spelling out letters",
+      "music",
+      "camera push-in",
+      "floppy features"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.3,
+      "mouth": "open",
+      "action": "Sprocket pushes the wheelbarrow into frame; its front wheel wobbles and squeaks; he looks worried and says the line."
+    },
+    {
+      "from": 2.3,
+      "to": 3.8,
+      "mouth": "open",
+      "action": "He crouches by the wheel and points a hoof at the loose bolt on the hub, and says the line."
+    },
+    {
+      "from": 3.8,
+      "to": 6.0,
+      "mouth": "closed",
+      "action": "Silent: he fits the wrench on the bolt and turns it firmly a few times; the wheel stops wobbling and sits straight."
+    },
+    {
+      "from": 6.0,
+      "to": 7.3,
+      "mouth": "open",
+      "action": "He gives the wheel a spin; it rolls true; he beams at the camera and says the line."
+    }
+  ],
+  "notes": "Pacing standard: ~9 words + sign-off, gaps >= 0.7s, the silent tightening is the lesson beat and never shortens. Franchise: Sprocket Fixes It. Teaches: a loose part causes a wobble; tightening the bolt fixes it. Distinct from Short 4 (intro), 6 (mystery tool), 10 (doesn't belong), 14 (before-you-fix-it rule): this is a concrete fix (tighten a loose bolt). LOCKED voice standard: re-voice main once via sts; sign-off = bank signoff_sprocket.mp3 fitted to the tail (never voice-change the tail).",
+  "shots": [],
+  "history": ""
+}
