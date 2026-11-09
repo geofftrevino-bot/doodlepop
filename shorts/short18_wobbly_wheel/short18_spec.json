@@ -84,5 +84,5 @@
   ],
   "notes": "Pacing standard: ~9 words + sign-off, gaps >= 0.7s, the silent tightening is the lesson beat and never shortens. Franchise: Sprocket Fixes It. Teaches: a loose part causes a wobble; tightening the bolt fixes it. Distinct from Short 4 (intro), 6 (mystery tool), 10 (doesn't belong), 14 (before-you-fix-it rule): this is a concrete fix (tighten a loose bolt). LOCKED voice standard: re-voice main once via sts; sign-off = bank signoff_sprocket.mp3 fitted to the tail (never voice-change the tail).",
   "shots": [],
-  "history": ""
+  "history": "APPROVED FINAL 2026-11-08 (short18_final.mp4, 12.01s, -14.3 LUFS). Main clip v1 accepted as-is: Veo delivered the lines well-spaced (0.48/2.52/6.74) with a genuine ~3s silent fix beat. Still: picked a 2-wrench variant then edited out the belt wrench (lesson: check prop count AT still selection; a clean variant existed). First use of the LOCKED sign-off standard: main re-voiced once via sts to Sprocket; sign-off = bank signoff_sprocket.mp3 (clean studio read) trimmed + atempo 0.80 to fit the Veo tail mouth, NOT a voice-changed tail (no robotic first word). Veo drawled the tail (1.78s mouth vs 1.18s bank), so only a moderate stretch used. ~$11 total."
 }
