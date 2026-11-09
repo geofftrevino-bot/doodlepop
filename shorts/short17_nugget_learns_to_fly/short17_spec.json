@@ -37,7 +37,7 @@
   "signoff": {
     "file": "short17_vo_nugget_sts_tail.mp3",
     "at": 8.0,
-    "note": "Re-voiced tail audio (full 4s file); native sign-off 'We can fix anything!' at 0.38-2.12, so at=8.0 lands it at 8.38 to match the tail picture (tail starts at 8.0s)."
+    "note": "Isolate-then-revoice tail (ambient stripped to fix a garbled voice-change), trimmed to 2.6s with a 0.2s fade. 'We can fix anything!' at 0.38-2.16; at=8.0 lands it at 8.38 on the tail picture mouth (tail starts at 8.0s)."
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -71,15 +71,15 @@
     },
     {
       "from": 2.70,
-      "to": 3.30,
+      "to": 3.5,
       "mouth": "open",
-      "action": "ACCEPTED v1: over-confident 'Ta-da!' BEFORE the leap (the joke)."
+      "action": "ACCEPTED v1: over-confident 'Ta-da!' BEFORE the leap (the joke); word tails off ~3.44 as he crouches."
     },
     {
-      "from": 3.30,
+      "from": 3.5,
       "to": 5.5,
       "mouth": "closed",
-      "action": "ACCEPTED v1: silent leap off, furious flap, hangs a beat, flops into the hay with a straw puff."
+      "action": "ACCEPTED v1: silent leap off (~3.75), furious flap, hangs a beat, flops into the hay with a straw puff (~5.0)."
     },
     {
       "from": 5.5,
