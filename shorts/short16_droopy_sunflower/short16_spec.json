@@ -1,0 +1,83 @@
+{
+  "title": "Clover and the Droopy Sunflower",
+  "character": "clover",
+  "cast": [
+    "clover"
+  ],
+  "voice": {
+    "name": "Clover",
+    "id": "EGiEBftkMhETd6Cyyfyj",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short16_vo_clover_take.mp3",
+  "lines": [
+    {
+      "text": "Oh! A droopy sunflower.",
+      "take": [
+        0.0,
+        2.8
+      ],
+      "at": 0.09,
+      "note": "Clover sts (main take A): 'Oh a droopy sunflower' speech 0.29-2.66 in take; lands 0.38-2.75, on Veo's mouth"
+    },
+    {
+      "text": "It needs a drink.",
+      "take": [
+        2.8,
+        4.6
+      ],
+      "at": 2.85,
+      "note": "Clover sts (main take A): 'It needs a drink' speech 3.01-4.28 in take; lands 3.06-4.33"
+    },
+    {
+      "text": "Look! It's happy!",
+      "take": [
+        4.6,
+        7.0
+      ],
+      "at": 6.81,
+      "note": "Clover: 'Look' spliced from eleven_multilingual_v2 TTS (Veo's clipped 'L' attack); 'it's happy' from tail sts take B. Lands 7.07; words exact"
+    }
+  ],
+  "signoff": {
+    "file": "short16_vo_clover_signoff_tail.mp3",
+    "at": 9.58,
+    "note": "Clover sts (tail take B), 'We can fix anything' cut 2.55-4.60; 'We' lands 9.65, 'anything' ends ~11.41, on Veo's tail mouth"
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short16_still_v2.png",
+    "model": "veo-3.1-generate-001",
+    "description": "CLOVER prop-free (refs/characters/clover_noprop_ref.png): both paws empty, no carrot in her pocket. In the garden beside one potted sunflower drooping low, its head hanging; the blue watering can with the white daisy on the ground beside her from the first frame.",
+    "negative": [
+      "carrot in pocket",
+      "holding a trowel",
+      "second watering can",
+      "objects appearing",
+      "camera push-in",
+      "spelling out letters",
+      "floppy ears",
+      "music"
+    ]
+  },
+  "beats": [],
+  "notes": "Pacing standard: 11 words + sign-off, gaps >= 0.7s, the silent pour is the lesson beat and never shortens. Franchise: Clover Grows It.",
+  "shots": [
+    {
+      "clip": "short16_clip_v3_speaking.mp4",
+      "from": 0.0,
+      "use": 7.05,
+      "start_frame": "short16_still_v2.png",
+      "note": "standard Veo from still v2 (ears pre-lengthened): ears hold from frame one. Blinks 0.2, 1.1. Pour 3.5-6.0, sunflower lifts 4.5-5.25, can set down by 6.75, camera locked. Veo adds an 'Ah.' at 7.46, after the cut. Cut at 7.05: eyes open, mouth closed, before the 7.15 blink"
+    },
+    {
+      "clip": "short16_clip_tail_v1_speaking.mp4",
+      "from": 0.0,
+      "use": 4.4,
+      "start_frame": "short16_clip_v3_at_7.05.png",
+      "note": "Tail v1 from short16_clip_v3_at_7.05.png: first frame matches v3 at 7.05, ears hold, can stays on the ground, paws empty. Words exact: 'Look,' 0.02-0.46, 'it's happy.' 1.22-2.10, 'We can fix anything.' 2.60-4.38. Points at flower 0.2-1.6, steps to centre 1.6-2.3 (camera still locked), waves 2.3-4.4. Push-in, blink (4.48-4.73) and a 'Mm-hmm' (4.72) start after the cut. Cut at 4.40: eyes open, mouth closed."
+    }
+  ],
+  "history": "v1 and v2 main clips (archive/shorts/short16/v1_v2_ears_grow/) grew her ears over the first ~0.9s from still v1's ref-length ears; prompting didn't stop it. Fix: lengthen the ears in the still to Veo's settled length. Tail 'Look' started at full volume at t=0 (Veo cut the clip on the word), sounding clipped; replaced with a TTS 'Look' that has a natural attack, spliced before the sts 'it's happy'."
+}
