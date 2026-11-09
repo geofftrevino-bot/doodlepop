@@ -1,0 +1,88 @@
+{
+  "title": "Sprocket's Wobbly Wheel",
+  "character": "sprocket",
+  "cast": [
+    "sprocket"
+  ],
+  "voice": {
+    "name": "Sprocket",
+    "id": "7cz9fvECOZ5B0zNWkN2v",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short18_vo_sprocket_sts_main.mp3",
+  "clip": "short18_clip_v1_speaking.mp4",
+  "tail": {
+    "clip": "short18_clip_tail.mp4"
+  },
+  "lines": [
+    {
+      "text": "Uh-oh, a wobbly wheel!",
+      "take": [0.4, 2.4],
+      "at": 0.4,
+      "note": "sts onset 0.48; at=take[0] plays the span at its native position = on the picture mouth."
+    },
+    {
+      "text": "The bolt is loose.",
+      "take": [2.46, 3.95],
+      "at": 2.46,
+      "note": "sts onset 2.54; played at native position."
+    },
+    {
+      "text": "All fixed!",
+      "take": [6.58, 7.95],
+      "at": 6.58,
+      "note": "sts onset 6.74, after the 3s silent fix beat; played at native position."
+    }
+  ],
+  "signoff": {
+    "file": "short18_vo_sprocket_signoff.mp3",
+    "at": 8.6,
+    "note": "LOCKED STANDARD: bank audio/signoffs/signoff_sprocket.mp3 (clean studio read), trimmed to speech and atempo 0.80 (~1.46s) to fit the Veo tail's mouth. NOT a voice-changed tail. Tail starts at 8.0s, mouth onset ~0.60 -> at=8.6. Veo drawled the tail (1.78s mouth) vs the snappy 1.18s bank read, so only a moderate stretch was used (a full match would drag the voice)."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short18_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "SPROCKET the piglet (refs/characters/sprocket_ref.png): round friendly pig, brown tool belt with a gold buckle and two brown pouches, a silver wrench in one hoof, no goggles. ONE wooden wheelbarrow with a SINGLE front wheel, in the workshop (refs/locations/workshop.png). The wheel has one visible bolt on its hub.",
+    "negative": [
+      "extra wheelbarrows",
+      "second wrench",
+      "two wheels on the wheelbarrow",
+      "goggles",
+      "spelling out letters",
+      "music",
+      "camera push-in",
+      "floppy features"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.4,
+      "mouth": "open",
+      "action": "ACCEPTED v1: pushes the wheelbarrow, the front wheel wobbles, worried: 'Uh-oh, a wobbly wheel!'"
+    },
+    {
+      "from": 2.4,
+      "to": 3.9,
+      "mouth": "open",
+      "action": "ACCEPTED v1: leans to the wheel/bolt: 'The bolt is loose.'"
+    },
+    {
+      "from": 3.9,
+      "to": 6.5,
+      "mouth": "closed",
+      "action": "ACCEPTED v1: silent ~2.6s fix beat — he works the wrench on the bolt; the wheel firms up."
+    },
+    {
+      "from": 6.5,
+      "to": 8.0,
+      "mouth": "open",
+      "action": "ACCEPTED v1: sets the wrench down, the wheelbarrow stands upright, he beams: 'All fixed!' (speech ~6.59-7.78). Eyes open through the end."
+    }
+  ],
+  "notes": "Pacing standard: ~9 words + sign-off, gaps >= 0.7s, the silent tightening is the lesson beat and never shortens. Franchise: Sprocket Fixes It. Teaches: a loose part causes a wobble; tightening the bolt fixes it. Distinct from Short 4 (intro), 6 (mystery tool), 10 (doesn't belong), 14 (before-you-fix-it rule): this is a concrete fix (tighten a loose bolt). LOCKED voice standard: re-voice main once via sts; sign-off = bank signoff_sprocket.mp3 fitted to the tail (never voice-change the tail).",
+  "shots": [],
+  "history": "APPROVED FINAL 2026-11-08 (short18_final.mp4, 12.01s, -14.3 LUFS). Main clip v1 accepted as-is: Veo delivered the lines well-spaced (0.48/2.52/6.74) with a genuine ~3s silent fix beat. Still: picked a 2-wrench variant then edited out the belt wrench (lesson: check prop count AT still selection; a clean variant existed). First use of the LOCKED sign-off standard: main re-voiced once via sts to Sprocket; sign-off = bank signoff_sprocket.mp3 (clean studio read) trimmed + atempo 0.80 to fit the Veo tail mouth, NOT a voice-changed tail (no robotic first word). Veo drawled the tail (1.78s mouth vs 1.18s bank), so only a moderate stretch used. ~$11 total."
+}
