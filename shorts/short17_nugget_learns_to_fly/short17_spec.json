@@ -9,31 +9,35 @@
     "id": "wHdWNyHIEKti3ZPcVIFa",
     "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
   },
-  "take": null,
+  "take": "short17_vo_nugget_sts_main.mp3",
+  "clip": "short17_clip_v1_speaking.mp4",
+  "tail": {
+    "clip": "short17_clip_tail.mp4"
+  },
   "lines": [
     {
       "text": "I can fly!",
-      "take": null,
+      "take": [0.27, 1.5],
       "at": 0.42,
-      "note": "ACCEPTED main clip v1: Veo delivered on top of the hay bale, flapping (0.42-1.30)"
+      "note": "Re-voiced sts onset 0.27; at=0.42 lands it on the native picture mouth (0.42-1.30)."
     },
     {
       "text": "Watch this!",
-      "take": null,
+      "take": [1.55, 2.55],
       "at": 1.66,
-      "note": "ACCEPTED main clip v1: Veo delivered winding up (1.66-2.40)"
+      "note": "Re-voiced sts onset 1.61; at=1.66 lands it on the native picture mouth (1.66-2.40)."
     },
     {
       "text": "Ta-da!",
-      "take": null,
+      "take": [2.62, 3.45],
       "at": 2.70,
-      "note": "ACCEPTED main clip v1: Veo delivered before the leap (2.70-3.28). Reframed gag: over-confident pre-announcement, then the silent leap-and-flop pays it off."
+      "note": "Re-voiced sts onset 2.69; at=2.70 lands it on the native picture mouth (2.70-3.28)."
     }
   ],
   "signoff": {
-    "file": null,
-    "at": null,
-    "note": "PLAN: 'We can fix anything!' spoken on camera in the tail, re-voiced"
+    "file": "short17_vo_nugget_sts_tail.mp3",
+    "at": 8.0,
+    "note": "Re-voiced tail audio (full 4s file); native sign-off 'We can fix anything!' at 0.38-2.12, so at=8.0 lands it at 8.38 to match the tail picture (tail starts at 8.0s)."
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -85,21 +89,7 @@
     }
   ],
   "notes": "Pacing standard: 6 words + sign-off, gaps >= 0.7s, the silent leap-and-flop is the beat and never shortens. Nugget hero: cream chest patch mandatory (he leads, >20% of frame). Franchise: Nugget's World. Distinct from Short 5 (helper), 7 (sorting bolts), 12 (counting): this is physical comedy, a chick trying to fly.",
-  "shots": [
-    {
-      "clip": "short17_clip_v1_speaking.mp4",
-      "from": 0.0,
-      "use": null,
-      "start_frame": "short17_still.png",
-      "note": "ACCEPTED main clip v1 (8s, 1080x1920). Veo native dialogue front-loaded: 'I can fly!' 0.42, 'Watch this!' 1.66, 'Ta-da!' 2.70; silent leap-and-flop 3.3-5.5; dazed-proud grin 5.5-7.9."
-    },
-    {
-      "clip": null,
-      "from": 0.0,
-      "use": null,
-      "start_frame": null,
-      "note": "tail TO GENERATE from the main clip's last eyes-open frame: a proud little flutter-hop + 'We can fix anything!'"
-    }
-  ],
+  "shots": [],
+  "_picture": "Single main clip (short17_clip_v1_speaking.mp4, 8s) + tail (short17_clip_tail.mp4, 4s) via top-level clip/tail. Main start_frame short17_still.png; tail start_frame short17_tailstart.png (main clip's last grin frame).",
   "history": ""
 }
