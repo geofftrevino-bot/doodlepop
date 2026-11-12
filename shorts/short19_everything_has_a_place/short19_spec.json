@@ -1,0 +1,91 @@
+{
+  "title": "Everything Has a Place",
+  "character": "rocco",
+  "cast": [
+    "rocco"
+  ],
+  "voice": {
+    "name": "Rocco",
+    "id": "YaTcUhI4B60lebDaAPcL",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short19_vo_rocco_sts_main.mp3",
+  "lines": [
+    {
+      "text": "Whose hammer is this?",
+      "take": null,
+      "at": 0.4,
+      "note": "PLAN: picks up the hammer from the workbench, tilts his head at it"
+    },
+    {
+      "text": "It goes right here!",
+      "take": null,
+      "at": 2.4,
+      "note": "PLAN: points a teal wingtip at the empty hammer outline on the pegboard beside him"
+    },
+    {
+      "text": "Tidy!",
+      "take": null,
+      "at": 6.0,
+      "note": "PLAN: steps back, wingtips on hips, beams. Must END by ~6.8s so the clip has an eyes-open hold for the tail start."
+    }
+  ],
+  "signoff": {
+    "file": "short19_vo_rocco_signoff.mp3",
+    "at": null,
+    "note": "Shared audio/signoffs/signoff_rocco.mp3, trimmed speech 2.09s, natural speed. Tail SPEAKING window 0.3-2.4s to match. at = cut point + tail mouth onset."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short19_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "ROCCO (refs/characters/rocco_ref.png): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, a red comb and wattle, golden-yellow scalloped neck and chest feathers, a large curved teal-turquoise tail, teal wingtips he gestures with like hands, yellow legs and feet, and a woven straw farmer's hat with a red band. No kerchief. In the workshop (refs/locations/workshop.png). A pegboard hangs on the wall right beside him at wing height, its tools each hung inside a painted outline (a wrench, a screwdriver, pliers, a saw) and ONE empty hammer-shaped outline. NO hammer on the pegboard. ONE wooden hammer lies on the workbench in front of him: the only hammer in the picture.",
+    "negative": [
+      "second hammer",
+      "hammer already on the pegboard",
+      "kerchief",
+      "see-through wings",
+      "turning his back to camera",
+      "spelling out letters",
+      "music",
+      "camera push-in",
+      "objects appearing"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.2,
+      "mouth": "open",
+      "action": "Rocco picks up the hammer from the workbench in one teal wingtip, tilts his head at it and says the line."
+    },
+    {
+      "from": 2.2,
+      "to": 3.6,
+      "mouth": "open",
+      "action": "Still facing camera, he points his other wingtip at the empty hammer outline on the pegboard beside him and says the line."
+    },
+    {
+      "from": 3.6,
+      "to": 5.8,
+      "mouth": "closed",
+      "action": "Silent: he hangs the hammer inside its outline on the pegboard; it fits exactly."
+    },
+    {
+      "from": 5.8,
+      "to": 6.8,
+      "mouth": "open",
+      "action": "He steps back, wingtips on hips, beams at camera and says the line."
+    },
+    {
+      "from": 6.8,
+      "to": 8.0,
+      "mouth": "closed",
+      "action": "Hold: proud smile facing camera, eyes open, mouth closed. The tail starts from a frame here and the main clip is cut at that frame."
+    }
+  ],
+  "notes": "Pacing: 9 words + sign-off, gaps >= 0.7s, the silent hang is the lesson beat. Franchise: Rocco Knows. Teaches: putting things back where they belong. Distinct from Shorts 2 (intro), 9 (checklist), 11 (what sound), 15 (stop look listen). New PLAYBOOK (PR #12): still continuity check (exactly one hammer, none on the pegboard), last line done by ~6.8s then hold, tail window = sign-off length, sign-off = shared recording, audio steps at 1 generation.",
+  "shots": [],
+  "history": ""
+}
