@@ -179,9 +179,25 @@ in `refs/scenes/_sheets/`. Four sets per character.
 | `rocco_barn_int.png` | `barn_int` — open doors centred, hayloft, lantern, crates, milk cans | indoor jobs, tidying, rainy-day scenes |
 | `rocco_windmill_field.png` | `windmill_field` — windmill above his hat, curving path, patchwork fields | weather, looking-out-over-the-farm, big-reveal scenes |
 
-**Still to make:** Clover, Sprocket and Nugget (four sets each). Make them from
-the same standard frame and the prompt below. Gemini image runs always return 4
-options (~$1.61 a set); pick against the standard frame and the character ref.
+### Clover (approved 2026-11-12)
+
+| File | Set (plate) | Use for |
+|---|---|---|
+| `clover_garden_beds.png` | `garden` — raised beds both sides, gate, barn and windmill behind | planting, growing, harvesting, garden problems |
+| `clover_garden_bench.png` | `garden` — potting bench of empty terracotta pots right behind her | potting, seeds, sorting, "what does a plant need?" |
+| `clover_fence_flowers.png` | `fence_line` — split-rail fence lined with sunflowers and daisies | flowers, bees and bugs, colours, nature walks |
+| `clover_windmill_field.png` | `windmill_field` — windmill beside her ears, path, patchwork fields | weather, sunshine and rain, seasons, big reveals |
+
+Clover-specific rules: made from `clover_noprop_ref.png` (empty pocket) plus
+`shorts/short16_droopy_sunflower/short16_still_v2.png` as a third reference
+"for her ear length only", so her ears are already at Veo's settled length and
+don't grow on screen. No watering can, trowel, glove, seeds or loose carrots in
+the sets — those are per-Short story props.
+
+**Still to make:** Sprocket and Nugget (four sets each). Make them from the
+same standard frame and the prompt below. Gemini image runs always return 4
+options (~$1.61 a set with two references, ~$2.01 with three); pick against the
+standard frame and the character ref.
 
 **Prompt template** (fill in the character's bible line and the set):
 

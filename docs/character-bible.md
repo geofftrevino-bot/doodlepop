@@ -77,6 +77,19 @@ eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
 - **Silhouette cue:** tall upright ears. They stay **up** — she's alert and happy, not timid.
 - **Props:** small trowel with a wooden handle, watering can, seed packets.
 - **Never:** floppy/drooping ears except as a deliberate sad beat.
+- **Ear length on screen:** Veo grows her ears in the first second if a start
+  frame has the ref's shorter ears. Every new still and reference passes
+  `shorts/short16_droopy_sunflower/short16_still_v2.png` "for her ear length
+  only"; her scene and pose references already have the settled length.
+- **Pose references** (`refs/characters/poses/`, approved 2026-11-12; see *Pose
+  references* below):
+
+  | File | Pose | Use for |
+  |---|---|---|
+  | `clover_pose_wave.png` | one paw raised in a hello | greetings, intros, talking to the viewer |
+  | `clover_pose_point.png` | paw pointing out to her side | "look at this!", showing a plant or a problem |
+  | `clover_pose_thinking.png` | paw on her chin, other across her tummy, eyes up | puzzles, "what does it need?", wondering |
+  | `clover_pose_proud.png` | paws on hips, ears up | confident starts, "it grew!" moments |
 
 ---
 
@@ -145,9 +158,10 @@ camera, empty-handed, eyes open, mouth closed. **Tail/ears on the same side as
 the character's ref** — reject options where the model mirrors the character
 (it did on 2 of Rocco's 16). One clear gesture per pose.
 
-**Done:** Rocco (wave, point, thinking, proud). **To make:** Clover, Sprocket,
-Nugget — same four poses unless a character needs another (e.g. Sprocket holding
-his wrench up), decided per character.
+**Done:** Rocco and Clover (wave, point, thinking, proud). **To make:**
+Sprocket, Nugget — same four poses unless a character needs another (e.g.
+Sprocket holding his wrench up), decided per character. Reject splayed or
+off-length ears and open mouths as well as mirrored options.
 
 **Prompt template:**
 
