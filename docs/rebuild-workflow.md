@@ -74,6 +74,10 @@ comes from a fix in *What we learned*.
      camera. The tail starts from a frame in that hold, so there must be one after
      the last word (Short 18's "All fixed!" ran to 7.8s and the clip ended on a
      blink, so the tail started from an earlier frame and the cut jumped back).
+   - **Only ONE line before the silent action beat.** Veo pushes a second
+     pre-action line past the action (Shorts 17, 19, 20: "One more big pull" came
+     after the carrot was out). Script: one line, the silent action, then one or
+     two lines reacting to it.
    - Wings/hooves "SOLID, OPAQUE… never see-through, even when he moves them";
      give any free hoof a job; "only ONE <prop>… no new objects appear".
    - Two speakers: tag lines by species ("THE PIG says") and say whose mouth stays shut.
@@ -94,13 +98,19 @@ comes from a fix in *What we learned*.
    as `shortNN_tailstart.png`; **the main clip ends at this exact frame** (main
    `use` = its time), so there's no jump back at the cut.
 10. **Size the sign-off's SPEAKING window to the shared recording's real length**
-    (trim its silence and measure it): Sprocket 1.18s, Nugget ~2.0s, Rocco ~2.1s;
-    measure Clover's. Mouth closed 0–0.3s, SPEAKING 0.3s to 0.3s + that length,
+    (trim its silence and measure it): Rocco 2.09s, Nugget ~2.0s, Sprocket 1.18s,
+    Clover 1.10s. Mouth closed 0–0.3s, SPEAKING 0.3s to 0.3s + that length,
     mouth closed after; only the sign-off in quotes; face to camera, no walking.
-    This is what made the Short 10 and Short 2 tails sync with no lip-sync pass.
-    A window longer than the recording makes Veo drawl (Short 18: a 2s window for
-    Sprocket's 1.18s line gave a 1.78s mouth, and the recording had to be slowed
-    20%, which sounded sluggish). Grid it and cut before the push-in or walk-off.
+    This is what made the Short 10, 2 and 19 tails sync with no lip-sync pass
+    (Short 19: a 2.1s window for Rocco's 2.09s line gave a 2.08s mouth).
+    **But Veo won't mouth "we can fix anything!" in under ~1.7s**, whatever the
+    window: Short 18 (2s window, Sprocket) gave 1.78s and Short 20 (1.1s window,
+    Clover) gave 1.72s. So Sprocket's and Clover's short recordings never fill the
+    mouth: slow them at most 15% (`atempo` 0.87), put the first word on the mouth
+    onset, and accept ~0.4s of mouth after the audio — or re-record those two
+    shared sign-offs at ~1.8s once. Transcribe the tail's own audio once for the
+    mouth span. Grid it and cut before the push-in, walk-off, or any extra
+    unscripted word ("Huh?", "Ha.") Veo adds after the line.
 
 **Voice** — pennies
 11. **Main clip only.** Extract its audio, commit and attach it, then
@@ -449,3 +459,15 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Veo may still reorder lines in the main clip** (Short 19): it said "Ah… mm"
   while pointing and moved the pointing line to after the action. Read the
   transcript against the beats before accepting; a reordered clip can still play.
+- **A misplaced line can be replaced instead of re-rolling** (Short 20, a few
+  cents): read a line that fits the moment in the character's voice with
+  `eleven_v3` + an `[excited]` tag (2 takes), trim it, `atempo` within 0.85–1.15
+  to the mouth span, mute the voice-changed original there and mix the new read
+  in at the span (the take becomes a composite). Transcribe the composite once.
+- **Short 16's settled-ear still keeps Clover's ears stable** (Short 20): pass
+  `shorts/short16_droopy_sunflower/short16_still_v2.png` as image 2 "for her ear
+  length only" and her ears held all 8s. Use `clover_noprop_ref.png` when a carrot
+  is the story prop, so her pocket carrot isn't a second one.
+- **Veo can drop a held prop in the last ~0.4s** (Short 20: the carrot vanished
+  at 7.66s). Grid the end and cut the main before it; the tail prompt should say
+  the prop "never disappears".
