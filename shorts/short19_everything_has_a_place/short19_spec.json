@@ -13,27 +13,45 @@
   "lines": [
     {
       "text": "Whose hammer is this?",
-      "take": null,
-      "at": 0.4,
-      "note": "PLAN: picks up the hammer from the workbench, tilts his head at it"
+      "take": [
+        0.2,
+        1.8
+      ],
+      "at": 0.2,
+      "note": "Rocco sts 0.30-1.62; plays where spoken (on the beak)."
     },
     {
-      "text": "It goes right here!",
-      "take": null,
-      "at": 2.4,
-      "note": "PLAN: points a teal wingtip at the empty hammer outline on the pegboard beside him"
+      "text": "Ah... mm.",
+      "take": [
+        1.85,
+        4.0
+      ],
+      "at": 1.85,
+      "note": "Unscripted thinking noises Veo gave the pointing beat (2.0-3.9); kept so the moving beak is voiced."
+    },
+    {
+      "text": "It goes right here.",
+      "take": [
+        5.05,
+        6.5
+      ],
+      "at": 5.05,
+      "note": "Veo moved this after the hang: said facing camera, wingtips on hips (5.16-6.32)."
     },
     {
       "text": "Tidy!",
-      "take": null,
-      "at": 6.0,
-      "note": "PLAN: steps back, wingtips on hips, beams. Must END by ~6.8s so the clip has an eyes-open hold for the tail start."
+      "take": [
+        6.6,
+        7.4
+      ],
+      "at": 6.6,
+      "note": "6.78-7.24; main clip is cut at 7.40 just after it."
     }
   ],
   "signoff": {
     "file": "short19_vo_rocco_signoff.mp3",
-    "at": null,
-    "note": "Shared audio/signoffs/signoff_rocco.mp3, trimmed speech 2.09s, natural speed. Tail SPEAKING window 0.3-2.4s to match. at = cut point + tail mouth onset."
+    "at": 7.96,
+    "note": "Shared audio/signoffs/signoff_rocco.mp3, silence trimmed, NATURAL speed (2.09s). Tail SPEAKING window was sized to it (0.3-2.4s); Veo's tail mouth ran 0.56-2.64s (2.08s), so no stretch. at = cut 7.40 + mouth onset 0.56."
   },
   "sfx": [],
   "music": "audio/theme/theme_sting.mp3",
@@ -56,36 +74,43 @@
   "beats": [
     {
       "from": 0.0,
-      "to": 2.2,
+      "to": 1.8,
       "mouth": "open",
-      "action": "Rocco picks up the hammer from the workbench in one teal wingtip, tilts his head at it and says the line."
+      "action": "ACCEPTED v1: picks up the hammer: 'Whose hammer is this?'"
     },
     {
-      "from": 2.2,
-      "to": 3.6,
+      "from": 1.8,
+      "to": 4.0,
       "mouth": "open",
-      "action": "Still facing camera, he points his other wingtip at the empty hammer outline on the pegboard beside him and says the line."
+      "action": "ACCEPTED v1: points at the empty outline: 'Ah... mm.'"
     },
     {
-      "from": 3.6,
-      "to": 5.8,
+      "from": 4.0,
+      "to": 5.0,
       "mouth": "closed",
-      "action": "Silent: he hangs the hammer inside its outline on the pegboard; it fits exactly."
+      "action": "ACCEPTED v1: hangs the hammer in its outline (silent)."
     },
     {
-      "from": 5.8,
-      "to": 6.8,
+      "from": 5.0,
+      "to": 7.4,
       "mouth": "open",
-      "action": "He steps back, wingtips on hips, beams at camera and says the line."
-    },
-    {
-      "from": 6.8,
-      "to": 8.0,
-      "mouth": "closed",
-      "action": "Hold: proud smile facing camera, eyes open, mouth closed. The tail starts from a frame here and the main clip is cut at that frame."
+      "action": "ACCEPTED v1: faces camera, wingtips on hips: 'It goes right here. Tidy!'"
     }
   ],
   "notes": "Pacing: 9 words + sign-off, gaps >= 0.7s, the silent hang is the lesson beat. Franchise: Rocco Knows. Teaches: putting things back where they belong. Distinct from Shorts 2 (intro), 9 (checklist), 11 (what sound), 15 (stop look listen). New PLAYBOOK (PR #12): still continuity check (exactly one hammer, none on the pegboard), last line done by ~6.8s then hold, tail window = sign-off length, sign-off = shared recording, audio steps at 1 generation.",
-  "shots": [],
-  "history": ""
+  "shots": [
+    {
+      "clip": "short19_clip_v1_speaking.mp4",
+      "from": 0.0,
+      "use": 7.4,
+      "start_frame": "short19_still.png",
+      "note": "Main clip, cut at 7.40 (eyes open, beak closed, after 'Tidy!'). The tail starts from this exact frame."
+    }
+  ],
+  "history": "",
+  "tail": {
+    "clip": "short19_clip_tail.mp4",
+    "use": 2.72,
+    "note": "Cut at 2.72: sign-off mouth ends 2.64; Veo added a 'Huh?' with the beak moving from 2.79, cut off."
+  }
 }
