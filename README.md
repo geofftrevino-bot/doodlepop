@@ -28,6 +28,7 @@ episodes/
   ep01/                     "Welcome to Fix-It Farm": script.md, shot-list.md
 refs/
   characters/               approved character reference renders
+    poses/                  four standard starting poses per character (plain bg)
   locations/                approved location plates (16:9)
   scenes/                   9:16 scene references: a character on-model in a set,
                             the start point for Shorts (see docs/location-bible.md)

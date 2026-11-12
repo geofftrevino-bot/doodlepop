@@ -199,13 +199,19 @@ Set the node to 9:16 and 2K before running (new nodes default to 16:9 / 1K).
 
 ### Using a scene reference in a Short
 
-1. **Pick the scene ref** whose set fits the story.
-2. **If the opening needs no props in the character's hands**, use the scene
-   ref as the Veo start frame directly: no still to generate (saves ~$1.61).
-3. **Otherwise make the still from it:** `gemini-3-pro-image`, 9:16 / 2K set on
-   the node, the scene ref as image 1 and the character's ref as image 2;
-   prompt "keep this exact frame, set and character; add `<props, exactly one
-   of each>`; `<pose change, if any>`". The set and framing stay put, so the
-   continuity check only has to look at the props and the pose.
+1. **Pick the scene ref** whose set fits the story, and the **pose ref**
+   (`refs/characters/poses/`, see *Pose references* in
+   `docs/character-bible.md`) that fits the opening beat.
+2. **If the opening is the scene ref's own neutral standing pose with no props
+   in hand**, use the scene ref as the Veo start frame directly: no still to
+   generate (saves ~$1.61).
+3. **Otherwise make the still from them:** `gemini-3-pro-image`, 9:16 / 2K set
+   on the node. Image 1 = the scene ref (set, framing, scale), image 2 = the
+   pose ref (body pose), image 3 = the character's ref (identity). Prompt:
+   "keep the exact set, camera framing and character size of the first image;
+   put `<NAME>` in the pose of the second image; keep them on-model to the
+   third image; add `<props, exactly one of each>`". The set and framing stay
+   put, so the continuity check only has to look at the props and the pose.
+   Leave out image 2 when no pose ref fits.
 4. Name the Short's still as usual (`shortNN_still.png`) and note the scene ref
    it came from in the spec's `video.description`.

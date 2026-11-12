@@ -55,6 +55,15 @@ eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
 - **Silhouette cue:** the teal tail. It reads instantly at thumbnail size.
 - **Posture:** chest out, upright, confident. He takes up space.
 - **Never:** without the straw hat.
+- **Pose references** (`refs/characters/poses/`, approved 2026-11-11; see *Pose
+  references* below):
+
+  | File | Pose | Use for |
+  |---|---|---|
+  | `rocco_pose_wave.png` | one wingtip raised in a hello | greetings, intros, talking to the viewer |
+  | `rocco_pose_point.png` | wingtip pointing out to his side | "look at this!", presenting a prop or problem |
+  | `rocco_pose_thinking.png` | wingtip under his beak, other across his tummy, eyes up | puzzles, "whose is this?", listening for a sound |
+  | `rocco_pose_proud.png` | wingtips on hips, chest out | confident starts, "all fixed / tidy!" moments |
 
 ---
 
@@ -117,6 +126,41 @@ for sidekick shots.
 - **Scale rule:** roughly **one-third** of Sprocket's height. Every prop he
   carries should look comically oversized — that's the entire joke.
 - **Never:** slim or tall. He is a fuzzy ball.
+
+---
+
+## POSE REFERENCES
+
+Four standard starting poses per character, each on a plain soft cream
+background with a soft floor shadow, so one pose works on any of the
+character's four scene references (`refs/scenes/`, see
+`docs/location-bible.md`). Pose x set covers 16 openings from 8 images.
+
+`refs/characters/poses/<character>_pose_<name>.png` · 1536×2752 (9:16, 2K) ·
+`gemini-3-pro-image` from the character's ref only (~$0.30 an option, 4 options
+a run).
+
+**The standard:** full body, centred, about 60–70% of the frame height, facing
+camera, empty-handed, eyes open, mouth closed. **Tail/ears on the same side as
+the character's ref** — reject options where the model mirrors the character
+(it did on 2 of Rocco's 16). One clear gesture per pose.
+
+**Done:** Rocco (wave, point, thinking, proud). **To make:** Clover, Sprocket,
+Nugget — same four poses unless a character needs another (e.g. Sprocket holding
+his wrench up), decided per character.
+
+**Prompt template:**
+
+> Vertical 9:16 bright, clean 3D cartoon for preschoolers. A character pose
+> reference sheet: plain soft cream background with a soft shadow under
+> `<their>` feet, nothing else. Keep `<NAME>` exactly on-model from the
+> reference: `<bible description line>`. Full body, centred, about 70% of the
+> frame height, standing on the ground facing the camera. POSE: `<the pose, one
+> clear gesture>`; eyes open, mouth closed. Empty-handed, no props, no other
+> characters, no text, no letters.
+
+**Using a pose in a Short:** see *Using a scene reference in a Short* in
+`docs/location-bible.md` — the pose ref goes in as the second image.
 
 ---
 

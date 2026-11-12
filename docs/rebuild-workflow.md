@@ -46,12 +46,13 @@ comes from a fix in *What we learned*.
 **Start still**
 3. **Start from the character's scene reference** (`refs/scenes/<character>_<set>.png`,
    see *Scene references* in `docs/location-bible.md`) when one fits the story:
-   - No props in hand at the start → use the scene ref itself as the Veo start
-     frame and skip the still (saves ~$1.61).
-   - Otherwise `gemini-3-pro-image`, 9:16 / 2K set on the node, the scene ref as
-     image 1 and the character's ref as image 2: "keep this exact frame, set and
-     character; add `<props>`; `<pose change>`". The set and framing stay fixed,
-     so only the props and pose need checking.
+   - Neutral standing start, no props in hand → use the scene ref itself as the
+     Veo start frame and skip the still (saves ~$1.61).
+   - Otherwise `gemini-3-pro-image`, 9:16 / 2K set on the node: image 1 = the
+     scene ref, image 2 = a pose ref from `refs/characters/poses/` (wave, point,
+     thinking, proud), image 3 = the character's ref. "Keep the set, framing and
+     size of image 1; the pose of image 2; on-model to image 3; add `<props>`."
+     The set and framing stay fixed, so only the props and pose need checking.
    No scene ref for that character or set yet → the old way: the character's ref
    from `refs/characters/` as image 1 (never an old still), a location plate as
    image 2 for the setting only. Hero Nugget gets his cream chest patch.
