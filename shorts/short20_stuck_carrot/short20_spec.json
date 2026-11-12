@@ -1,0 +1,91 @@
+{
+  "title": "Clover and the Stuck Carrot",
+  "character": "clover",
+  "cast": [
+    "clover"
+  ],
+  "voice": {
+    "name": "Clover",
+    "id": "EGiEBftkMhETd6Cyyfyj",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short20_vo_clover_sts_main.mp3",
+  "lines": [
+    {
+      "text": "This carrot is stuck!",
+      "take": null,
+      "at": 0.4,
+      "note": "PLAN: tugging the carrot's leafy top; it won't budge"
+    },
+    {
+      "text": "One more big pull...",
+      "take": null,
+      "at": 2.4,
+      "note": "PLAN: plants her feet, deep breath"
+    },
+    {
+      "text": "Got it!",
+      "take": null,
+      "at": 6.0,
+      "note": "PLAN: holds the carrot up, beaming. Must END by ~6.8s so the clip has an eyes-open hold for the tail start."
+    }
+  ],
+  "signoff": {
+    "file": "short20_vo_clover_signoff.mp3",
+    "at": null,
+    "note": "Shared audio/signoffs/signoff_clover.mp3, trimmed speech 1.10s, natural speed. Tail SPEAKING window 0.3-1.4s to match. Confirm it's Clover's voice in the voice preview before the tail spend."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short20_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "CLOVER prop-free (refs/characters/clover_noprop_ref.png): a soft white cartoon rabbit with tall upright ears with pink inner ears (at the settled length of short16_still_v2.png, so Veo doesn't grow them), big glossy black eyes, rosy pink cheeks, a small pink nose, two little front teeth, a fluffy round tail, bright green overalls with yellow round buttons and an EMPTY front pocket (no carrot). In the garden. ONE big carrot planted in the soil in front of her, only its bushy green leafy top and the orange shoulder of the carrot showing: the only carrot in the picture.",
+    "negative": [
+      "second carrot",
+      "carrot in her pocket",
+      "ears growing longer",
+      "droopy ears",
+      "extra characters",
+      "spelling out letters",
+      "music",
+      "camera push-in",
+      "objects appearing"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 2.2,
+      "mouth": "open",
+      "action": "Clover grips the carrot's leafy top in both paws and tugs; it won't budge; she says the line."
+    },
+    {
+      "from": 2.2,
+      "to": 3.6,
+      "mouth": "open",
+      "action": "She plants her feet wide, takes a big breath and says the line."
+    },
+    {
+      "from": 3.6,
+      "to": 5.6,
+      "mouth": "closed",
+      "action": "Silent: she pulls with all her might, leaning back... POP! The carrot comes out and she plops down on her bottom, holding it."
+    },
+    {
+      "from": 5.6,
+      "to": 6.8,
+      "mouth": "open",
+      "action": "She holds the big carrot up, beams at camera and says the line."
+    },
+    {
+      "from": 6.8,
+      "to": 8.0,
+      "mouth": "closed",
+      "action": "Hold: proud smile facing camera, eyes open, ears up, mouth closed. The tail starts from a frame here and the main clip is cut at that frame."
+    }
+  ],
+  "notes": "Pacing: 9 words + sign-off, gaps >= 0.7s, the silent pull-and-POP is the lesson beat. Franchise: Clover Grows It. Teaches: keep trying when something is hard. Distinct from Shorts 3 (intro), 8 (seeds), 13 (colours), 16 (watering). PLAYBOOK: still check (exactly one carrot, empty pocket, ears at settled length), last line by ~6.8s then hold, tail window = 1.10s sign-off, sign-off = shared recording, one generation per audio step.",
+  "shots": [],
+  "history": ""
+}

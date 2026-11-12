@@ -63,6 +63,7 @@ archive/                  superseded takes, old doc versions, exact duplicates
 | 17 | `short17_nugget_learns_to_fly` | Nugget |
 | 18 | `short18_wobbly_wheel` | Sprocket |
 | 19 | `short19_everything_has_a_place` | Rocco |
+| 20 | `short20_stuck_carrot` | Clover |
 
 ## Naming convention
 
