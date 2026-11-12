@@ -32,8 +32,10 @@ frame shows, so the start frame decides whether a character is on model.
 ## THE PLAYBOOK (Shorts 4–7 rebuilds) — use this
 
 Veo's standard model speaks the lines on camera, the voice changer turns that
-speech into the character's voice without moving a syllable, and a tail clip
-carries the sign-off. Every step below comes from a fix in *What we learned*.
+speech into the character's voice without moving a syllable, and a 4s tail clip
+gives the sign-off a moving mouth. The sign-off's audio is always the shared
+recording in `audio/signoffs/`, never a voice-changed tail. Every step below
+comes from a fix in *What we learned*.
 
 **Setup**
 1. Fast-forward the branch to `main` (start fresh once a PR has merged) and open
@@ -47,8 +49,19 @@ carries the sign-off. Every step below comes from a fix in *What we learned*.
    the setting only. Hero Nugget gets his cream chest patch.
 4. Put every prop the story needs in the frame from the start, placed where the
    action will use it. Nothing may appear later.
-5. Two options; pick the one closest to the ref. Commit and push it, then attach
-   it to the flow by its `raw.githubusercontent.com/<owner>/<repo>/<sha>/…` URL
+5. The node returns 4 options. **Check every one before picking** — fixing a still
+   afterwards costs an edit batch (Short 18: $1.51 to remove a second wrench when
+   a clean option was already in the batch):
+   - **One of each prop.** Look for a second copy in a belt, pouch, pocket or the
+     background.
+   - **Counted props match the line** ("one, two, three carrots" = exactly three).
+   - **The right character variant for the role**: hero Nugget (cream chest patch,
+     leads) vs sidekick Nugget; Sprocket without goggles; and so on.
+   - Closest to the ref.
+   Pick a clean one. If none is clean, re-run the still rather than editing: the
+   edit tool returns 16:9 at 1K whatever the input, so an edit needs the node set
+   to 9:16 / 2K and run again (4 more). Commit and push the pick, then attach it
+   to the flow by its `raw.githubusercontent.com/<owner>/<repo>/<sha>/…` URL
    (asset uploads are blocked).
 
 **Main clip** — `veo-3.1-generate-001`, 8s, ~$3.20
@@ -57,6 +70,10 @@ carries the sign-off. Every step below comes from a fix in *What we learned*.
    - "The camera is LOCKED OFF… never pushes in"; crates/props "stay fully in frame".
    - Timed segments, each line in quotes, in plain lowercase (all caps gets spelled
      out) plus "He speaks in ordinary words, never spelling anything out".
+   - **End the last line by ~7s, then a mouth-closed, eyes-open hold to 8s** facing
+     camera. The tail starts from a frame in that hold, so there must be one after
+     the last word (Short 18's "All fixed!" ran to 7.8s and the clip ended on a
+     blink, so the tail started from an earlier frame and the cut jumped back).
    - Wings/hooves "SOLID, OPAQUE… never see-through, even when he moves them";
      give any free hoof a job; "only ONE <prop>… no new objects appear".
    - Two speakers: tag lines by species ("THE PIG says") and say whose mouth stays shut.
@@ -70,32 +87,51 @@ carries the sign-off. Every step below comes from a fix in *What we learned*.
    that could smear, and a transcript of the clip's audio. Two speakers: grid both
    faces through every line.
 
-**Tail** — same model, 6–8s, $2.40–$3.20
-9. Grid the main clip's last second. Cut on a frame with eyes open, mouth closed,
-   props held the way they should stay, and before Veo's late camera push-in
-   (usually the last ~0.7s). Save it as `shortNN_clip_at_T.png`.
-10. Generate the tail from that frame with the remaining line(s) and the sign-off
-    spoken on camera; give the free hoof/wing the gesture (thumbs-up, wave). Grid
-    it and cut before the push-in or walk-off.
+**Tail** — same model, **4s**, $1.60 (picture only)
+9. Grid the main clip's last second. Cut on a frame **in the hold after the last
+   line**: eyes open, mouth closed, props held the way they should stay, before
+   Veo's late camera push-in (usually the last ~0.7s). Never on a blink. Save it
+   as `shortNN_tailstart.png`; **the main clip ends at this exact frame** (main
+   `use` = its time), so there's no jump back at the cut.
+10. **Size the sign-off's SPEAKING window to the shared recording's real length**
+    (trim its silence and measure it): Sprocket 1.18s, Nugget ~2.0s, Rocco ~2.1s;
+    measure Clover's. Mouth closed 0–0.3s, SPEAKING 0.3s to 0.3s + that length,
+    mouth closed after; only the sign-off in quotes; face to camera, no walking.
+    This is what made the Short 10 and Short 2 tails sync with no lip-sync pass.
+    A window longer than the recording makes Veo drawl (Short 18: a 2s window for
+    Sprocket's 1.18s line gave a 1.78s mouth, and the recording had to be slowed
+    20%, which sounded sluggish). Grid it and cut before the push-in or walk-off.
 
 **Voice** — pennies
-11. Extract each clip's audio, commit and attach it, then `audio_isolation` →
-    `eleven_multilingual_sts_v2` with the character's voice id. Check the voice
-    changer's reference is the new isolator output, not an earlier run.
-12. Transcribe every converted file. Fix a bad word by splicing it from an
+11. **Main clip only.** Extract its audio, commit and attach it, then
+    `audio_isolation` → `eleven_multilingual_sts_v2` with the character's voice id.
+    `run_flow_nodes` makes 4 variations and you use 1, so run isolation through
+    `creative_generate_in_flow` with **`generations_count: 1`** (untested as of
+    Short 18: check the count it returns). For the voice changer, try the same
+    with `voice_id`; if it fails with "Select a voice", add the node, set the
+    voice with `creative_update_node` and run it (4 variations, ~7¢). Never
+    voice-change raw audio (ambience makes it invent words); isolation needs
+    ≥4.6s of audio, so pad shorter audio with silence.
+12. Transcribe the converted main once. Fix a bad word by splicing it from an
     `eleven_multilingual_v2` read in the same voice (word cut from the loudness
     envelope, `atempo` 0.75–0.85 to fill the mouth span, no gain boost). Covers
     stretched ("beeolts"), shouted ("aah!nything") and garbled words. Don't try
     to turn a shout down; replace the word.
-13. `silencedetect=n=-38dB:d=0.2` on the converted files gives each line's span.
+13. `silencedetect=n=-38dB:d=0.2` on the converted main gives each line's span.
 
 **Assemble**
-14. Take = the main clip's converted voice up to the cut + the tail's converted
-    voice `adelay`ed to the cut. Cut the sign-off from the tail's own audio as
-    `shortNN_vo_<character>_signoff_tail.mp3`.
-15. Spec: `lines` at their real spans, `signoff` {file, at} at least 0.3s after
-    the last line, `shots` (main `use` = cut point, tail `use` = past the
-    sign-off), `cast`, `beats: []`. Then `check`, `seams`, `refcheck`, `mix`.
+14. Take = the main clip's converted voice. **Sign-off = the shared
+    `audio/signoffs/signoff_<character>.mp3`**, silence trimmed, at natural speed
+    (or `atempo` 0.9–1.1 at most), saved as `shortNN_vo_<character>_signoff.mp3`.
+    Never voice-change the tail: on short clips the voice changer garbles words
+    ("anythang", "Let him fix for me the lineman") and makes the first word
+    halting. Check the shared file is in the right character's voice first
+    (Short 5's `signoff_nugget.mp3` was once Sprocket). No transcript needed.
+15. Spec: `lines` with `take` = [span start, end] and `at` = span start (plays each
+    line where it was spoken, on the mouth); `signoff.at` = cut point + the tail's
+    mouth onset (transcribe the tail's own audio once to find it); `shots` (main
+    `use` = cut point, tail `use` = ~0.5s past the sign-off), `cast`, beats. Then
+    `check`, `seams`, `refcheck`, `mix`.
 16. Commit, attach the mix's audio, transcribe it, and compare word for word.
 
 **Approval**
@@ -104,8 +140,10 @@ carries the sign-off. Every step below comes from a fix in *What we learned*.
 18. On approval: test → `shortNN_final.mp4`, delete the test files, add the
     lessons below, update the PR description and mark it ready.
 
-**Typical Short:** ~$11–14 including retries (still $0.80, main $3.20, tail
-$2.40–3.20, plus one or two re-runs).
+**Typical Short:** ~$6.50 (4 stills $1.60, main $3.20, 4s tail $1.60, voice and
+transcripts ~$0.10). Short 18 cost ~$8.10, of which $1.51 was a still edit and
+$0.13 unused audio variations. Don't pay for a lip-sync pass: it usually leaves
+our cartoon faces unchanged (see *What we learned*).
 
 Still valid from the older paths: prefer the user's own recorded take when one
 exists (row 4c below), and record voice-over shots (character off screen) with
@@ -367,3 +405,35 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
   dip with a low-pass still read as a scream. Splicing "anything" from an
   `eleven_multilingual_v2` read in Nugget's voice (`atempo` 0.82 to fill the beak
   span, no gain boost) fixed it.
+
+### Shorts 16–18 (Nov 2026)
+
+- **A word Veo cuts the clip on starts clipped** (Short 16 tail "Look"): the
+  audio starts at full volume with no consonant attack, and the voice changer
+  can't restore it. Splice that word from an `eleven_multilingual_v2` read in the
+  character's voice. Better: start every speaking window after a short
+  mouth-closed beat.
+- **Veo can front-load an 8s clip** (Short 17): all three lines landed in the
+  first 3.3s with ~0.3s gaps. It was still usable once the gag was reframed
+  around the delivery (an over-confident "Ta-da!" before the flop), so read the
+  clip before re-rolling.
+- **Never voice-change a short tail** (Short 17): the 4s tail's raw audio came
+  back as "Let him fix for me the lineman". Padding it past 4.6s and isolating
+  first fixed the words, but the shared sign-off recording would have skipped
+  all of it. That is now step 14.
+- **Size the tail's SPEAKING window to the sign-off recording** (Short 18): a 2s
+  window for Sprocket's 1.18s recording gave a 1.78s drawled mouth; slowing the
+  recording 20% to fit sounded sluggish. Step 10.
+- **Plan an eyes-open hold after the last line** (Short 18): the main clip ended
+  on a blink right after "All fixed!", so the tail started from an earlier frame
+  and the cut jumped back. Step 6 and step 9.
+- **Pick a clean still; don't edit a flawed one** (Short 18): a wrench in the hoof
+  plus one in the belt. The edit tool returned 16:9 at 1K, the re-run at 9:16 2K
+  cost another 4 variations, $1.51 in all, while a clean option was in the first
+  batch. Step 5.
+- **`run_flow_nodes` makes 4 variations of every image and audio node**; video
+  nodes make 1. Use `creative_generate_in_flow` / `creative_edit_image` with
+  `generations_count` where you only need one.
+- **Short 18 (8s main + 4s tail) came back with well-spaced lines** (0.48 / 2.52 /
+  6.74s and a ~3s silent fix beat) when each segment had one line and the silent
+  beat was the longest one. Plan beats that way.
