@@ -105,13 +105,16 @@ comes from a fix in *What we learned*.
 **Voice** — pennies
 11. **Main clip only.** Extract its audio, commit and attach it, then
     `audio_isolation` → `eleven_multilingual_sts_v2` with the character's voice id.
-    `run_flow_nodes` makes 4 variations and you use 1, so run isolation through
-    `creative_generate_in_flow` with **`generations_count: 1`** (untested as of
-    Short 18: check the count it returns). For the voice changer, try the same
-    with `voice_id`; if it fails with "Select a voice", add the node, set the
-    voice with `creative_update_node` and run it (4 variations, ~7¢). Never
-    voice-change raw audio (ambience makes it invent words); isolation needs
-    ≥4.6s of audio, so pad shorter audio with silence.
+    `run_flow_nodes` on a node made by `creative_add_flow_node` makes 4
+    variations and you use 1, so (confirmed on Short 19):
+    - **Isolation:** `creative_generate_in_flow`, `connect_from` the audio node,
+      **`generations_count: 1`** → 1 generation.
+    - **Voice changer:** `creative_generate_in_flow` with `generations_count: 1`
+      (its `voice_id` doesn't attach, so it fails free with "Select a voice"),
+      then `creative_update_node` with the voice id on that same node, then
+      `run_flow_nodes` it → 1 generation, because the node keeps its count of 1.
+    Never voice-change raw audio (ambience makes it invent words); isolation
+    needs ≥4.6s of audio, so pad shorter audio with silence.
 12. Transcribe the converted main once. Fix a bad word by splicing it from an
     `eleven_multilingual_v2` read in the same voice (word cut from the loudness
     envelope, `atempo` 0.75–0.85 to fill the mouth span, no gain boost). Covers
@@ -437,3 +440,12 @@ stage speaking moments face-to-camera and give the pass a voice-only track.
 - **Short 18 (8s main + 4s tail) came back with well-spaced lines** (0.48 / 2.52 /
   6.74s and a ~3s silent fix beat) when each segment had one line and the silent
   beat was the longest one. Plan beats that way.
+- **Short 19 confirmed the tail rules** (~$6.47, no rework). A 0.3–2.4s SPEAKING
+  window for Rocco's 2.09s sign-off gave a 2.08s mouth, so the shared recording
+  played at natural speed. Cutting the main at 7.40s on an eyes-open frame and
+  starting the tail from that same frame made the cut invisible. Veo added an
+  unscripted "Huh?" after the sign-off with the beak moving; set the tail `use`
+  just before it.
+- **Veo may still reorder lines in the main clip** (Short 19): it said "Ah… mm"
+  while pointing and moved the pointing line to after the action. Read the
+  transcript against the beats before accepting; a reordered clip can still play.
