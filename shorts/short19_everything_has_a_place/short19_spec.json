@@ -107,7 +107,7 @@
       "note": "Main clip, cut at 7.40 (eyes open, beak closed, after 'Tidy!'). The tail starts from this exact frame."
     }
   ],
-  "history": "",
+  "history": "APPROVED FINAL 2026-11-11 (short19_final.mp4, 10.30s, -14.0 LUFS), ~$6.47. First Short on the PR #12 PLAYBOOK. Still: picked option 3 of 4 (one claw hammer matching the claw outline; flaw: a second empty pliers outline). Main clip v1 accepted: Veo said 'Ah... mm' while pointing and moved 'It goes right here' after the hang. Re-voiced once to Rocco (isolation via creative_generate_in_flow generations_count 1 = 1 generation; voice changer failed there with 'Select a voice', but after creative_update_node set the voice, run_flow_nodes on that count-1 node made 1 generation). Tail: SPEAKING window 0.3-2.4s sized to the 2.09s sign-off; Veo's mouth ran 2.08s, so the shared recording plays at natural speed. Main cut at 7.40 = tail start frame: seamless cut. Tail cut at 2.72 before an unscripted 'Huh?'.",
   "tail": {
     "clip": "short19_clip_tail.mp4",
     "use": 2.72,
