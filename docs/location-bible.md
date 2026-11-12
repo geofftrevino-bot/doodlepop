@@ -1,5 +1,5 @@
 # DoodlePop Kids — LOCATION BIBLE (LOCKED)
-### Seven approved background plates · all 1672×941 (16:9)
+### Seven approved background plates · all 1672×941 (16:9) · plus 9:16 scene references for Shorts (see the end)
 
 All seven match the character art style and each other. The rainbow windmill,
 red barn with the slate roof and silo, split-rail fencing, apple trees, and
@@ -145,8 +145,73 @@ first, approve it, then animate from that.
 
 ## ASPECT RATIO
 
-All plates are 16:9 — right for episodes, wrong for Shorts. For vertical you
-have two options: generate 9:16 versions of the plates you need most
-(`windmill_field`, `garden`, `workshop`, `tractor_yard`), or frame Shorts tight
-on characters so the background crop matters less. The first is cleaner; the
-second is cheaper.
+All plates are 16:9 — right for episodes, wrong for Shorts. For Shorts, use the
+9:16 **scene references** below instead: each one is a set already recomposed
+vertically with its character standing in it on-model, so a Short no longer
+re-invents the set (and drifts) every time.
+
+---
+
+## SCENE REFERENCES (9:16, character in set) — the start point for Shorts
+
+`refs/scenes/<character>_<set>.png` · 1536×2752 (9:16, 2K) · `gemini-3-pro-image`
+from the character's ref (image 1) and the set's plate (image 2). Contact sheets
+in `refs/scenes/_sheets/`. Four sets per character.
+
+**The standard frame** (every scene ref, every character):
+- The character full body, about 40% of the frame height, lower middle, facing
+  the camera, on-model to `refs/characters/`.
+- Empty-handed (no story props), eyes open, mouth closed, a friendly smile,
+  arms/wings/paws relaxed at the sides.
+- Clear open ground in front of them, where a Short's props go.
+- The set's landmark behind them (barn, gate, windmill, doors), recomposed for
+  vertical. Daylight and the continuity rules above (rainbow windmill with cream
+  tower, red barn with slate-grey roof and silo, split-rail fence, deep blue sky
+  with chunky clouds; warm bright light indoors).
+- No other characters, no text.
+
+### Rocco (approved 2026-11-11)
+
+| File | Set (plate) | Use for |
+|---|---|---|
+| `rocco_barn_ext.png` | `barn_ext` — barn centred, dirt path toward camera | farm-wide scenes, arrivals, announcements |
+| `rocco_fence_gate.png` | `fence_line` — wooden gate in the split-rail fence right behind him, barn and windmill beyond | gate / safety / routine scenes (Short 15's beat) |
+| `rocco_barn_int.png` | `barn_int` — open doors centred, hayloft, lantern, crates, milk cans | indoor jobs, tidying, rainy-day scenes |
+| `rocco_windmill_field.png` | `windmill_field` — windmill above his hat, curving path, patchwork fields | weather, looking-out-over-the-farm, big-reveal scenes |
+
+**Still to make:** Clover, Sprocket and Nugget (four sets each). Make them from
+the same standard frame and the prompt below. Gemini image runs always return 4
+options (~$1.61 a set); pick against the standard frame and the character ref.
+
+**Prompt template** (fill in the character's bible line and the set):
+
+> Vertical 9:16 bright, clean 3D cartoon for preschoolers. A standard reference
+> frame. Keep `<NAME>` exactly on-model from the first reference: `<bible
+> description line>`. Use the second reference for the set: `<the plate's key
+> features>`. Recompose the set for a vertical frame, `<landmark>` behind
+> them. `<NAME>` stands `<where>` facing the camera, full body, about 40% of the
+> frame height in the lower middle, `<arms>` relaxed at their sides,
+> empty-handed, eyes open, mouth closed, friendly smile. Leave clear open ground
+> in front of them. Deep blue sky with chunky white clouds, bright daylight. No
+> other characters, no text, no letters, no numbers.
+
+Set the node to 9:16 and 2K before running (new nodes default to 16:9 / 1K).
+
+### Using a scene reference in a Short
+
+1. **Pick the scene ref** whose set fits the story, and the **pose ref**
+   (`refs/characters/poses/`, see *Pose references* in
+   `docs/character-bible.md`) that fits the opening beat.
+2. **If the opening is the scene ref's own neutral standing pose with no props
+   in hand**, use the scene ref as the Veo start frame directly: no still to
+   generate (saves ~$1.61).
+3. **Otherwise make the still from them:** `gemini-3-pro-image`, 9:16 / 2K set
+   on the node. Image 1 = the scene ref (set, framing, scale), image 2 = the
+   pose ref (body pose), image 3 = the character's ref (identity). Prompt:
+   "keep the exact set, camera framing and character size of the first image;
+   put `<NAME>` in the pose of the second image; keep them on-model to the
+   third image; add `<props, exactly one of each>`". The set and framing stay
+   put, so the continuity check only has to look at the props and the pose.
+   Leave out image 2 when no pose ref fits.
+4. Name the Short's still as usual (`shortNN_still.png`) and note the scene ref
+   it came from in the spec's `video.description`.
