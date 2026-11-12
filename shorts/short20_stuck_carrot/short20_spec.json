@@ -107,7 +107,7 @@
       "note": "Main clip cut at 7.40 (eyes open, carrot held, after 'Got it!'); the carrot vanishes at ~7.66. The tail starts from this exact frame."
     }
   ],
-  "history": "",
+  "history": "APPROVED FINAL 2026-11-11 (short20_final.mp4, 9.72s, -14.0 LUFS), ~$6.49. Still: option 4 of 4 (one carrot, empty pocket via clover_noprop_ref, ears at short16_still_v2's settled length passed as image 2): ears held all clip. Main v1: Veo moved 'One more big pull' to after the carrot popped out; replaced with an eleven_v3 'Look how big it is!' in Clover's voice (atempo 1.15) on that mouth span. Carrot vanished at ~7.66, so main cut at 7.40 = tail start frame (seamless). Tail: window sized to the 1.10s shared sign-off, but Veo mouthed it over 1.72s; recording at atempo 0.87, first word on the mouth onset, mouth runs ~0.45s past. Tail cut at 2.32 before a squint and an unscripted 'Ha'.",
   "tail": {
     "clip": "short20_clip_tail.mp4",
     "use": 2.32,
