@@ -1,0 +1,116 @@
+{
+  "title": "Everything Has a Place",
+  "character": "rocco",
+  "cast": [
+    "rocco"
+  ],
+  "voice": {
+    "name": "Rocco",
+    "id": "YaTcUhI4B60lebDaAPcL",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short19_vo_rocco_sts_main.mp3",
+  "lines": [
+    {
+      "text": "Whose hammer is this?",
+      "take": [
+        0.2,
+        1.8
+      ],
+      "at": 0.2,
+      "note": "Rocco sts 0.30-1.62; plays where spoken (on the beak)."
+    },
+    {
+      "text": "Ah... mm.",
+      "take": [
+        1.85,
+        4.0
+      ],
+      "at": 1.85,
+      "note": "Unscripted thinking noises Veo gave the pointing beat (2.0-3.9); kept so the moving beak is voiced."
+    },
+    {
+      "text": "It goes right here.",
+      "take": [
+        5.05,
+        6.5
+      ],
+      "at": 5.05,
+      "note": "Veo moved this after the hang: said facing camera, wingtips on hips (5.16-6.32)."
+    },
+    {
+      "text": "Tidy!",
+      "take": [
+        6.6,
+        7.4
+      ],
+      "at": 6.6,
+      "note": "6.78-7.24; main clip is cut at 7.40 just after it."
+    }
+  ],
+  "signoff": {
+    "file": "short19_vo_rocco_signoff.mp3",
+    "at": 7.96,
+    "note": "Shared audio/signoffs/signoff_rocco.mp3, silence trimmed, NATURAL speed (2.09s). Tail SPEAKING window was sized to it (0.3-2.4s); Veo's tail mouth ran 0.56-2.64s (2.08s), so no stretch. at = cut 7.40 + mouth onset 0.56."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "short19_still.png",
+    "model": "veo-3.1-generate-001",
+    "description": "ROCCO (refs/characters/rocco_ref.png): a cheerful tall cartoon rooster with an orange-red body, a long neck and a red face, big round expressive eyes with blue irises, a large yellow beak, a red comb and wattle, golden-yellow scalloped neck and chest feathers, a large curved teal-turquoise tail, teal wingtips he gestures with like hands, yellow legs and feet, and a woven straw farmer's hat with a red band. No kerchief. In the workshop (refs/locations/workshop.png). A pegboard hangs on the wall right beside him at wing height, its tools each hung inside a painted outline (a wrench, a screwdriver, pliers, a saw) and ONE empty hammer-shaped outline. NO hammer on the pegboard. ONE wooden hammer lies on the workbench in front of him: the only hammer in the picture.",
+    "negative": [
+      "second hammer",
+      "hammer already on the pegboard",
+      "kerchief",
+      "see-through wings",
+      "turning his back to camera",
+      "spelling out letters",
+      "music",
+      "camera push-in",
+      "objects appearing"
+    ]
+  },
+  "beats": [
+    {
+      "from": 0.0,
+      "to": 1.8,
+      "mouth": "open",
+      "action": "ACCEPTED v1: picks up the hammer: 'Whose hammer is this?'"
+    },
+    {
+      "from": 1.8,
+      "to": 4.0,
+      "mouth": "open",
+      "action": "ACCEPTED v1: points at the empty outline: 'Ah... mm.'"
+    },
+    {
+      "from": 4.0,
+      "to": 5.0,
+      "mouth": "closed",
+      "action": "ACCEPTED v1: hangs the hammer in its outline (silent)."
+    },
+    {
+      "from": 5.0,
+      "to": 7.4,
+      "mouth": "open",
+      "action": "ACCEPTED v1: faces camera, wingtips on hips: 'It goes right here. Tidy!'"
+    }
+  ],
+  "notes": "Pacing: 9 words + sign-off, gaps >= 0.7s, the silent hang is the lesson beat. Franchise: Rocco Knows. Teaches: putting things back where they belong. Distinct from Shorts 2 (intro), 9 (checklist), 11 (what sound), 15 (stop look listen). New PLAYBOOK (PR #12): still continuity check (exactly one hammer, none on the pegboard), last line done by ~6.8s then hold, tail window = sign-off length, sign-off = shared recording, audio steps at 1 generation.",
+  "shots": [
+    {
+      "clip": "short19_clip_v1_speaking.mp4",
+      "from": 0.0,
+      "use": 7.4,
+      "start_frame": "short19_still.png",
+      "note": "Main clip, cut at 7.40 (eyes open, beak closed, after 'Tidy!'). The tail starts from this exact frame."
+    }
+  ],
+  "history": "APPROVED FINAL 2026-11-11 (short19_final.mp4, 10.30s, -14.0 LUFS), ~$6.47. First Short on the PR #12 PLAYBOOK. Still: picked option 3 of 4 (one claw hammer matching the claw outline; flaw: a second empty pliers outline). Main clip v1 accepted: Veo said 'Ah... mm' while pointing and moved 'It goes right here' after the hang. Re-voiced once to Rocco (isolation via creative_generate_in_flow generations_count 1 = 1 generation; voice changer failed there with 'Select a voice', but after creative_update_node set the voice, run_flow_nodes on that count-1 node made 1 generation). Tail: SPEAKING window 0.3-2.4s sized to the 2.09s sign-off; Veo's mouth ran 2.08s, so the shared recording plays at natural speed. Main cut at 7.40 = tail start frame: seamless cut. Tail cut at 2.72 before an unscripted 'Huh?'.",
+  "tail": {
+    "clip": "short19_clip_tail.mp4",
+    "use": 2.72,
+    "note": "Cut at 2.72: sign-off mouth ends 2.64; Veo added a 'Huh?' with the beak moving from 2.79, cut off."
+  }
+}
