@@ -28,7 +28,9 @@ episodes/
   ep01/                     "Welcome to Fix-It Farm": script.md, shot-list.md
 refs/
   characters/               approved character reference renders
-  locations/                approved location plates
+  locations/                approved location plates (16:9)
+  scenes/                   9:16 scene references: a character on-model in a set,
+                            the start point for Shorts (see docs/location-bible.md)
 audio/
   theme/                    theme_full.mp3, theme_sting.mp3
   catchphrases/             catch_<character>.mp3
