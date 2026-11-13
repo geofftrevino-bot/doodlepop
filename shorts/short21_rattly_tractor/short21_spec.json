@@ -1,0 +1,89 @@
+{
+  "title": "The Rattly Tractor",
+  "character": "sprocket",
+  "cast": [
+    "sprocket"
+  ],
+  "voice": {
+    "name": "Sprocket",
+    "id": "7cz9fvECOZ5B0zNWkN2v",
+    "model": "Veo native dialogue (veo-3.1-generate-001), isolated and re-voiced with eleven_multilingual_sts_v2"
+  },
+  "take": "short21_vo_sprocket_sts_main.mp3",
+  "lines": [
+    {
+      "text": "You hear that rattle?",
+      "take": [0.15, 1.3],
+      "at": 0.15,
+      "note": "sts 0.17-1.27; plays where spoken. Veo added 'You'."
+    },
+    {
+      "text": "Something's loose.",
+      "take": [1.6, 3.05],
+      "at": 1.6,
+      "note": "sts 1.67-3.00."
+    },
+    {
+      "text": "Hmm.",
+      "take": [3.6, 4.1],
+      "at": 3.6,
+      "note": "Unscripted thinking noise as he reaches the tractor (3.66-4.03); kept so the mouth is voiced."
+    },
+    {
+      "text": "A little twist...",
+      "take": [4.4, 5.6],
+      "at": 4.4,
+      "note": "4.46-5.54, said while he twists the bolt."
+    },
+    {
+      "text": "...and it's snug!",
+      "take": [5.9, 7.72],
+      "at": 5.9,
+      "note": "5.97-7.67, facing camera; main clip cut at 7.792 just after."
+    }
+  ],
+  "signoff": {
+    "file": "short21_vo_sprocket_signoff.mp3",
+    "at": 8.29,
+    "note": "Shared audio/signoffs/signoff_sprocket.mp3, silence trimmed, atempo 0.87 (1.31s). Tail mouth runs ~0.5-2.0s (Veo's ~1.5s minimum here), so first word on the onset: at = cut 7.792 + 0.5."
+  },
+  "sfx": [],
+  "music": "audio/theme/theme_sting.mp3",
+  "video": {
+    "start_frame": "../../refs/scenes/sprocket_tractor_yard.png",
+    "model": "veo-3.1-generate-001",
+    "description": "First Short started straight from a scene reference (refs/scenes/sprocket_tractor_yard.png), no still generated. SPROCKET: a cheerful chunky cartoon piglet with a soft pink body, floppy pink ears, a big pink snout, rosy cheeks, solid glossy black eyes with a small white highlight (no coloured irises), dark brown hooves, a curly pink tail, wearing a brown leather tool belt with a gold buckle and two brown tool pouches (red-handled screwdriver + small silver tool in one, blue-handled tool in the other). The blue tractor with its grille face behind him.",
+    "negative": [
+      "camera push-in",
+      "wrench",
+      "second screwdriver",
+      "objects appearing",
+      "see-through hooves",
+      "spelling out letters",
+      "music",
+      "cuts"
+    ]
+  },
+  "beats": [
+    {"from": 0.0, "to": 3.05, "mouth": "open", "action": "ACCEPTED v1: waves to camera: 'You hear that rattle? Something's loose.'"},
+    {"from": 3.05, "to": 4.4, "mouth": "open", "action": "ACCEPTED v1: walks to the tractor (camera follows), 'Hmm.'"},
+    {"from": 4.4, "to": 5.6, "mouth": "open", "action": "ACCEPTED v1: twists a grille bolt with the red screwdriver: 'A little twist...'"},
+    {"from": 5.6, "to": 7.792, "mouth": "open", "action": "ACCEPTED v1: faces camera holding the screwdriver: '...and it's snug!'"}
+  ],
+  "notes": "Pacing: 11 words + sign-off. Franchise: Sprocket fixes. Teaches: listen for the problem, a small fix can do it. Known flaw accepted by the user: from ~5.5s a second red screwdriver handle shows in his pouch while he holds one (Veo refilled the pouch); camera follows him to the tractor instead of staying locked off.",
+  "shots": [
+    {
+      "clip": "short21_clip_v1_speaking.mp4",
+      "from": 0.0,
+      "use": 7.792,
+      "start_frame": "../../refs/scenes/sprocket_tractor_yard.png",
+      "note": "Main clip, cut at 7.792 (frame 187: eyes open, mouth closed). The tail starts from this exact frame."
+    }
+  ],
+  "tail": {
+    "clip": "short21_clip_tail.mp4",
+    "use": 3.1,
+    "note": "SPEAKING window 0.3-1.9 asked; mouth ran ~0.5-2.0. Cut at 3.1, before the blink at 3.5."
+  },
+  "history": "Main v1 accepted 2026-11-12 with the second-screwdriver flaw (user: 'Accept, continue'; no credits for a re-run). Re-voiced once (isolation + voice changer, 1 generation each)."
+}
