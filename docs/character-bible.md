@@ -187,8 +187,9 @@ character's four scene references (`refs/scenes/`, see
 `docs/location-bible.md`). Pose x set covers 16 openings from 8 images.
 
 `refs/characters/poses/<character>_pose_<name>.png` · 1536×2752 (9:16, 2K) ·
-`gemini-3-pro-image` from the character's ref only (~$0.30 an option, 4 options
-a run).
+`gemini-3-pro-image` from the character's ref only (~$0.30 an option). Run new
+poses with `creative_generate_in_flow`, `generations_count: 2` (~$0.60); the
+existing poses were run 4 at a time, which doubled their cost.
 
 **The standard:** full body, centred, about 60–70% of the frame height, facing
 camera, empty-handed, eyes open, mouth closed. **Tail/ears on the same side as

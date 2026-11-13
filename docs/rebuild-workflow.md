@@ -37,6 +37,26 @@ gives the sign-off a moving mouth. The sign-off's audio is always the shared
 recording in `audio/signoffs/`, never a voice-changed tail. Every step below
 comes from a fix in *What we learned*.
 
+### CREDIT RULES (audit 2026-11-12 — read before any paid step)
+
+October–November used about a month of ElevenLabs credits (~$76) on four
+Shorts plus the reference stills. Where it went: **reference stills ~$50
+(two-thirds)** — 128 image options bought to keep 26 — and Shorts 18–20 plus the
+shelved Rattly Tractor ~$26. Rules that would have halved it:
+
+| # | Rule | Saves |
+|---|---|---|
+| C1 | **Never let an image node run 4 options when you need 1–2.** `run_flow_nodes` always makes 4. For stills and any reference work use `creative_generate_in_flow` with `generations_count: 2` (1 for a small, safe change). The refs were run as 4 × 26 nodes. | ~50% of every image step |
+| C2 | **Tails without audio: `generate_audio: false`.** Priced 2026-11-12: 4s standard = **$0.80** silent vs $1.60 with audio. The sign-off audio is always the shared recording, so the tail's own audio is only used to find the mouth onset — read that off a 6–8 fps face grid instead (free). | $0.80 / Short |
+| C3 | **Price the main clip on `veo-3.1-lite-generate-001` first.** 8s 1080p with audio = **$0.64** vs $3.20 standard (resolution doesn't change the price; 720p = 1080p). Lite is untested on our cartoons: try it on the next Short and run the usual checks (eyes, wings, props, who speaks). If it holds, it's the default; if not, record why here and stay on standard. Fast (`veo-3.1-fast`, $1.20/8s) already failed on eyes, wings and mouths. | up to $2.56 / Short |
+| C4 | **Skip the still** whenever the opening fits a scene ref as-is (step 3). | $1.61–$2.01 |
+| C5 | **Duplicate check before scripting** (step 0). | a whole Short |
+| C6 | **Estimate every run and tell the user the exact cost first**; never re-run a video to "see if it's better" — fix by cutting, re-timing or splicing audio (pennies). | — |
+| C7 | **One generation per audio step** (steps 11–12); transcribe only the voice-changed main and, once, the final mix. | pennies, but adds up |
+
+**Target per Short:** standard main $3.20 + silent tail $0.80 + audio ~$0.10 =
+**~$4.10** with no still; **~$1.55** if lite passes. Old typical was ~$6.50.
+
 **Story**
 0. **Run the duplicate check in `docs/shorts-catalog.md` before scripting —
    every new Short, no exceptions.** Same lead + same problem, fix, lesson or
@@ -56,7 +76,9 @@ comes from a fix in *What we learned*.
    see *Scene references* in `docs/location-bible.md`) when one fits the story:
    - Neutral standing start, no props in hand → use the scene ref itself as the
      Veo start frame and skip the still (saves ~$1.61).
-   - Otherwise `gemini-3-pro-image`, 9:16 / 2K set on the node: image 1 = the
+   - Otherwise `gemini-3-pro-image` **via `creative_generate_in_flow` with
+     `generations_count: 2`** (rule C1; `run_flow_nodes` would make 4), 9:16 / 2K
+     set on the node: image 1 = the
      scene ref, image 2 = a pose ref from `refs/characters/poses/` (wave, point,
      thinking, proud), image 3 = the character's ref. "Keep the set, framing and
      size of image 1; the pose of image 2; on-model to image 3; add `<props>`."
@@ -66,6 +88,12 @@ comes from a fix in *What we learned*.
    image 2 for the setting only. Hero Nugget gets his cream chest patch.
 4. Put every prop the story needs in the frame from the start, placed where the
    action will use it. Nothing may appear later.
+   **Keep faces, props and the action out of the bottom 30% of the frame** —
+   YouTube's title, handle and buttons cover it (`docs/intro-shorts-pack.md`
+   rule 3; Short 1's Nugget "went missing" there). The scene refs leave open
+   ground in front of the character, and that ground *is* the bottom 30%: put
+   story props at chest height or beside the character (on a bench, crate,
+   fence rail, the tractor), never on the ground in front of them.
    **Sprocket never uses a tool from his belt.** The red screwdriver, small
    silver tool and blue-handled tool are costume (`docs/prop-rules.md`), and Veo
    refills the pouch the moment he takes one out, so the tool appears twice
@@ -74,7 +102,7 @@ comes from a fix in *What we learned*.
    something that isn't a belt tool (Short 4's gear from the pouch). It sits
    in the scene or in his hoof from frame one. In the main prompt say "the
    tools in his belt stay in his belt the whole time; he never takes one out."
-5. The node returns 4 options. **Check every one before picking** — fixing a still
+5. The run returns 2 options (C1). **Check every one before picking** — fixing a still
    afterwards costs an edit batch (Short 18: $1.51 to remove a second wrench when
    a clean option was already in the batch):
    - **One of each prop.** Look for a second copy in a belt, pouch, pocket or the
@@ -85,12 +113,16 @@ comes from a fix in *What we learned*.
    - Closest to the ref.
    Pick a clean one. If none is clean, re-run the still rather than editing: the
    edit tool returns 16:9 at 1K whatever the input, so an edit needs the node set
-   to 9:16 / 2K and run again (4 more). Commit and push the pick, then attach it
+   to 9:16 / 2K and run again (2 more). Commit and push the pick, then attach it
    to the flow by its `raw.githubusercontent.com/<owner>/<repo>/<sha>/…` URL
    (asset uploads are blocked).
 
-**Main clip** — `veo-3.1-generate-001`, 8s, ~$3.20
+**Main clip** — `veo-3.1-generate-001`, 8s, ~$3.20 (or lite, $0.64, once it passes — rule C3)
 6. Prompt:
+   - **Hook in the first 0.8s** (`docs/intro-shorts-pack.md` rule 1): the
+     character is already moving or speaking by 0.4s; no slow open.
+   - **Sprocket:** "the tools in his belt stay in his belt the whole time"
+     (step 4), and the tool he uses named as the only one of its kind.
    - The bible's description line and "keep exactly on-model".
    - "The camera is LOCKED OFF… never pushes in"; crates/props "stay fully in frame".
    - Timed segments, each line in quotes, in plain lowercase (all caps gets spelled
@@ -133,8 +165,9 @@ comes from a fix in *What we learned*.
     Clover) gave 1.72s. So Sprocket's and Clover's short recordings never fill the
     mouth: slow them at most 15% (`atempo` 0.87), put the first word on the mouth
     onset, and accept ~0.4s of mouth after the audio — or re-record those two
-    shared sign-offs at ~1.8s once. Transcribe the tail's own audio once for the
-    mouth span. Grid it and cut before the push-in, walk-off, or any extra
+    shared sign-offs at ~1.8s once. **Run the tail silent (`generate_audio:
+    false`, $0.80 — rule C2)** and read the mouth span off a 6–8 fps face grid
+    of the tail (first and last frame with the mouth open). Grid it and cut before the push-in, walk-off, or any extra
     unscripted word ("Huh?", "Ha.") Veo adds after the line.
 
 **Voice** — pennies
@@ -167,7 +200,7 @@ comes from a fix in *What we learned*.
     (Short 5's `signoff_nugget.mp3` was once Sprocket). No transcript needed.
 15. Spec: `lines` with `take` = [span start, end] and `at` = span start (plays each
     line where it was spoken, on the mouth); `signoff.at` = cut point + the tail's
-    mouth onset (transcribe the tail's own audio once to find it); `shots` (main
+    mouth onset (from the tail's face grid); `shots` (main
     `use` = cut point, tail `use` = ~0.5s past the sign-off), `cast`, beats. Then
     `check`, `seams`, `refcheck`, `mix`.
 16. Commit, attach the mix's audio, transcribe it, and compare word for word.
@@ -178,8 +211,10 @@ comes from a fix in *What we learned*.
 18. On approval: test → `shortNN_final.mp4`, delete the test files, add the
     lessons below, update the PR description and mark it ready.
 
-**Typical Short:** ~$6.50 (4 stills $1.60, main $3.20, 4s tail $1.60, voice and
-transcripts ~$0.10). Short 18 cost ~$8.10, of which $1.51 was a still edit and
+**Typical Short (from 2026-11-12, see *Credit rules*):** ~$4.10 — no still,
+standard main $3.20, silent 4s tail $0.80, voice and transcripts ~$0.10; add
+~$1.00 for a still at 2 options. Before: ~$6.50 (4 stills $1.60, tail with
+audio $1.60). Short 18 cost ~$8.10, of which $1.51 was a still edit and
 $0.13 unused audio variations. Don't pay for a lip-sync pass: it usually leaves
 our cartoon faces unchanged (see *What we learned*).
 

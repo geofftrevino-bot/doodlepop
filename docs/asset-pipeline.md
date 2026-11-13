@@ -1,5 +1,13 @@
 # Fix-It Farm — ASSET PIPELINE
 
+> **Partly out of date (checked 2026-11-12).** Claude now commits and pushes to
+> the repo itself and downloads ElevenLabs results directly, so the "you" steps
+> and *What still can't be automated* no longer apply, and the cost table below
+> is from the Runvid / fast-model days. Current costs and the credit rules are in
+> `docs/rebuild-workflow.md` (*Credit rules*). The URL-attach path and the
+> standing rules still hold — but asset *uploads* are blocked; attach by
+> `raw.githubusercontent.com/<owner>/<repo>/<sha>/…` URL.
+
 > **Channel:** DoodlePop Kids · **Show:** Fix-It Farm
 
 ---

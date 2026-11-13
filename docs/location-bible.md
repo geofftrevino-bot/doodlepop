@@ -230,9 +230,15 @@ are in **hero form** (cream chest patch), since the standard frame makes him
 shot (>20%, patch). See the hero/sidekick table in `docs/character-bible.md`.
 
 All four characters are done. **Prompt and standard for any new set:** the
-standard frame above and the prompt below. Gemini image runs always return 4
-options (~$1.61 a set with two references, ~$2.01 with three); pick against the
-standard frame and the character ref.
+standard frame above and the prompt below. **Run it with
+`creative_generate_in_flow`, `generations_count: 2`** (~$0.80 with two
+references, ~$1.00 with three). `run_flow_nodes` always returns 4 options and
+doubles the cost — the reference sets were made that way (~$50 for 26 images;
+PLAYBOOK credit rule C1). Pick against the standard frame and the character ref.
+
+**The open ground in front of the character is the bottom ~30% of the frame,
+which YouTube's title and buttons cover.** Don't stage props or action there;
+put them at chest height or beside the character (PLAYBOOK step 4).
 
 **Prompt template** (fill in the character's bible line and the set):
 
