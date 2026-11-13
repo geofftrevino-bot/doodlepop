@@ -104,6 +104,20 @@ eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
 - **Silhouette cue:** the tool belt at his waist.
 - **Props:** silver wrench (his signature), screwdriver, oil can, toolbox.
 - **Never:** without the tool belt.
+- **No wrench in the pouches.** His wrench is a hand prop. In every still and
+  reference his pouches hold only the red screwdriver, a small silver tool and
+  the blue-handled tool, so the wrench never appears twice. Say "no wrench
+  anywhere on him" in the prompt and still check each option's pouches —
+  `sprocket_noprop_ref.png` shows a wrench in a pouch and the model copies it.
+- **Pose references** (`refs/characters/poses/`, approved 2026-11-12; see *Pose
+  references* below):
+
+  | File | Pose | Use for |
+  |---|---|---|
+  | `sprocket_pose_wave.png` | one front hoof raised in a hello | greetings, intros, talking to the viewer |
+  | `sprocket_pose_point.png` | hoof pointing out to his side | "look at this!", showing what's broken |
+  | `sprocket_pose_thinking.png` | hoof under his chin, other across his tummy, eyes up | puzzles, "what's wrong with it?", choosing a tool |
+  | `sprocket_pose_proud.png` | hooves on hips above the belt | confident starts, "all fixed!" moments |
 
 ---
 
@@ -158,10 +172,11 @@ camera, empty-handed, eyes open, mouth closed. **Tail/ears on the same side as
 the character's ref** — reject options where the model mirrors the character
 (it did on 2 of Rocco's 16). One clear gesture per pose.
 
-**Done:** Rocco and Clover (wave, point, thinking, proud). **To make:**
-Sprocket, Nugget — same four poses unless a character needs another (e.g.
-Sprocket holding his wrench up), decided per character. Reject splayed or
-off-length ears and open mouths as well as mirrored options.
+**Done:** Rocco, Clover and Sprocket (wave, point, thinking, proud; Sprocket
+kept empty-handed rather than a wrench-up pose, so the wrench is added per
+Short). **To make:** Nugget — decide hero vs sidekick form first. Reject
+splayed or off-length ears, open mouths, mirrored options and stray props
+(e.g. a wrench in Sprocket's pouch).
 
 **Prompt template:**
 
