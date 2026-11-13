@@ -153,6 +153,26 @@ for sidekick shots.
 - **Scale rule:** roughly **one-third** of Sprocket's height. Every prop he
   carries should look comically oversized — that's the entire joke.
 - **Never:** slim or tall. He is a fuzzy ball.
+- **Pose references** (`refs/characters/poses/`, approved 2026-11-12; see *Pose
+  references* below). Eight, split by form: four **hero** poses (patch) for
+  when he leads, four **sidekick** helper poses (no patch) for when he's beside
+  a bigger character in their set.
+
+  | File | Form | Pose | Use for |
+  |---|---|---|---|
+  | `nugget_hero_pose_wave.png` | hero | one wing raised in a hello | his own Shorts: greetings, intros |
+  | `nugget_hero_pose_point.png` | hero | wing pointing out to his side | "look at this!" (beak very slightly open — reads as a smile) |
+  | `nugget_hero_pose_thinking.png` | hero | wing tip under his beak, other on his tummy, eyes up | puzzles, counting, "how do I…?" |
+  | `nugget_hero_pose_proud.png` | hero | wings on hips, patch puffed out | "I did it!" moments |
+  | `nugget_sidekick_pose_cheer.png` | sidekick | both wings up | celebrating a friend's fix |
+  | `nugget_sidekick_pose_look_up.png` | sidekick | head tipped back, gazing up | listening to Rocco / Sprocket / Clover |
+  | `nugget_sidekick_pose_hop.png` | sidekick | mid-hop, wings out | eager arrival, "can I help?" |
+  | `nugget_sidekick_pose_salute.png` | sidekick | wing at his brow | "ready to help!" |
+
+  Both forms follow their own reference: hero eyes are dark brown
+  (`nugget_hero_ref.png`), sidekick eyes are black (`nugget_sidekick_ref.png`).
+  Check every option for the patch (hero: present; sidekick: absent) and a
+  closed beak — the beak opened on about a quarter of Nugget's 40 options.
 
 ---
 
@@ -172,11 +192,11 @@ camera, empty-handed, eyes open, mouth closed. **Tail/ears on the same side as
 the character's ref** — reject options where the model mirrors the character
 (it did on 2 of Rocco's 16). One clear gesture per pose.
 
-**Done:** Rocco, Clover and Sprocket (wave, point, thinking, proud; Sprocket
-kept empty-handed rather than a wrench-up pose, so the wrench is added per
-Short). **To make:** Nugget — decide hero vs sidekick form first. Reject
-splayed or off-length ears, open mouths, mirrored options and stray props
-(e.g. a wrench in Sprocket's pouch).
+**Done — all four characters:** Rocco, Clover and Sprocket (wave, point,
+thinking, proud; Sprocket empty-handed, the wrench added per Short); Nugget
+(hero wave, point, thinking, proud + sidekick cheer, look-up, hop, salute).
+Reject splayed or off-length ears, open mouths/beaks, mirrored options, stray
+props (e.g. a wrench in Sprocket's pouch) and the wrong Nugget form.
 
 **Prompt template:**
 
