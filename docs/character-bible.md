@@ -109,6 +109,9 @@ eyes, bigger beak. Reference: `refs/characters/rocco_ref.png`; v1 is in
   the blue-handled tool, so the wrench never appears twice. Say "no wrench
   anywhere on him" in the prompt and still check each option's pouches —
   `sprocket_noprop_ref.png` shows a wrench in a pouch and the model copies it.
+- **He never takes a tool out of his belt.** Veo refills the pouch, so the tool
+  shows twice (the shelved "Rattly Tractor"). The tool he uses is a separate prop placed in the
+  scene or his hoof from frame one. See `docs/prop-rules.md`.
 - **Pose references** (`refs/characters/poses/`, approved 2026-11-12; see *Pose
   references* below):
 

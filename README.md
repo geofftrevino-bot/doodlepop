@@ -23,6 +23,7 @@ docs/                     show bibles and production notes
   vo-retake-guide.md        recording + PR steps for single-take VO
   vo-retake-plan.md         timing anchors for re-timing takes to picture
   rebuild-workflow.md       step-by-step loop for rebuilding a Short, with costs
+  shorts-catalog.md         every Short by premise + the duplicate check (read first)
   spec-format.md            fields of shortNN_spec.json
 episodes/
   ep01/                     "Welcome to Fix-It Farm": script.md, shot-list.md
