@@ -194,10 +194,27 @@ Clover-specific rules: made from `clover_noprop_ref.png` (empty pocket) plus
 don't grow on screen. No watering can, trowel, glove, seeds or loose carrots in
 the sets — those are per-Short story props.
 
-**Still to make:** Sprocket and Nugget (four sets each). Make them from the
-same standard frame and the prompt below. Gemini image runs always return 4
-options (~$1.61 a set with two references, ~$2.01 with three); pick against the
-standard frame and the character ref.
+### Sprocket (approved 2026-11-12)
+
+| File | Set (plate) | Use for |
+|---|---|---|
+| `sprocket_workshop_pegboard.png` | `workshop` — pegboard of hung tools centred behind him, red tool chest, green lamps | tool lessons, "which tool?", tidying tools |
+| `sprocket_workshop_bench.png` | `workshop` — workbench with the red vise (top clear), tyres, windmill through the open side | fixing small things on the bench, building, step-by-step jobs |
+| `sprocket_tractor_yard.png` | `tractor_yard` — the blue tractor with its grille face behind him, hay, wagon wheel, windmill | tractor and machine fixes, wheels, engines |
+| `sprocket_barn_ext.png` | `barn_ext` — barn centred, dirt path, apple tree, windmill | farm-wide fix-it jobs, arrivals, announcements |
+
+Sprocket-specific rules: made from `sprocket_noprop_ref.png` + plate. **His
+pouches hold only the red screwdriver, a small silver tool and the
+blue-handled tool — no wrench**, so a Short can put the wrench in his hoof
+without doubling it (Short 18). The noprop ref itself still shows a wrench in a
+pouch and the model copied it into 4 of 16 options even though the prompt
+forbade it: check every pouch when picking. `sprocket_barn_ext.png` frames him
+larger than the standard (~50% of the height); it was the only clean option.
+
+**Still to make:** Nugget (four sets). Make them from the same standard frame
+and the prompt below. Gemini image runs always return 4 options (~$1.61 a set
+with two references, ~$2.01 with three); pick against the standard frame and
+the character ref.
 
 **Prompt template** (fill in the character's bible line and the set):
 
