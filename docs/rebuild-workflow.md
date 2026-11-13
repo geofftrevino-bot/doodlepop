@@ -37,6 +37,14 @@ gives the sign-off a moving mouth. The sign-off's audio is always the shared
 recording in `audio/signoffs/`, never a voice-changed tail. Every step below
 comes from a fix in *What we learned*.
 
+**Story**
+0. **Run the duplicate check in `docs/shorts-catalog.md` before scripting —
+   every new Short, no exceptions.** Same lead + same problem, fix, lesson or
+   hero prop (two or more) = a repeat; also skip anything on the *Retired* list.
+   In the plan shown to the user, name the closest existing Short and why this
+   one is different. Short 21 repeated Short 14 (Sprocket, tractor, loose bolt)
+   and wasted ~$4.90 because this check didn't exist.
+
 **Setup**
 1. Fast-forward the branch to `main` (start fresh once a PR has merged) and open
    a draft PR for the Short.
@@ -58,6 +66,14 @@ comes from a fix in *What we learned*.
    image 2 for the setting only. Hero Nugget gets his cream chest patch.
 4. Put every prop the story needs in the frame from the start, placed where the
    action will use it. Nothing may appear later.
+   **Sprocket never uses a tool from his belt.** The red screwdriver, small
+   silver tool and blue-handled tool are costume (`docs/prop-rules.md`), and Veo
+   refills the pouch the moment he takes one out, so the tool appears twice
+   (Short 21: a red screwdriver in his hoof *and* in the pouch). The tool he
+   uses is a separate prop: the silver wrench (never also in the belt), or
+   something that isn't a belt tool (Short 4's gear from the pouch). It sits
+   in the scene or in his hoof from frame one. In the main prompt say "the
+   tools in his belt stay in his belt the whole time; he never takes one out."
 5. The node returns 4 options. **Check every one before picking** — fixing a still
    afterwards costs an edit batch (Short 18: $1.51 to remove a second wrench when
    a clean option was already in the batch):

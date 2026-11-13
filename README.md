@@ -23,6 +23,7 @@ docs/                     show bibles and production notes
   vo-retake-guide.md        recording + PR steps for single-take VO
   vo-retake-plan.md         timing anchors for re-timing takes to picture
   rebuild-workflow.md       step-by-step loop for rebuilding a Short, with costs
+  shorts-catalog.md         every Short by premise + the duplicate check (read first)
   spec-format.md            fields of shortNN_spec.json
 episodes/
   ep01/                     "Welcome to Fix-It Farm": script.md, shot-list.md
@@ -67,6 +68,7 @@ archive/                  superseded takes, old doc versions, exact duplicates
 | 18 | `short18_wobbly_wheel` | Sprocket |
 | 19 | `short19_everything_has_a_place` | Rocco |
 | 20 | `short20_stuck_carrot` | Clover |
+| 21 | `short21_rattly_tractor` | Sprocket (duplicate of 14 — not for upload unless approved) |
 
 ## Naming convention
 

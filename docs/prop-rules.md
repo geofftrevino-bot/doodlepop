@@ -33,6 +33,14 @@ survived, but only just.
 blue-handled tool, is permanent costume and stays in every shot. Only the
 **held** wrench is a prop.
 
+**So he never takes a tool out of the belt.** Veo keeps the belt looking like
+the reference, so a tool pulled from a pouch reappears in the pouch while he
+holds it — two red screwdrivers in Short 21. A tool he uses is a separate prop
+that is not one of the belt tools: the silver wrench (with no wrench in the
+belt — Short 18), or something new like Short 4's gear. Prompt: "the tools in
+his belt stay in his belt the whole time; he never takes one out"; negative:
+`taking a tool from his belt, second screwdriver`.
+
 Same for Rocco's straw hat and Clover's green overalls — costume, always
 present.
 
