@@ -69,7 +69,7 @@ comes from a fix in *What we learned*.
    **Sprocket never uses a tool from his belt.** The red screwdriver, small
    silver tool and blue-handled tool are costume (`docs/prop-rules.md`), and Veo
    refills the pouch the moment he takes one out, so the tool appears twice
-   (Short 21: a red screwdriver in his hoof *and* in the pouch). The tool he
+   (the shelved "Rattly Tractor": a red screwdriver in his hoof *and* in the pouch). The tool he
    uses is a separate prop: the silver wrench (never also in the belt), or
    something that isn't a belt tool (Short 4's gear from the pouch). It sits
    in the scene or in his hoof from frame one. In the main prompt say "the
