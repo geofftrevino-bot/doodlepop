@@ -30,6 +30,15 @@
       "note": "sts 1.67-3.00."
     },
     {
+      "text": "Hmm.",
+      "take": [
+        3.6,
+        4.1
+      ],
+      "at": 3.6,
+      "note": "Unscripted thinking noise as he reaches the tractor (3.66-4.03); kept so the mouth is voiced."
+    },
+    {
       "text": "A little twist...",
       "take": [
         4.4,
@@ -96,7 +105,7 @@
       "action": "ACCEPTED v1: faces camera holding the screwdriver: '...and it's snug!'"
     }
   ],
-  "notes": "Pacing: 11 words + sign-off. Franchise: Sprocket fixes. Teaches: listen for the problem, a small fix can do it. Known flaw accepted by the user: from ~5.5s a second red screwdriver handle shows in his pouch while he holds one (Veo refilled the pouch); camera follows him to the tractor instead of staying locked off. The voice changer turned Veo's 'Hmm' (3.66-4.03, said in profile while walking) into words heard as 'grow it every day', so that line is dropped; his face is turned to the tractor there.",
+  "notes": "Pacing: 11 words + sign-off. Franchise: Sprocket fixes. Teaches: listen for the problem, a small fix can do it. Known flaw accepted by the user: from ~5.5s a second red screwdriver handle shows in his pouch while he holds one (Veo refilled the pouch); camera follows him to the tractor instead of staying locked off. Word check: the voice track transcribes clean; a transcript of the full mix also picks up the theme bed's sung words ('grow it every day') in the 3.1-4.4s gap, which is the music, not the voice.",
   "shots": [
     {
       "clip": "short21_clip_v1_speaking.mp4",
