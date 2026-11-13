@@ -13,31 +13,37 @@
   "lines": [
     {
       "text": "You hear that rattle?",
-      "take": [0.15, 1.3],
+      "take": [
+        0.15,
+        1.3
+      ],
       "at": 0.15,
       "note": "sts 0.17-1.27; plays where spoken. Veo added 'You'."
     },
     {
       "text": "Something's loose.",
-      "take": [1.6, 3.05],
+      "take": [
+        1.6,
+        3.05
+      ],
       "at": 1.6,
       "note": "sts 1.67-3.00."
     },
     {
-      "text": "Hmm.",
-      "take": [3.6, 4.1],
-      "at": 3.6,
-      "note": "Unscripted thinking noise as he reaches the tractor (3.66-4.03); kept so the mouth is voiced."
-    },
-    {
       "text": "A little twist...",
-      "take": [4.4, 5.6],
+      "take": [
+        4.4,
+        5.6
+      ],
       "at": 4.4,
       "note": "4.46-5.54, said while he twists the bolt."
     },
     {
       "text": "...and it's snug!",
-      "take": [5.9, 7.72],
+      "take": [
+        5.9,
+        7.72
+      ],
       "at": 5.9,
       "note": "5.97-7.67, facing camera; main clip cut at 7.792 just after."
     }
@@ -65,12 +71,32 @@
     ]
   },
   "beats": [
-    {"from": 0.0, "to": 3.05, "mouth": "open", "action": "ACCEPTED v1: waves to camera: 'You hear that rattle? Something's loose.'"},
-    {"from": 3.05, "to": 4.4, "mouth": "open", "action": "ACCEPTED v1: walks to the tractor (camera follows), 'Hmm.'"},
-    {"from": 4.4, "to": 5.6, "mouth": "open", "action": "ACCEPTED v1: twists a grille bolt with the red screwdriver: 'A little twist...'"},
-    {"from": 5.6, "to": 7.792, "mouth": "open", "action": "ACCEPTED v1: faces camera holding the screwdriver: '...and it's snug!'"}
+    {
+      "from": 0.0,
+      "to": 3.05,
+      "mouth": "open",
+      "action": "ACCEPTED v1: waves to camera: 'You hear that rattle? Something's loose.'"
+    },
+    {
+      "from": 3.05,
+      "to": 4.4,
+      "mouth": "open",
+      "action": "ACCEPTED v1: walks to the tractor (camera follows), 'Hmm.'"
+    },
+    {
+      "from": 4.4,
+      "to": 5.6,
+      "mouth": "open",
+      "action": "ACCEPTED v1: twists a grille bolt with the red screwdriver: 'A little twist...'"
+    },
+    {
+      "from": 5.6,
+      "to": 7.792,
+      "mouth": "open",
+      "action": "ACCEPTED v1: faces camera holding the screwdriver: '...and it's snug!'"
+    }
   ],
-  "notes": "Pacing: 11 words + sign-off. Franchise: Sprocket fixes. Teaches: listen for the problem, a small fix can do it. Known flaw accepted by the user: from ~5.5s a second red screwdriver handle shows in his pouch while he holds one (Veo refilled the pouch); camera follows him to the tractor instead of staying locked off.",
+  "notes": "Pacing: 11 words + sign-off. Franchise: Sprocket fixes. Teaches: listen for the problem, a small fix can do it. Known flaw accepted by the user: from ~5.5s a second red screwdriver handle shows in his pouch while he holds one (Veo refilled the pouch); camera follows him to the tractor instead of staying locked off. The voice changer turned Veo's 'Hmm' (3.66-4.03, said in profile while walking) into words heard as 'grow it every day', so that line is dropped; his face is turned to the tractor there.",
   "shots": [
     {
       "clip": "short21_clip_v1_speaking.mp4",
