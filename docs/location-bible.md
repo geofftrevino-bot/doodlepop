@@ -156,7 +156,7 @@ re-invents the set (and drifts) every time.
 
 `refs/scenes/<character>_<set>.png` · 1536×2752 (9:16, 2K) · `gemini-3-pro-image`
 from the character's ref (image 1) and the set's plate (image 2). Contact sheets
-in `refs/scenes/_sheets/`. Four sets per character.
+in `refs/scenes/_sheets/`. Four sets per character (two for Nugget).
 
 **The standard frame** (every scene ref, every character):
 - The character full body, about 40% of the frame height, lower middle, facing
@@ -211,10 +211,28 @@ pouch and the model copied it into 4 of 16 options even though the prompt
 forbade it: check every pouch when picking. `sprocket_barn_ext.png` frames him
 larger than the standard (~50% of the height); it was the only clean option.
 
-**Still to make:** Nugget (four sets). Make them from the same standard frame
-and the prompt below. Gemini image runs always return 4 options (~$1.61 a set
-with two references, ~$2.01 with three); pick against the standard frame and
-the character ref.
+### Nugget (approved 2026-11-12) — two sets only
+
+| File | Set (plate) | Use for |
+|---|---|---|
+| `nugget_barn_int.png` | `barn_int` — open barn doors centred, hayloft, lantern, wagon wheel, sunflowers | sorting, counting, indoor helping |
+| `nugget_fence_lawn.png` | `fence_line` — fence with sunflowers and daisies, barn and windmill beyond, wide lawn | outdoor learning, practising (flying, hopping), nature beats |
+
+Nugget gets **two** sets, not four: he spends most of his time helping in the
+other characters' sets, so a Nugget-led Short often starts from another
+character's set instead (see *Nugget in other characters' sets* below). Both
+are in **hero form** (cream chest patch), since the standard frame makes him
+~40% of the frame height. Made from `nugget_hero_ref.png` + plate.
+
+**Nugget in other characters' sets:** start from that character's scene ref
+(image 1), add Nugget with a sidekick pose ref when he's small beside them
+(≤20% of the frame height, no patch) or a hero pose ref when he leads the
+shot (>20%, patch). See the hero/sidekick table in `docs/character-bible.md`.
+
+All four characters are done. **Prompt and standard for any new set:** the
+standard frame above and the prompt below. Gemini image runs always return 4
+options (~$1.61 a set with two references, ~$2.01 with three); pick against the
+standard frame and the character ref.
 
 **Prompt template** (fill in the character's bible line and the set):
 
