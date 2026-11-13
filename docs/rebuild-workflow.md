@@ -42,8 +42,8 @@ comes from a fix in *What we learned*.
    every new Short, no exceptions.** Same lead + same problem, fix, lesson or
    hero prop (two or more) = a repeat; also skip anything on the *Retired* list.
    In the plan shown to the user, name the closest existing Short and why this
-   one is different. Short 21 repeated Short 14 (Sprocket, tractor, loose bolt)
-   and wasted ~$4.90 because this check didn't exist.
+   one is different. The shelved "Rattly Tractor" repeated Short 14 (Sprocket,
+   tractor, loose bolt) and wasted ~$4.90 because this check didn't exist.
 
 **Setup**
 1. Fast-forward the branch to `main` (start fresh once a PR has merged) and open

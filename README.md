@@ -68,7 +68,6 @@ archive/                  superseded takes, old doc versions, exact duplicates
 | 18 | `short18_wobbly_wheel` | Sprocket |
 | 19 | `short19_everything_has_a_place` | Rocco |
 | 20 | `short20_stuck_carrot` | Clover |
-| 21 | `short21_rattly_tractor` | Sprocket (duplicate of 14 — not for upload unless approved) |
 
 ## Naming convention
 

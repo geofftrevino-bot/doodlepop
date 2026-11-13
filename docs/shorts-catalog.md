@@ -44,11 +44,14 @@ the user ("closest existing: Short 14 — different because …").
 | 18 | Sprocket's Wobbly Wheel | Sprocket | workshop | wheelbarrow wheel wobbles | tighten the loose bolt | loose part → wobble | wheelbarrow, wrench |
 | 19 | Everything Has a Place | Rocco | workshop | a hammer left out | hang it in its outline | tidy up / put things back | hammer, pegboard |
 | 20 | Clover and the Stuck Carrot | Clover | garden | a carrot won't come out | keeps pulling | keep trying | one big carrot |
-| 21 | The Rattly Tractor | Sprocket | tractor yard | tractor rattles | tighten a loose bolt | listen for the problem | tractor, screwdriver |
+| ~~21~~ | The Rattly Tractor — **SHELVED** | Sprocket | tractor yard | tractor rattles | tighten a loose bolt | listen for the problem | tractor, screwdriver |
 
-**Short 21 is a duplicate of Short 14** (same lead, problem, fix and hero prop;
-18 shares the fix and lesson too). Kept on its branch as the first test of the
-scene-reference start frame; whether it's uploaded is the user's call.
+**The Rattly Tractor was shelved (2026-11-12)**: a duplicate of Short 14 (same
+lead, problem, fix and hero prop; 18 shares the fix and lesson too). Its files
+are in `archive/shorts/short21_rattly_tractor_shelved/` (it was the first test
+of starting from a scene reference, which worked). It won't be uploaded, and
+**the number 21 is free** for the next Short. It stays listed here so the idea
+isn't tried a fourth time.
 
 ## Retired premises (used up — don't reuse for that character)
 
